@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="my.dashboard">
+
+    <uses-sdk android:minSdkVersion="10" />
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:resizeable="true"
+        android:smallScreens="true" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/dashb"
+        android:label="i-DASHBOARD"
+        android:screenOrientation="portrait"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name="my.com.tm.dashboard.Starting"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="my.com.tm.dashboard.MainActivity"
+            android:label="@string/title_activity_main"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="my.com.tm.dashboard.Register"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="my.com.tm.dashboard.Start"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="my.com.tm.dashboard.PlanFiber"
+            android:label="PLAN E-FIBER" />
+        <activity
+            android:name="my.com.tm.dashboard.ActualFiber"
+            android:label="ACTUAL E-FIBER" />
+        <activity
+            android:name="my.com.tm.dashboard.ResetPassword"
+            android:screenOrientation="portrait" />
+        <activity android:name="my.com.tm.dashboard.CardDemoActivity" />
+        <activity
+            android:name="my.com.tm.dashboard.LoginActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="my.com.tm.dashboard.CabinetMonitoring"
+            android:label="MONITORING SITES" />
+        <activity
+            android:name="my.com.tm.dashboard.TotalMigCab"
+            android:label="TOTAL MIGRATED CABINET" />
+        <activity
+            android:name="my.com.tm.dashboard.PlanMigrateToday"
+            android:label="PLAN MIGRATE TODAY" />
+        <activity
+            android:name="my.com.tm.dashboard.PlanSubb"
+            android:label="PLAN SUBB" />
+        <activity
+            android:name="my.com.tm.dashboard.ActualSubb"
+            android:label="ACTUAL SUBB" />
+        <activity
+            android:name="my.com.tm.dashboard.PlanColo"
+            android:label="PLAN SPINE COLO" />
+        <activity
+            android:name="my.com.tm.dashboard.ActualColo"
+            android:label="ACTUAL SPINE COLO" />
+        <activity
+            android:name="my.com.tm.dashboard.BalanceFiber"
+            android:label="BALANCE FIBER" />
+        <activity
+            android:name="my.com.tm.dashboard.BalanceSubb"
+            android:label="BALANCE SUBB" />
+        <activity
+            android:name="my.com.tm.dashboard.BalanceColo"
+            android:label="BALANCE SPINE COLO"></activity>
+        <activity android:name="my.com.tm.dashboard.ListMigCab"
+            android:label="LIST MIGRATED CABINET"></activity>
+    </application>
+
+</manifest>

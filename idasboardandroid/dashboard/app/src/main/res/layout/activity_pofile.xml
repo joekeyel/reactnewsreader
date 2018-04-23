@@ -1,0 +1,554 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:gravity="center"
+    android:layout_height="match_parent">
+
+ <RelativeLayout
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content">
+
+  <TextView
+      android:id="@+id/textViewUserEmail"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:textStyle="italic"
+      android:layout_centerHorizontal="true"
+      android:layout_gravity="center_horizontal"
+      android:text=""
+      android:textAppearance="?android:attr/textAppearanceLarge" />
+
+
+  <TextView
+      android:id="@+id/mitos"
+      android:layout_width="match_parent"
+      android:layout_height="40dp"
+      android:layout_alignParentEnd="true"
+      android:layout_alignParentLeft="true"
+      android:layout_alignParentRight="true"
+      android:layout_alignParentStart="true"
+      android:layout_below="@+id/textViewUserEmail"
+      android:textStyle="bold"
+      android:background="#cc2e2e"
+      android:gravity="center"
+      android:text="PLAN MIGRATE TODAY"
+      android:textColor="#ffffff" />
+
+  <TextView
+      android:id="@+id/mint"
+      android:layout_width="match_parent"
+      android:layout_height="30dp"
+      android:layout_alignEnd="@+id/mitos"
+      android:layout_alignParentLeft="true"
+      android:layout_alignParentStart="true"
+      android:layout_alignRight="@+id/mitos"
+      android:layout_below="@+id/mitos"
+      android:background="#cc2e2e"
+      android:gravity="center"
+      android:text=""
+      android:textStyle="bold"
+      android:textColor="#ffffff"
+      android:textSize="20dp" />
+
+   <TableLayout
+       android:id="@+id/table"
+       android:layout_width="match_parent"
+       android:layout_gravity="center"
+       android:layout_height="wrap_content"
+       android:layout_below="@+id/ttt"
+       android:background="#ff9d00">
+
+   <TableRow android:layout_marginTop="1dp"
+       android:gravity="center"
+       >
+
+    <TextView
+        android:id="@+id/plansubbb"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="PLAN"
+        android:textColor="#000000"
+        android:textSize="16dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:gravity="center"
+        android:id="@+id/plansubb"
+        android:text=""
+        android:layout_marginLeft="10dp"
+        android:textSize="20dp"
+        android:textColor="#ffffff"
+        android:textStyle="bold"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="ACTUAL"
+        android:id="@+id/actualsubbb"
+        android:layout_gravity="center"
+        android:textColor="#000000"
+        android:textSize="16dp"
+        android:textStyle="bold" />
+
+    <TextView android:id="@+id/actualsubb"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:layout_marginLeft="10dp"
+        android:text=""
+        android:textColor="#ffffff"
+        android:textStyle="bold"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+
+        android:layout_marginLeft="10dp"
+        android:text="BALANCE"
+
+        android:textColor="#000000"
+        android:textSize="16dp"
+        android:textStyle="bold" />
+
+    <TextView android:id="@+id/balancesubb"
+        android:gravity="center"
+        android:layout_marginLeft="10dp"
+        android:layout_width="wrap_content"
+        android:textSize="20dp"
+        android:text=""
+        android:textColor="#ffffff"
+        android:textStyle="bold"/>
+   </TableRow>
+  </TableLayout>
+
+
+  <TextView
+      android:id="@+id/textView2"
+      android:layout_width="match_parent"
+      android:layout_height="40dp"
+      android:layout_alignParentEnd="true"
+      android:layout_alignParentLeft="true"
+      android:layout_alignParentRight="true"
+      android:layout_alignParentStart="true"
+      android:layout_below="@+id/mint"
+      android:layout_marginTop="10dp"
+      android:background="#ff9d00"
+      android:gravity="center"
+      android:text="MIGRATION PROGRESS SUBB"
+      android:textColor="#ffffff"
+      android:visibility="gone" />
+
+  <TextView
+      android:id="@+id/ttt"
+      android:layout_width="match_parent"
+      android:layout_height="30dp"
+      android:textStyle="bold"
+      android:layout_alignLeft="@+id/textView2"
+      android:layout_alignParentEnd="true"
+      android:layout_alignParentRight="true"
+      android:layout_alignStart="@+id/textView2"
+      android:layout_below="@+id/mint"
+      android:layout_marginTop="1dp"
+      android:background="#ff9d00"
+      android:gravity="center"
+      android:text="MIGRATION PROGRESS SUBB"
+      android:textColor="#ffffff" />
+
+  <TextView
+      android:id="@+id/textView6"
+      android:layout_width="match_parent"
+      android:layout_height="40dp"
+      android:layout_alignParentLeft="true"
+      android:layout_alignParentStart="true"
+      android:layout_below="@+id/tablest"
+      android:layout_marginTop="1dp"
+      android:textStyle="bold"
+      android:background="#173cab"
+      android:gravity="center"
+      android:text="CABINET CURRENTLY MONITORING BY MCC"
+      android:textColor="#ffffff" />
+
+  <TextView
+      android:id="@+id/tst"
+      android:layout_width="match_parent"
+      android:layout_height="30dp"
+      android:layout_alignParentLeft="true"
+      android:layout_alignParentStart="true"
+      android:layout_below="@+id/textView6"
+      android:background="#173cab"
+      android:gravity="center"
+      android:textStyle="bold"
+      android:text=""
+      android:textColor="#ffffff"
+      android:textSize="20dp" />
+
+  <TextView
+      android:id="@+id/textView5"
+      android:layout_width="match_parent"
+      android:layout_height="40dp"
+      android:layout_alignParentLeft="true"
+      android:layout_alignParentStart="true"
+      android:layout_below="@+id/table"
+      android:textStyle="bold"
+      android:layout_marginTop="1dp"
+      android:background="#438944"
+      android:gravity="center"
+      android:text="MIGRATION PROGRESS E-FIBERIZATION"
+      android:textColor="#ffffff" />
+  <TextView
+      android:id="@+id/textView54"
+      android:layout_width="match_parent"
+      android:layout_height="40dp"
+      android:layout_alignParentLeft="true"
+      android:layout_alignParentStart="true"
+      android:layout_below="@+id/tables"
+      android:layout_marginTop="1dp"
+      android:background="#8cc727"
+      android:textStyle="bold"
+      android:gravity="center"
+      android:text="MIGRATION PROGRESS SPINE COLO"
+      android:textColor="#ffffff" />
+
+  <TableLayout
+      android:id="@+id/tablest"
+      android:layout_width="match_parent"
+      android:gravity="center"
+      android:layout_height="wrap_content"
+      android:layout_below="@+id/textView54"
+      android:background="#8cc727">
+
+   <TableRow android:layout_marginTop="1dp"
+       android:gravity="center"/>
+
+
+   <TableRow android:layout_marginTop="1dp"
+       android:gravity="center"
+       >
+
+    <TextView
+        android:layout_width="wrap_content"
+
+        android:text="PLAN"
+        android:id="@+id/plancolo"
+        android:layout_gravity="center"
+        android:textColor="#000000"
+        android:textSize="16dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:gravity="center"
+        android:id="@+id/planspine"
+        android:text=""
+        android:layout_marginLeft="10dp"
+        android:textSize="20dp"
+        android:textColor="#ffffff"
+        android:textStyle="bold"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="ACTUAL"
+        android:id="@+id/actualcolo"
+        android:layout_gravity="center"
+        android:textColor="#000000"
+        android:textSize="16dp"
+        android:textStyle="bold" />
+
+    <TextView android:id="@+id/actualspine"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:layout_marginLeft="10dp"
+        android:text=""
+        android:textColor="#ffffff"
+        android:textStyle="bold"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+
+        android:layout_marginLeft="10dp"
+        android:text="BALANCE"
+
+        android:textColor="#000000"
+        android:textSize="16dp"
+        android:textStyle="bold" />
+
+    <TextView android:id="@+id/balancespine"
+        android:gravity="center"
+        android:layout_marginLeft="10dp"
+        android:layout_width="wrap_content"
+        android:textSize="20dp"
+        android:text=""
+        android:textColor="#ffffff"
+        android:textStyle="bold"/>
+   </TableRow>
+  </TableLayout>
+
+  <TableLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:background="#438944"
+      android:gravity="center"
+      android:layout_below="@+id/textView5"
+      android:id="@+id/tables">
+
+   <TableRow
+       android:gravity="center"
+       android:layout_marginTop="1dp"/>
+
+
+   <TableRow android:layout_marginTop="1dp"
+       android:gravity="center"
+       >
+
+    <TextView
+        android:id="@+id/planfiber"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="PLAN"
+        android:textColor="#000000"
+        android:textSize="16dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:gravity="center"
+        android:id="@+id/plansfiber"
+        android:text=""
+        android:layout_marginLeft="10dp"
+        android:textSize="20dp"
+        android:textColor="#ffffff"
+        android:textStyle="bold"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="ACTUAL"
+        android:id="@+id/actualfiberr"
+        android:layout_gravity="center"
+        android:textColor="#000000"
+        android:textSize="16dp"
+        android:textStyle="bold" />
+
+    <TextView android:id="@+id/actualfiber"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:layout_marginLeft="10dp"
+        android:text=""
+        android:textColor="#ffffff"
+        android:textStyle="bold"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+
+        android:layout_marginLeft="10dp"
+        android:text="BALANCE"
+
+        android:textColor="#000000"
+        android:textSize="16dp"
+        android:textStyle="bold" />
+
+    <TextView android:id="@+id/balancefiber"
+        android:gravity="center"
+        android:layout_marginLeft="10dp"
+        android:layout_width="wrap_content"
+        android:textSize="20dp"
+        android:text=""
+        android:textColor="#ffffff"
+        android:textStyle="bold"/>
+   </TableRow>
+  </TableLayout>
+
+
+  <TextView
+      android:id="@+id/textview11"
+      android:layout_width="match_parent"
+      android:layout_height="40dp"
+      android:layout_alignParentLeft="true"
+      android:layout_alignParentStart="true"
+      android:layout_below="@+id/tst"
+      android:layout_marginTop="1dp"
+      android:background="#a41173"
+      android:textStyle="bold"
+      android:gravity="center"
+      android:text="UNRESOLVED TT"
+      android:textColor="#ffffff" />
+
+  <TextView
+
+      android:id="@+id/rst"
+      android:layout_width="match_parent"
+      android:layout_height="30dp"
+      android:layout_alignEnd="@+id/mitos"
+      android:layout_alignParentLeft="true"
+      android:layout_alignParentStart="true"
+      android:layout_alignRight="@+id/mitos"
+      android:layout_below="@+id/textview11"
+      android:background="#a41173"
+      android:textStyle="bold"
+      android:gravity="center"
+      android:text=""
+      android:textColor="#ffffff"
+      android:textSize="20dp" />
+
+  <TextView
+      android:id="@+id/hi"
+      android:layout_width="match_parent"
+      android:layout_height="40dp"
+      android:layout_alignParentLeft="true"
+      android:layout_alignParentStart="true"
+      android:layout_below="@+id/rst"
+      android:layout_marginTop="1dp"
+      android:textStyle="bold"
+      android:background="#e2c805"
+      android:gravity="center"
+      android:text="FAULT RATE YTD"
+      android:textColor="#ffffff" />
+
+  <TextView
+      android:id="@+id/jesi"
+      android:layout_width="match_parent"
+      android:layout_height="30dp"
+      android:layout_alignParentLeft="true"
+      android:layout_alignParentStart="true"
+      android:layout_below="@+id/hi"
+      android:background="#e2c805"
+      android:gravity="center"
+
+      android:textStyle="bold"
+      android:text="SERVICE NOT AVAILABLE YET"
+      android:textColor="#ffffff"
+      android:textSize="20dp" />
+
+  <TextView
+      android:id="@+id/textview66"
+      android:layout_width="match_parent"
+      android:layout_height="40dp"
+      android:layout_alignParentLeft="true"
+      android:layout_alignParentStart="true"
+      android:layout_below="@+id/jesi"
+      android:textStyle="bold"
+      android:layout_marginTop="1dp"
+      android:background="#151414"
+      android:gravity="center"
+      android:text="MEAN TIME TO RESTORE"
+      android:textColor="#ffffff" />
+
+  <TextView
+
+      android:id="@+id/saa"
+      android:layout_width="match_parent"
+      android:layout_height="30dp"
+      android:layout_alignEnd="@+id/mitos"
+      android:layout_alignParentLeft="true"
+      android:layout_alignParentStart="true"
+      android:layout_alignRight="@+id/mitos"
+      android:layout_below="@+id/textview66"
+      android:background="#151414"
+      android:gravity="center"
+      android:textStyle="bold"
+      android:text="SERVICE NOT AVAILABLE YET"
+      android:textColor="#ffffff"
+      android:textSize="20dp" />
+
+  <TextView
+      android:id="@+id/textView52"
+      android:layout_width="match_parent"
+      android:layout_height="40dp"
+      android:layout_alignParentLeft="true"
+      android:layout_alignParentStart="true"
+      android:layout_below="@+id/saa"
+      android:layout_marginTop="1dp"
+      android:background="#700776"
+      android:gravity="center"
+      android:textStyle="bold"
+      android:text="TOTAL TT YTD 2018"
+      android:textColor="#ffffff" />
+
+  <TextView
+      android:id="@+id/textr"
+      android:layout_width="match_parent"
+      android:layout_height="30dp"
+      android:layout_alignParentLeft="true"
+      android:layout_alignParentStart="true"
+      android:layout_below="@+id/textView52"
+      android:background="#700776"
+      android:gravity="center"
+      android:text=""
+      android:textColor="#ffffff"
+      android:textSize="20dp"
+      android:textStyle="bold" />
+
+  <TextView
+      android:id="@+id/textView22"
+      android:layout_width="match_parent"
+      android:layout_height="40dp"
+      android:layout_alignParentEnd="true"
+      android:layout_alignParentLeft="true"
+      android:textStyle="bold"
+      android:layout_alignParentRight="true"
+      android:layout_alignParentStart="true"
+      android:layout_below="@+id/textr"
+      android:layout_marginTop="1dp"
+      android:background="#0ca0da"
+      android:gravity="center"
+      android:text="TOTAL MIGRATED CABINET YTD 2018"
+      android:textColor="#ffffff" />
+
+  <TextView
+      android:id="@+id/textt"
+      android:layout_width="match_parent"
+      android:layout_height="30dp"
+      android:layout_alignLeft="@+id/textView2"
+      android:layout_alignParentEnd="true"
+      android:layout_alignParentRight="true"
+      android:layout_alignStart="@+id/textView2"
+      android:layout_below="@+id/textView22"
+      android:background="#0ca0da"
+      android:textStyle="bold"
+      android:gravity="center"
+      android:text=""
+      android:textColor="#ffffff"
+      android:textSize="20dp" />
+
+  <TextView
+      android:id="@+id/tecv"
+      android:layout_width="match_parent"
+      android:layout_height="40dp"
+      android:layout_alignParentLeft="true"
+      android:layout_alignParentStart="true"
+      android:layout_below="@+id/textt"
+      android:layout_marginTop="1dp"
+      android:background="#838383"
+      android:textStyle="bold"
+      android:gravity="center"
+      android:text="TOTAL CABINET HANDED OVER TO NGNNOC"
+      android:textColor="#ffffff" />
+
+  <TextView
+      android:id="@+id/testt"
+      android:layout_width="match_parent"
+      android:layout_height="30dp"
+      android:layout_alignEnd="@+id/mitos"
+      android:layout_alignParentLeft="true"
+      android:layout_alignParentStart="true"
+      android:layout_alignRight="@+id/mitos"
+      android:layout_below="@+id/tecv"
+      android:background="#838383"
+      android:gravity="center"
+      android:text=""
+      android:textColor="#ffffff"
+      android:textStyle="bold"
+      android:textSize="20dp" />
+
+
+ </RelativeLayout>
+
+</ScrollView>

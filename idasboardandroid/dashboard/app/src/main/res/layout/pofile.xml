@@ -1,0 +1,534 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:cardView="http://schemas.android.com/tools"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:clickable="true"
+    android:id="@+id/card_view"
+    android:layout_gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    card_view:cardCornerRadius="20dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:id="@+id/hi">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="end">
+            <TextView
+                android:id="@+id/time"
+                android:text=""
+                android:textColor="#000000"
+                android:layout_marginRight="50dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="18dp"/>
+
+            <ImageView
+                android:id="@+id/refresh"
+                android:src="@mipmap/refresh"
+                android:layout_marginRight="30dp"
+                android:layout_gravity="end"
+                android:textColor="#0331a4"
+                android:layout_width="40dp"
+                android:layout_height="50dp"
+                android:gravity="end"
+                />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <TableLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_below="@+id/hi"
+        android:background="#09249b"
+        android:id="@+id/ter"
+      >
+
+        <TableRow
+            android:gravity="center"
+            android:id="@+id/high">
+
+            <TextView
+                android:id="@+id/mitos"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:text="TODAY PLAN"
+                android:gravity="center"
+                android:textColor="#ffffff"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:text="MONITORING SITES"
+                android:textColor="#ffffff"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_marginLeft="20dp"
+                android:text="ACTIVE TT"
+                android:textColor="#ffffff"
+                android:textSize="16dp" />
+        </TableRow>
+
+        <TableRow
+            android:gravity="center"
+            android:layout_gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:text=""
+                android:id="@+id/mint"
+                android:textStyle="bold"
+                android:textColor="#ffffff"
+                android:textSize="40dp" />
+
+            <TextView
+                android:id="@+id/tst"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:text=""
+                android:textStyle="bold"
+                android:textColor="#ffffff"
+                android:textSize="40dp"
+                 />
+            <TextView
+                android:text=""
+                android:textColor="#ffffff"
+                android:id="@+id/rst"
+                android:textSize="40dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </TableRow>
+    </TableLayout>
+
+
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="95dp"
+        android:id="@+id/tables"
+        android:gravity="center"
+        android:layout_marginTop="3dp"
+        android:background="#ff9d00"
+        android:layout_below="@+id/ter"
+
+        >
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="3dp"
+            android:gravity="center"
+            android:text="SUBB MIGRATION PROGRESS"
+            android:textColor="#ffffff"
+            android:textSize="16dp" />
+
+
+        <TableRow
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/plansubbb"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:text="PLAN"
+                android:textColor="#000000"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/actualsubbb"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_gravity="center"
+
+                android:text="ACTUAL"
+                android:textColor="#000000"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/bala"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:text="BALANCE"
+                android:textColor="#000000"
+                android:textSize="16dp" />
+
+
+        </TableRow>
+
+        <TableRow
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:text=""
+                android:id="@+id/plansubb"
+                android:textStyle="bold"
+                android:textColor="#ffffff"
+                android:textSize="40dp" />
+
+            <TextView
+                android:text=""
+                android:textColor="#ffffff"
+                android:id="@+id/actualsubb"
+                android:textSize="40dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text=""
+                android:textColor="#ffffff"
+                android:id="@+id/balancesubb"
+                android:textSize="40dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </TableRow>
+    </TableLayout>
+
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="95dp"
+        android:id="@+id/tablest"
+        android:background="#ff9d00"
+        android:layout_marginTop="3dp"
+        android:layout_below="@+id/tablestt"
+
+        >
+
+        <TextView
+            android:id="@+id/textView111"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:textColor="#ffffff"
+            android:textSize="16dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="3dp"
+            android:gravity="center"
+            android:text="SPINE COLO MIGRATION PROGRESS" />
+        <TableRow
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/plancolo"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:text="PLAN"
+                android:textColor="#000000"
+                android:textSize="16dp" />
+
+            <TextView
+                android:text="ACTUAL"
+                android:id="@+id/actualcolo"
+                android:textSize="16dp"
+
+                android:textColor="#000000"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/balanc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:text="BALANCE"
+                android:textColor="#000000"
+                android:textSize="16dp" />
+        </TableRow>
+
+        <TableRow
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:text=""
+                android:id="@+id/planspine"
+                android:textStyle="bold"
+                android:textColor="#ffffff"
+                android:textSize="40dp" />
+
+            <TextView
+                android:text=""
+                android:textColor="#ffffff"
+                android:id="@+id/actualspine"
+                android:textSize="40dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text=""
+                android:textColor="#ffffff"
+                android:id="@+id/balancespine"
+                android:textSize="40dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </TableRow>
+    </TableLayout>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="95dp"
+        android:id="@+id/tablestt"
+        android:background="#ff9d00"
+        android:layout_marginTop="3dp"
+        android:layout_below="@+id/tables"
+
+        >
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:textColor="#ffffff"
+            android:textSize="16dp"
+
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="3dp"
+            android:gravity="center"
+            android:text="E-FIBERIZATION MIGRATION PROGRESS" />
+
+        <TableRow
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/planfiber"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:text="PLAN"
+                android:textColor="#000000"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/actualfiberr"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:text="ACTUAL"
+                android:textColor="#000000"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/balan"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:text="BALANCE"
+                android:textColor="#000000"
+                android:textSize="16dp" />
+        </TableRow>
+
+        <TableRow
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:text=""
+                android:textStyle="bold"
+                android:id="@+id/plansfiber"
+                android:textColor="#ffffff"
+                android:textSize="40dp" />
+
+            <TextView
+                android:id="@+id/actualfiber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:text=""
+                android:textColor="#ffffff"
+                android:textSize="40dp"
+                android:textStyle="bold" />
+            <TextView
+                android:text=""
+                android:textColor="#ffffff"
+                android:id="@+id/balancefiber"
+                android:textSize="40dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </TableRow>
+    </TableLayout>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="95dp"
+        android:id="@+id/tablestt1"
+        android:layout_marginTop="3dp"
+        android:background="#09249b"
+        android:layout_below="@+id/tablest"
+
+
+        >
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="3dp"
+            android:textColor="#ffffff"
+            android:textSize="16dp"
+            android:gravity="center"
+            android:text="YTD PROGRESS" />
+
+        <TableRow
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/textView22"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:text="MIGRATED"
+                android:gravity="center"
+                android:textColor="#ffffff"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/textView52"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:text="TOTAL TT"
+                android:textColor="#ffffff"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/dwatt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_marginLeft="10dp"
+                android:text="HANDED OVER"
+                android:textColor="#ffffff"
+                android:textSize="16dp" />
+        </TableRow>
+
+        <TableRow
+            android:gravity="center"
+            android:layout_gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:text=""
+                android:gravity="center"
+                android:id="@+id/textt"
+                android:textStyle="bold"
+                android:textColor="#ffffff"
+                android:textSize="40dp" />
+
+            <TextView
+                android:text=""
+                android:textColor="#ffffff"
+                android:id="@+id/textr"
+                android:textSize="40dp"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text=""
+                android:textColor="#ffffff"
+                android:id="@+id/handed"
+                android:gravity="center"
+                android:textSize="40dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </TableRow>
+    </TableLayout>
+    </RelativeLayout>
+</ScrollView>
