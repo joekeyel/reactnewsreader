@@ -1,27 +1,27 @@
 {
   "project_info": {
-    "project_number": "711237828752",
-    "firebase_url": "https://dashboard-abc97.firebaseio.com",
-    "project_id": "dashboard-abc97",
-    "storage_bucket": "dashboard-abc97.appspot.com"
+    "project_number": "247587223290",
+    "firebase_url": "https://androididashboard.firebaseio.com",
+    "project_id": "androididashboard",
+    "storage_bucket": "androididashboard.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:711237828752:android:91fbb62d2e651262",
+        "mobilesdk_app_id": "1:247587223290:android:b0599652b0c1e380",
         "android_client_info": {
-          "package_name": "tm.dashboard"
+          "package_name": "my.com.tm.dashboard"
         }
       },
       "oauth_client": [
         {
-          "client_id": "711237828752-4hj7irfjch0ncdi9scspguodv6og28oe.apps.googleusercontent.com",
+          "client_id": "247587223290-4unrdi55okvth92g8vnn7ir7oa1vu6bc.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyA4grLPLqqsCQqN6v6MFBvHy7V27Ypi_wo"
+          "current_key": "AIzaSyD5TGzxkLYPt-eWGfJPiI1G45e6DbPbvnc"
         }
       ],
       "services": {
