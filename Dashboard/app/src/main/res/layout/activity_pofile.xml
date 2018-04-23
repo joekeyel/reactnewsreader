@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="my.dashboard.tm.com.dashboard.PofileActivity">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:hint=""
+        android:id="@+id/textViewUserEmail"
+        android:layout_gravity="center_horizontal"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Logout"
+        android:background="@drawable/shape"
+        android:id="@+id/buttonLogout"
+        android:layout_gravity="center_horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:hint="YOUR PASSWORD"
+        android:ems="10"
+        android:id="@+id/change"
+        android:layout_above="@+id/btnchange"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:text="CURRENT MiTOS USER"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:id="@+id/mitos"
+        android:textColor="#ffffff"
+        android:background="#cc2e2e"
+        android:layout_marginTop="51dp"
+        android:layout_below="@+id/textViewUserEmail"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:gravity="center"
+        android:text=""
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:id="@+id/mitosuser"
+        android:background="#cc2e2e"
+        android:textColor="#ffffff"
+        android:layout_below="@+id/mitos"
+        android:layout_alignRight="@+id/mitos"
+        android:layout_alignEnd="@+id/mitos"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="CABINET ON MONITORING"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:id="@+id/textView2"
+        android:textColor="#ffffff"
+        android:background="#ff9d00"
+        android:layout_alignBaseline="@+id/mitos"
+        android:layout_alignBottom="@+id/mitos"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:text=""
+        android:gravity="center"
+        android:background="#ff9d00"
+        android:textColor="#ffffff"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:id="@+id/monitoring"
+        android:layout_below="@+id/textView2"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_alignStart="@+id/textView2"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_below="@+id/mitosuser"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="43dp"
+        android:id="@+id/textView6"
+        android:textColor="#ffffff"
+        android:background="#173cab"
+        android:text="DAILY TT HANDLE"
+        android:textSize="15dp"
+        android:layout_alignRight="@+id/mitos"
+        android:layout_alignEnd="@+id/mitos" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:id="@+id/tthandle"
+        android:gravity="center"
+        android:textColor="#ffffff"
+        android:background="#173cab"
+        android:text=""
+        android:textSize="15dp"
+        android:layout_below="@+id/textView6"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/textView6"
+        android:layout_alignEnd="@+id/textView6" />
+
+    <TextView
+        android:text="UNRESOLVE TT"
+        android:textColor="#ffffff"
+        android:background="#438944"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_above="@+id/tthandle"
+        android:layout_alignLeft="@+id/monitoring"
+        android:layout_alignStart="@+id/monitoring"
+        android:id="@+id/textView5"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:text=""
+        android:textColor="#ffffff"
+        android:background="#438944"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_below="@+id/textView5"
+        android:layout_alignLeft="@+id/textView5"
+        android:layout_alignStart="@+id/textView5"
+        android:id="@+id/unresolve"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:text="SUBMIT"
+        android:background="@drawable/shape"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnchange"
+        android:layout_above="@+id/buttonLogout"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="15dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:text="CHANGE PASSWORD"
+        android:textColor="#000000"
+        android:textStyle="italic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView10"
+        android:layout_above="@+id/change"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+</RelativeLayout>

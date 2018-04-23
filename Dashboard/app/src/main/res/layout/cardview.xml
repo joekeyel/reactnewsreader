@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:cardView="http://schemas.android.com/tools"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:clickable="true"
+    android:id="@+id/card_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    card_view:cardCornerRadius="20dp">
+
+<TableLayout
+    android:background="#FFBDADAD"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TableRow>
+        <TextView
+            android:text="MIGRATION DATE"
+            android:textColor="#000000"
+            android:textSize="15dp"
+            android:layout_marginLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"/>
+        <TextView
+            android:hint="1"
+            android:textColor="#000000"
+            android:layout_marginLeft="10dp"
+            android:textStyle="italic"
+            android:id="@+id/satu"
+            android:textSize="15dp"
+            android:layout_gravity="left"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"/>
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:text="REGION"
+            android:layout_marginLeft="10dp"
+            android:textColor="#000000"
+            android:textSize="15dp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"/>
+        <TextView
+            android:hint="2"
+            android:id="@+id/dua"
+            android:textColor="#000000"
+            android:textSize="15dp"
+            android:layout_marginLeft="10dp"
+            android:textStyle="italic"
+            android:layout_gravity="left"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"/>
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:text="STATE"
+            android:textSize="15dp"
+            android:textColor="#000000"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="left"/>
+
+        <TextView
+            android:hint="3"
+            android:id="@+id/tiga"
+            android:textSize="15dp"
+            android:textStyle="italic"
+            android:textColor="#000000"
+            android:layout_gravity="left"
+            android:layout_marginLeft="10dp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"/>
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:textColor="#000000"
+            android:text="TM NODE"
+            android:textSize="15dp"
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"/>
+
+        <TextView
+            android:hint="4"
+            android:textColor="#000000"
+            android:id="@+id/empat"
+            android:textSize="15dp"
+            android:layout_gravity="left"
+            android:layout_marginLeft="10dp"
+            android:textStyle="italic"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"/>
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:text="NEW CABINET"
+            android:textColor="#000000"
+            android:layout_marginLeft="10dp"
+            android:textSize="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"/>
+
+        <TextView
+            android:hint="5"
+            android:id="@+id/lima"
+            android:textSize="15dp"
+            android:textColor="#000000"
+            android:textStyle="italic"
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="left"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"/>
+    </TableRow>
+    <TableRow>
+        <TextView
+            android:text="OLD CABINET"
+            android:textColor="#000000"
+            android:layout_marginLeft="10dp"
+            android:textSize="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"/>
+
+        <TextView
+            android:hint="6"
+            android:id="@+id/enam"
+            android:textColor="#000000"
+            android:textStyle="italic"
+            android:textSize="15dp"
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="left"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"/>
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:text="TOTAL TT"
+            android:layout_marginLeft="10dp"
+            android:textColor="#000000"
+            android:textSize="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"/>
+
+        <TextView
+            android:hint="7"
+            android:id="@+id/tujuh"
+            android:textColor="#000000"
+            android:textStyle="italic"
+            android:layout_gravity="left"
+            android:layout_marginLeft="10dp"
+            android:textSize="15dp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"/>
+    </TableRow>
+    <TableRow>
+        <TextView
+            android:text="TOTAL TT CLOSED"
+            android:textSize="15dp"
+            android:textColor="#000000"
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"/>
+
+        <TextView
+            android:hint="8"
+            android:id="@+id/lapan"
+            android:layout_marginLeft="10dp"
+            android:textColor="#000000"
+            android:textSize="15dp"
+            android:textStyle="italic"
+            android:layout_gravity="left"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"/>
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:textColor="#000000"
+            android:text="CAPACITY"
+            android:layout_marginLeft="10dp"
+            android:textSize="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"/>
+
+        <TextView
+            android:hint="9"
+            android:id="@+id/sembilan"
+            android:textSize="15dp"
+            android:layout_gravity="left"
+            android:layout_marginLeft="10dp"
+            android:textColor="#000000"
+            android:textStyle="italic"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"/>
+    </TableRow>
+    <TableRow>
+        <TextView
+            android:text="FAULT RATE"
+            android:textColor="#000000"
+            android:layout_marginLeft="10dp"
+            android:textSize="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"/>
+
+        <TextView
+            android:hint="10"
+            android:textStyle="italic"
+            android:layout_marginLeft="10dp"
+            android:textColor="#000000"
+            android:id="@+id/sepuluh"
+            android:textSize="15dp"
+            android:layout_gravity="left"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"/>
+    </TableRow>
+    <TableRow>
+        <TextView
+            android:text="PROJECT TYPE "
+            android:layout_marginLeft="10dp"
+            android:textColor="#000000"
+            android:textSize="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"/>
+
+        <TextView
+            android:hint="11"
+            android:textColor="#000000"
+            android:id="@+id/sebelas"
+            android:layout_gravity="left"
+            android:textSize="15dp"
+            android:layout_marginLeft="10dp"
+            android:textStyle="italic"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+    </TableRow>
+
+
+</TableLayout>
+
+</android.support.v7.widget.CardView>
