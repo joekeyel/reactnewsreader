@@ -18,7 +18,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-import my.dashboard.R;
+import my.com.tm.dashboard.R;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 

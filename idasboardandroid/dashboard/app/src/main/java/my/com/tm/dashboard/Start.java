@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
-import my.dashboard.R;
+import my.com.tm.dashboard.R;
 
 /**
  * Created by user on 5/12/2017.

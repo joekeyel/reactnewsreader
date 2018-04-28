@@ -14,7 +14,7 @@ import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
 
-import my.dashboard.R;
+import my.com.tm.dashboard.R;
 
 public class CardDemoActivity extends AppCompatActivity implements ListView.OnItemClickListener{
 

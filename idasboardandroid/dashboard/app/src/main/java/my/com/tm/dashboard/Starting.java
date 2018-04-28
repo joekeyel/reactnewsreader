@@ -11,7 +11,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
-import my.dashboard.R;
+import my.com.tm.dashboard.R;
 
 public class Starting extends AppCompatActivity {
 

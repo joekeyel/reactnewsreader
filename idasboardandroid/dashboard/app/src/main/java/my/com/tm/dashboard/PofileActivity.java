@@ -29,7 +29,7 @@ import org.json.JSONObject;
 import java.text.DateFormat;
 import java.util.Calendar;
 
-import my.dashboard.R;
+import my.com.tm.dashboard.R;
 
 public class PofileActivity extends Fragment implements View.OnClickListener {
 
