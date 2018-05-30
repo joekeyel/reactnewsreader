@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Mapsviews-->
+        <scene sceneID="BZ8-Y8-Ptm">
+            <objects>
+                <viewController storyboardIdentifier="mapview" id="bBw-B9-Z3t" customClass="mapsviews" customModule="remoteios" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KWm-fo-qju"/>
+                        <viewControllerLayoutGuide type="bottom" id="B6r-L3-n6P"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rql-8a-pfX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qzc-pC-lBD">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="zTs-3n-nQC"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B7j-bM-TVE" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Qzc-pC-lBD" firstAttribute="leading" secondItem="rql-8a-pfX" secondAttribute="leading" id="SlY-Vh-TyY"/>
+                            <constraint firstAttribute="trailing" secondItem="Qzc-pC-lBD" secondAttribute="trailing" id="YuU-zg-amB"/>
+                            <constraint firstItem="Qzc-pC-lBD" firstAttribute="top" secondItem="rql-8a-pfX" secondAttribute="top" id="vY3-8W-4js"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="B7j-bM-TVE" id="CjK-lS-AMm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RvB-9R-7LH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-74.400000000000006" y="42.728635682158924"/>
+        </scene>
+    </scenes>
+</document>
