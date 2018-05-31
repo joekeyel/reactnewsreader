@@ -18,7 +18,11 @@ protocol sendDataToViewProtocol {
     func gotomanholesummary(marker:GMSMarker)
     func gotoextrainfo(marker:GMSMarker)
 }
-class markerdetail: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class markerdetail: UIViewController,UINavigationControllerDelegate,UITableViewDelegate,UITableViewDataSource ,UIImagePickerControllerDelegate{
+   
+    
+   
+    
     
     @IBOutlet weak var remarktable: UITableView!
     
@@ -27,6 +31,7 @@ class markerdetail: UIViewController,UITableViewDelegate,UITableViewDataSource {
     @IBOutlet weak var createbylabel: UILabel!
     @IBOutlet weak var tvtittle: UILabel!
     @IBOutlet weak var imageviewmarker: UIImageView!
+    
     
     
     
@@ -95,7 +100,7 @@ class markerdetail: UIViewController,UITableViewDelegate,UITableViewDataSource {
             
             
             
-            for rest2 in snapshot.children.allObjects as! [FIRDataSnapshot] {//photo marker user name level
+            for rest2 in snapshot.children.allObjects as! [FIRDataSnapshot] {
                 
                 
                 let remarkitem:remarkobject = remarkobject()
@@ -120,6 +125,12 @@ class markerdetail: UIViewController,UITableViewDelegate,UITableViewDataSource {
                     if(rest3.key == "createdby"){
                         
                         remarkitem.createdby = rest3.value as! String
+                        
+                    }
+                    
+                    if(rest3.key == "imageid"){
+                        
+                        remarkitem.imageid = rest3.value as! String
                         
                     }
                     
@@ -165,6 +176,20 @@ class markerdetail: UIViewController,UITableViewDelegate,UITableViewDataSource {
         cell?.remarklabel.text = remark
         cell?.createdby.text = createdby
         cell?.createddate.text = datetime
+        
+        let storage = FIRStorage.storage()
+        let storageRef = storage.reference()
+        // Create a reference to the file you want to download
+       
+        let islandRef = storageRef.child("postimage/"+remarklist[indexPath.item].imageid+".jpg")
+        
+        let imageviewe =  cell?.imagepost
+        
+        imageviewe?.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.RawValue(UInt8(UIViewAutoresizing.flexibleBottomMargin.rawValue) | UInt8(UIViewAutoresizing.flexibleHeight.rawValue) | UInt8(UIViewAutoresizing.flexibleRightMargin.rawValue) | UInt8(UIViewAutoresizing.flexibleLeftMargin.rawValue) | UInt8(UIViewAutoresizing.flexibleTopMargin.rawValue) | UInt8(UIViewAutoresizing.flexibleWidth.rawValue)))
+        imageviewe?.contentMode = UIViewContentMode.scaleAspectFit
+        
+        //using firebase UI to view image directly from firebase referrence ui
+        imageviewe?.sd_setImage(with: islandRef)
         
         cell?.layer.cornerRadius = 5
         
@@ -289,7 +314,7 @@ class markerdetail: UIViewController,UITableViewDelegate,UITableViewDataSource {
         
         var ref: FIRDatabaseReference!
         ref = FIRDatabase.database().reference()
-        
+        let randomID = ref.childByAutoId()
         let remark = inpuremark.text
         let createdby = FIRAuth.auth()?.currentUser?.email
         
@@ -307,13 +332,139 @@ class markerdetail: UIViewController,UITableViewDelegate,UITableViewDataSource {
                 "datetime": datestr,
                 ]
             
-            ref.child("remarkelement").child(marker1.title!).childByAutoId().setValue(data)
+            
+           
+          
+            ref.child("remarkelement").child(marker1.title!).child(randomID.key).setValue(data)
             
             
             inpuremark.text = ""
         }
         
     }
+    func resizeImage(image: UIImage, newWidth: CGFloat) -> UIImage {
+        
+        let scale = newWidth / image.size.width
+        let newHeight = image.size.height * scale
+        
+        UIGraphicsBeginImageContext(CGSize(width: newWidth, height: newHeight))
+        
+        
+        image.draw(in: CGRect(x: 0, y: 0,width: newWidth, height: newHeight))
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return newImage!
+    }
+    
+   
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+       
+        var ref: FIRDatabaseReference!
+        ref = FIRDatabase.database().reference()
+        
+        let randomID = ref.childByAutoId()
+        
+        let storage = FIRStorage.storage()
+        let storageRef = storage.reference()
+       
+        
+        //image process here -- to resize
+        
+        var image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        image = resizeImage(image: image, newWidth: 200)
+        
+        var data = NSData()
+        data = UIImageJPEGRepresentation(image, 0.5)! as NSData
+        let metaData = FIRStorageMetadata()
+        metaData.contentType = "image/jpg"
+        let createdby : String = (FIRAuth.auth()?.currentUser?.email)!
+        
+        
+        
+        //upload the image to firebase storage using the id
+        
+      
+        let riversRef = storageRef.child("postimage/"+randomID.key+".jpg")
+        
+        // Upload the file to the path "images/rivers.jpg"
+        _ = riversRef.put(data as Data, metadata: metaData) { (metadata, error) in
+            guard let metadata = metadata else {
+                // Uh-oh, an error occurred!
+                return
+            }
+            // Metadata contains file metadata such as size, content-type, and download URL.
+            _ = metadata.downloadURL
+         
+            self.dismiss(animated: false, completion: {()->Void in
+                
+                
+            });
+        }
+        
+        //send new row
+        
+    
+      
+        let remark = inpuremark.text
+     
+        
+            
+            let date = Date()
+            let formatter = DateFormatter()
+            formatter.dateFormat = "dd-MM-yyyy HH:mm"
+            
+            let datestr = formatter.string(from: date)
+            
+            let datasent: [String:String] = [
+                "remark": remark!,
+                "createdby": createdby,
+                "datetime": datestr,
+                 "imageid": randomID.key,
+                ]
+            
+            
+            
+            
+            ref.child("remarkelement").child(marker1.title!).child(randomID.key).setValue(datasent)
+            
+            
+            inpuremark.text = ""
+        
+        
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+   
+    
+    @IBAction func uploadimage(_ sender: UIButton) {
+        
+        let imagepickercontroller = UIImagePickerController()
+        imagepickercontroller.delegate = self
+        let actionsheet = UIAlertController(title:"Photo Source",message:"Choose a source",preferredStyle:.actionSheet)
+        
+        actionsheet.addAction(UIAlertAction(title:"Camera",style:.default,handler:{(action:UIAlertAction) in
+            
+            imagepickercontroller.sourceType = .camera
+            self.present(imagepickercontroller,animated: true,completion: nil)
+            
+        }))
+        
+        actionsheet.addAction(UIAlertAction(title:"Photo Library",style:.default,handler:{(action:UIAlertAction) in
+            
+            imagepickercontroller.sourceType = .photoLibrary
+            self.present(imagepickercontroller,animated: true,completion: nil)
+            
+        }))
+        
+        actionsheet.addAction(UIAlertAction(title:"Cancel",style:.cancel,handler:nil))
+        
+        self.present(actionsheet,animated: true,completion: nil)
+    }
+    
     
     @IBAction func gotomanholeextra(_ sender: Any) {
         

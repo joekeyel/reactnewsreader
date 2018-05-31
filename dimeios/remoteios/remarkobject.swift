@@ -14,4 +14,5 @@ class remarkobject: NSObject {
     var remark:String = ""
     var createdby:String = ""
     var datetime:String = ""
+     var imageid:String = ""
 }
