@@ -186,7 +186,7 @@ class markerdetail: UIViewController,UINavigationControllerDelegate,UITableViewD
         let imageviewe =  cell?.imagepost
         
         imageviewe?.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.RawValue(UInt8(UIViewAutoresizing.flexibleBottomMargin.rawValue) | UInt8(UIViewAutoresizing.flexibleHeight.rawValue) | UInt8(UIViewAutoresizing.flexibleRightMargin.rawValue) | UInt8(UIViewAutoresizing.flexibleLeftMargin.rawValue) | UInt8(UIViewAutoresizing.flexibleTopMargin.rawValue) | UInt8(UIViewAutoresizing.flexibleWidth.rawValue)))
-        imageviewe?.contentMode = UIViewContentMode.scaleAspectFit
+        imageviewe?.contentMode = UIViewContentMode.scaleAspectFill
         
         //using firebase UI to view image directly from firebase referrence ui
         imageviewe?.sd_setImage(with: islandRef)
@@ -372,7 +372,7 @@ class markerdetail: UIViewController,UINavigationControllerDelegate,UITableViewD
         //image process here -- to resize
         
         var image = info[UIImagePickerControllerOriginalImage] as! UIImage
-        image = resizeImage(image: image, newWidth: 200)
+        image = resizeImage(image: image, newWidth: 600)
         
         var data = NSData()
         data = UIImageJPEGRepresentation(image, 0.5)! as NSData

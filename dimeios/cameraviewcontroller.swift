@@ -24,9 +24,9 @@ class cameraviewcontroller: UIViewController,UINavigationControllerDelegate,UIIm
     @IBOutlet weak var selectelement: UIPickerView!
     //for pickerview type of element
     
-     let arrayregion = ["Cabinet","ManHole","DP"]
+     let arrayregion = ["ManHole"]
     
-    var networkelement = "Cabinet"
+    var networkelement = "ManHole"
     var marker1 = GMSMarker()
     
      var delegate:addmarkeraftertagdelegate? = nil
@@ -121,9 +121,11 @@ class cameraviewcontroller: UIViewController,UINavigationControllerDelegate,UIIm
             
             
         marker1.title = networkelement+"_"+imagename!
-        
+            
+            
+    imagecapture.image = resizeImage(image: imagecapture.image!, newWidth: 800)
         var data = NSData()
-        data = UIImageJPEGRepresentation(imagecapture.image!, 0.1)! as NSData
+        data = UIImageJPEGRepresentation(imagecapture.image!, 0.8)! as NSData
         let metaData = FIRStorageMetadata()
         metaData.contentType = "image/jpg"
             let createdby : String = (FIRAuth.auth()?.currentUser?.email)!

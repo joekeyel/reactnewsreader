@@ -30,6 +30,7 @@
 		3062194D1F721CE7002CAE0C /* infowindowsmaps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3062194C1F721CE7002CAE0C /* infowindowsmaps.swift */; };
 		306DC34E1EF96F2500A5E082 /* register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306DC34D1EF96F2500A5E082 /* register.swift */; };
 		307D0031200B8D7300E00C41 /* registercontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307D0030200B8D7300E00C41 /* registercontroller.swift */; };
+		308F686920C3648600E6705D /* ScaleHeightImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308F686820C3648600E6705D /* ScaleHeightImageView.swift */; };
 		30981638200850C30020976B /* searchlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30981637200850C30020976B /* searchlist.swift */; };
 		3098163A20085E080020976B /* searchcell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3098163920085E080020976B /* searchcell.swift */; };
 		3098163C2008688E0020976B /* markerobject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3098163B2008688E0020976B /* markerobject.swift */; };
@@ -108,6 +109,7 @@
 		3062194C1F721CE7002CAE0C /* infowindowsmaps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = infowindowsmaps.swift; sourceTree = "<group>"; };
 		306DC34D1EF96F2500A5E082 /* register.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = register.swift; sourceTree = "<group>"; };
 		307D0030200B8D7300E00C41 /* registercontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = registercontroller.swift; sourceTree = "<group>"; };
+		308F686820C3648600E6705D /* ScaleHeightImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleHeightImageView.swift; sourceTree = "<group>"; };
 		30981637200850C30020976B /* searchlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchlist.swift; sourceTree = "<group>"; };
 		3098163920085E080020976B /* searchcell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchcell.swift; sourceTree = "<group>"; };
 		3098163B2008688E0020976B /* markerobject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = markerobject.swift; sourceTree = "<group>"; };
@@ -260,6 +262,7 @@
 				30AF73EA20BE8013002487F1 /* remarkobject.swift */,
 				302FE96220BEAAC00072C608 /* DIME-Bridging-Header.h */,
 				302FE96620BEACAF0072C608 /* manholeextrainfo.swift */,
+				308F686820C3648600E6705D /* ScaleHeightImageView.swift */,
 			);
 			path = remoteios;
 			sourceTree = "<group>";
@@ -630,6 +633,7 @@
 				30B2F2661F1860B700D6B7E2 /* cellmenu.swift in Sources */,
 				305CB3D71E814677002732CB /* AppDelegate.swift in Sources */,
 				307D0031200B8D7300E00C41 /* registercontroller.swift in Sources */,
+				308F686920C3648600E6705D /* ScaleHeightImageView.swift in Sources */,
 				30AAE89C1F6B68A1002E5FDB /* orientation.swift in Sources */,
 				3023B9FD1F2F691B00A52650 /* hidekeyboard.swift in Sources */,
 				306DC34E1EF96F2500A5E082 /* register.swift in Sources */,
