@@ -1,0 +1,130 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/tvmanholenameinfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ManHole ID" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Owner" />
+
+    <RadioGroup
+        android:id="@+id/ownergroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/radiodeveloperowner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="Developer" />
+
+        <RadioButton
+            android:id="@+id/radioTMowner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:text="TM" />
+
+        <RadioButton
+            android:id="@+id/radiounknownowner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:text="Unknown" />
+
+
+    </RadioGroup>
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:text="Trespassing" />
+
+    <RadioGroup
+        android:id="@+id/trespassinggroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/trespassingyes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:text="Yes" />
+
+        <RadioButton
+            android:id="@+id/tresspasingno"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:text="No" />
+
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:text="Olnos" />
+
+
+
+        <CheckBox
+            android:id="@+id/olnosunknown"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:text="Unknown" />
+
+        <CheckBox
+            android:id="@+id/olnosdigi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:text="Digi" />
+
+        <CheckBox
+            android:id="@+id/olnosumobile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:text="U Mobile" />
+
+        <CheckBox
+            android:id="@+id/olnostime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:text="Time" />
+
+        <CheckBox
+            android:id="@+id/olnosmaxis"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:text="Maxis" />
+
+        <CheckBox
+            android:id="@+id/olnoscelcom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:text="Celcom" />
+
+
+
+</LinearLayout>

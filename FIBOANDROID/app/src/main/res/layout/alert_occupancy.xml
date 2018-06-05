@@ -1,0 +1,161 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/ductnameid"
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:text="Unset"
+        android:gravity="center"
+        android:textSize="25sp" />
+
+
+
+    <RadioGroup
+        android:id="@+id/toggleGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:orientation="horizontal" >
+
+
+        <ToggleButton
+            android:id="@+id/imagetoggle03"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/button_selector03"
+            android:gravity="center_horizontal"
+            android:textOff=""
+            android:textOn=""
+            android:layout_weight="0.25"
+            android:onClick="onToggle"/>
+
+        <ToggleButton
+            android:id="@+id/imagetoggle13"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/button_selector13"
+            android:gravity="center_horizontal"
+            android:textOff=""
+            android:textOn=""
+            android:layout_weight="0.25"
+            android:onClick="onToggle"/>
+
+        <ToggleButton
+            android:id="@+id/imagetoggle23"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/button_selector"
+            android:gravity="center_horizontal"
+            android:textOff=""
+            android:textOn=""
+            android:layout_weight="0.25"
+            android:onClick="onToggle"/>
+
+        <ToggleButton
+            android:id="@+id/imagetoggle33"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/button_selector33"
+            android:gravity="center_horizontal"
+            android:textOff=""
+            android:textOn=""
+            android:layout_weight="0.25"
+            android:onClick="onToggle"/>
+
+        <ToggleButton
+            android:id="@+id/imagetoggle11"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/button_selector11"
+            android:gravity="center_horizontal"
+            android:textOff=""
+            android:textOn=""
+            android:layout_weight="0.25"
+            android:onClick="onToggle"/>
+
+
+        <ToggleButton
+            android:id="@+id/imagetoggle01"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/button_selector01"
+            android:gravity="center_horizontal"
+            android:textOff=""
+            android:textOn=""
+            android:layout_weight="0.25"
+            android:onClick="onToggle"/>
+
+    </RadioGroup>
+
+
+
+    <!--<EditText-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:id="@+id/cablecodeduct"-->
+    <!--android:hint="CABLE CODE"/>-->
+
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="29dp"
+        android:text="Cable Code" />
+
+    <EditText
+        android:id="@+id/cablecodeedittext"
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:textSize="18sp" />
+
+    <!--<SeekBar-->
+    <!--android:id="@+id/utilizationsb"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="34dp"-->
+    <!--android:hint="UTILIZATION"-->
+    <!--android:max="100"-->
+    <!--android:tooltipText="Utization" />-->
+
+
+    <!--<Spinner-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:id="@+id/spinneroccupancy"-->
+    <!--android:spinnerMode="dropdown"-->
+    <!--android:layout_alignParentRight="false"-->
+    <!--android:layout_alignParentEnd="true"-->
+    <!--android:background="@android:drawable/btn_dropdown"/>-->
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/updateoccupancy"
+            android:layout_weight="0.5"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="Update" />
+        <Button
+            android:id="@+id/deleteduct"
+            android:layout_width="match_parent"
+            android:layout_weight="0.5"
+            android:layout_height="wrap_content"
+            android:text="Unset" />
+
+    </LinearLayout>
+    <Button
+        android:id="@+id/deleteductnest"
+        android:layout_width="match_parent"
+        android:layout_weight="0.5"
+        android:layout_height="wrap_content"
+        android:text="Delete Duct Nest"
+        android:onClick="clickductdeletebutton2"/>
+</LinearLayout>
