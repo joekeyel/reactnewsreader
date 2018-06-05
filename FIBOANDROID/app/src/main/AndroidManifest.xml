@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="my.com.tm.DIME">
+    package="my.com.tm.FIBO">
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -31,16 +31,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="my.com.tm.DIME.login">
+        <activity android:name="my.com.tm.FIBO.login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="my.com.tm.DIME.registeruser" />
+        <activity android:name="my.com.tm.FIBO.registeruser" />
         <activity
-            android:name="my.com.tm.DIME.MyActivity"
+            android:name="my.com.tm.FIBO.MyActivity"
             android:configChanges="orientation"
             android:label="DIME"
             android:screenOrientation="portrait" />
@@ -59,9 +59,9 @@
                 android:resource="@xml/provider_paths" />
         </provider>
 
-        <activity android:name="my.com.tm.DIME.streetview" />
-        <activity android:name="my.com.tm.DIME.mainholewall"></activity>
-        <activity android:name="my.com.tm.DIME.extrainfo"></activity>
+        <activity android:name="my.com.tm.FIBO.streetview" />
+        <activity android:name="my.com.tm.FIBO.mainholewall"></activity>
+        <activity android:name="my.com.tm.FIBO.extrainfo"></activity>
     </application>
 
 </manifest>

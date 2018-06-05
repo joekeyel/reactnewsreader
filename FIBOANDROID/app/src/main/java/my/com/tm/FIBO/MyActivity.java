@@ -1,4 +1,4 @@
-package my.com.tm.DIME;
+package my.com.tm.FIBO;
 
 import android.Manifest;
 import android.app.AlertDialog;

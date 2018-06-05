@@ -1,4 +1,4 @@
-package my.com.tm.DIME;
+package my.com.tm.FIBO;
 
 import com.google.android.gms.maps.model.Marker;
 import com.squareup.picasso.Callback;

@@ -1,13 +1,13 @@
-package my.com.tm.DIME;
+package my.com.tm.FIBO;
 
 import android.Manifest;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -28,15 +28,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class login extends AppCompatActivity {
+public class registeruser extends AppCompatActivity {
 
 
 
 
     private static final int MY_PERMISSIONS_REQUEST_READ_CONTACTS = 1;
     public static String token = "";
-    public static login loginactivityinstance;
-    String uuid;
+    public static registeruser loginactivityinstance;
 
 
     //for loading bar progress
@@ -56,15 +55,10 @@ public class login extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_register);
 
 
-        String msg = getIntent().getStringExtra("msg");
 
-        TextView display = (TextView)findViewById(R.id.loginstatusdisplaytv);
-
-
-            display.setText(msg);
 
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M){
             // Do something for lollipop and above versions
@@ -74,9 +68,6 @@ public class login extends AppCompatActivity {
 
 
         } else{
-            // do something for phones running an SDK before lollipop
-//            TelephonyManager telephonyManager = (TelephonyManager) getApplicationContext().getSystemService(Context.TELEPHONY_SERVICE);
-//            uuid = telephonyManager.getDeviceId();
 
             //
 
@@ -108,7 +99,7 @@ public class login extends AppCompatActivity {
             permissionsNeeded.add("GPS");
         if (!addPermission(permissionsList, Manifest.permission.ACCESS_FINE_LOCATION))
             permissionsNeeded.add("MY LOCATION");
-        if (!addPermission(permissionsList,android.Manifest.permission.CAMERA))
+        if (!addPermission(permissionsList, Manifest.permission.CAMERA))
             permissionsNeeded.add("Use Camera");
 //        if (!addPermission(permissionsList, Manifest.permission.GET_ACCOUNTS))
 //            permissionsNeeded.add("Read Contacts");
@@ -116,8 +107,6 @@ public class login extends AppCompatActivity {
 //            permissionsNeeded.add("PHONE STATE");
 
 
-//        if (!addPermission(permissionsList, android.Manifest.permission.RECORD_AUDIO))
-//            permissionsNeeded.add("RECORD AUDIO");
 
         if (!addPermission(permissionsList, Manifest.permission.WRITE_EXTERNAL_STORAGE))
             permissionsNeeded.add("SAVE PHOTO");
@@ -159,14 +148,13 @@ public class login extends AppCompatActivity {
                 Map<String, Integer> perms = new HashMap<String, Integer>();
                 // Initial
                 perms.put(Manifest.permission.ACCESS_FINE_LOCATION, PackageManager.PERMISSION_GRANTED);
-
+//                perms.put(Manifest.permission.GET_ACCOUNTS, PackageManager.PERMISSION_GRANTED);
                 perms.put(Manifest.permission.ACCESS_COARSE_LOCATION, PackageManager.PERMISSION_GRANTED);
                 perms.put(Manifest.permission.CAMERA, PackageManager.PERMISSION_GRANTED);
                 perms.put(Manifest.permission.WRITE_EXTERNAL_STORAGE, PackageManager.PERMISSION_GRANTED);
                 perms.put(Manifest.permission.READ_EXTERNAL_STORAGE, PackageManager.PERMISSION_GRANTED);
-                //                perms.put(Manifest.permission.GET_ACCOUNTS, PackageManager.PERMISSION_GRANTED);
 //                perms.put(Manifest.permission.READ_PHONE_STATE, PackageManager.PERMISSION_GRANTED);
-//                perms.put(Manifest.permission.RECORD_AUDIO, PackageManager.PERMISSION_GRANTED);
+                perms.put(Manifest.permission.RECORD_AUDIO, PackageManager.PERMISSION_GRANTED);
 //                perms.put(Manifest.permission.PROCESS_OUTGOING_CALLS, PackageManager.PERMISSION_GRANTED);
                 // Fill with results
                 for (int i = 0; i < permissions.length; i++)
@@ -174,6 +162,7 @@ public class login extends AppCompatActivity {
                 // Check for ACCESS_FINE_LOCATION
                 if (perms.get(Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED
 //                        && perms.get(Manifest.permission.GET_ACCOUNTS) == PackageManager.PERMISSION_GRANTED
+
                         && perms.get(Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED
                         && perms.get(Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED
                         && perms.get(Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED
@@ -181,17 +170,16 @@ public class login extends AppCompatActivity {
 //                        && perms.get(Manifest.permission.READ_PHONE_STATE) == PackageManager.PERMISSION_GRANTED
 //                        && perms.get(Manifest.permission.RECORD_AUDIO) == PackageManager.PERMISSION_GRANTED
 //                        && perms.get(Manifest.permission.PROCESS_OUTGOING_CALLS) == PackageManager.PERMISSION_GRANTED
-
                         ) {
                     // All Permissions Granted
-//                    // insertDummyContact();
-//                    TelephonyManager telephonyManager = (TelephonyManager) getApplicationContext().getSystemService(Context.TELEPHONY_SERVICE);
-//                    uuid = telephonyManager.getDeviceId();
+                    // insertDummyContact();
+
 
 
                 } else {
+                    //testkkk uh hhjjjjj
                     // Permission Denied
-                    Toast.makeText(login.this, "Pls Allow Permission To access full Feature", Toast.LENGTH_SHORT)
+                    Toast.makeText(registeruser.this, "Pls Allow Permission To access full Feature", Toast.LENGTH_SHORT)
                             .show();
 
                     Button loginbutton = (Button)findViewById(R.id.btnlogin);
@@ -214,73 +202,41 @@ public class login extends AppCompatActivity {
         return true;
     }
     private void showMessageOKCancel(String message, DialogInterface.OnClickListener okListener) {
-        new AlertDialog.Builder(login.this)
+        new AlertDialog.Builder(registeruser.this)
                 .setMessage(message)
                 .setPositiveButton("OK", okListener)
                 .setNegativeButton("Cancel", null)
                 .create()
                 .show();
     }
-    public static login getInstance() {
+    public static registeruser getInstance() {
 
         return loginactivityinstance;
     }
 
-    public void loginaction(View view){
+
+
+
+    public void registeraction(View view){
 
         progressdialogshow();
 
-        EditText username = (EditText)findViewById(R.id.usernameTv);
-        EditText password = (EditText)findViewById(R.id.passwordTv);
+        EditText username = (EditText)findViewById(R.id.usernameregisterTv);
+        EditText password = (EditText)findViewById(R.id.passwordregisterTv);
 
 
         String usernamestr = String.valueOf(username.getText());
         String passwordstr = String.valueOf(password.getText());
 
-        if (!usernamestr.matches("") || !passwordstr.matches("")) {
 
-            returnloginresult(usernamestr, passwordstr);
+        returnloginresult(usernamestr,passwordstr);
 
 
-        }
 
-        else
-        {
-
-            Toast.makeText(this, "You did not enter an email and password", Toast.LENGTH_SHORT).show();
-        }
 
     }
 
-public void forgetpassword(View view){
 
-    mAuth = FirebaseAuth.getInstance();
-    EditText email = (EditText)findViewById(R.id.usernameTv);
-    final String emailstr = String.valueOf(email.getText());
-
-    if (!emailstr.matches("")) {
-
-        mAuth.sendPasswordResetEmail(emailstr)
-                .addOnCompleteListener(new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        if (task.isSuccessful()) {
-                            Log.d(TAG, "Email sent.");
-
-                            TextView displayresult = (TextView) findViewById(R.id.loginstatusdisplaytv);
-                            displayresult.setText("Email has been sent to " + emailstr);
-
-
-                        }
-                    }
-                });
-
-    }else{
-
-        Toast.makeText(this, "You did not enter an email", Toast.LENGTH_SHORT).show();
-    }
-
-}
 
 
     void returnloginresult(String email,String passworduser){
@@ -288,13 +244,11 @@ public void forgetpassword(View view){
 
 
 
-        TextView displayresult = (TextView)findViewById(R.id.loginstatusdisplaytv);
+        TextView displayresult = (TextView)findViewById(R.id.loginstatusdisplayregistertv);
         displayresult.setText(token);
-
-
         mAuth = FirebaseAuth.getInstance();
 
-        mAuth.signInWithEmailAndPassword(email, passworduser)
+        mAuth.createUserWithEmailAndPassword(email, "temp12345678")
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
@@ -306,7 +260,7 @@ public void forgetpassword(View view){
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w("TOKEN FIREBASE", "signInWithCustomToken:failure", task.getException());
-                            Toast.makeText(login.this, "Authentication failed.",
+                            Toast.makeText(registeruser.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
                             //updateUI(null);
 
@@ -325,22 +279,27 @@ public void forgetpassword(View view){
 
         if(user!=null) {
 
-            TextView displayresult = (TextView) findViewById(R.id.loginstatusdisplaytv);
-            displayresult.setText(user.getUid());
+            TextView displayresult = (TextView) findViewById(R.id.loginstatusdisplayregistertv);
 
 
 
-            displayresult.setText("Sign In Success "+user.getUid().toString());
+            displayresult.setText("Register Success, an activation link has been sent to your email ");
 
 
 
             progressbarhide();
 
+            mAuth = FirebaseAuth.getInstance();
 
+
+            mAuth.sendPasswordResetEmail(user.getEmail());
+            mAuth.signOut();
 
            // go to register building activity
 
-            Intent i = new Intent(getApplicationContext(), MyActivity.class);
+            Intent i = new Intent(getApplicationContext(), login.class);
+
+            i.putExtra("msg","Register Success, an activation link has been sent to your email");
             startActivity(i);
 
             this.finish();
@@ -355,7 +314,7 @@ public void forgetpassword(View view){
 
     }
 
-    public void gotoregister(View view){
+    public void gotoregister(){
 
 
         Intent i = new Intent(getApplicationContext(), registeruser.class);
@@ -365,10 +324,12 @@ public void forgetpassword(View view){
     }
 
 
+
+
     public void progressdialogshow(){
 
 
-        alertDialogprogress = new AlertDialog.Builder(login.this);
+        alertDialogprogress = new AlertDialog.Builder(registeruser.this);
 
         alertprogress = alertDialogprogress.create();
 
@@ -400,19 +361,7 @@ public void forgetpassword(View view){
 
 
 
-    @Override
-    public void onStart() {
-        super.onStart();
-        // Check if user is signed in (non-null) and update UI accordingly.
-        FirebaseAuth mAuth = FirebaseAuth.getInstance();
 
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        if(currentUser!=null){
-        progressdialogshow();
-
-        updateUI(currentUser);
-        }
-    }
 
 
 
