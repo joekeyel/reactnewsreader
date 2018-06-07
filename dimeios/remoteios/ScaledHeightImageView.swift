@@ -1,11 +1,3 @@
-//
-//  ScaleHeightImageView.swift
-//  DIME
-//
-//  Created by Hasanul Isyraf on 03/06/2018.
-//  Copyright © 2018 Hasanul Isyraf. All rights reserved.
-//
-
 import UIKit
 
 class ScaledHeightImageView: UIImageView {

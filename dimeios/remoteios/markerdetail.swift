@@ -216,6 +216,36 @@ class markerdetail: UIViewController,UINavigationControllerDelegate,UITableViewD
             
             ref.child("photomarkeridraw").child((FIRAuth.auth()?.currentUser?.uid)!).child(marker1.title!).removeValue()
             
+            let geocoder = GMSGeocoder()
+            
+            var state: String = "no data"
+            
+            
+            
+            geocoder.reverseGeocodeCoordinate(marker1.position, completionHandler:{ response, error in
+                
+                if let address = response?.firstResult() {
+                    
+                    
+                    if(address.locality != nil){
+                        state = address.administrativeArea!
+                        
+                        
+                        ref.child("photomarkeridrawstate").child(state).child((FIRAuth.auth()?.currentUser?.uid)!).child(self.marker1.title!).removeValue()
+                        
+                        
+                    }
+                    
+                    
+                    
+                    
+                    
+                    
+                }
+                
+                
+            })
+            
             //delete mysqlserver
             deletemysqlserver(manholeid: marker1.title!, createdby: currentuser)
             

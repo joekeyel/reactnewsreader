@@ -178,6 +178,18 @@ class cameraviewcontroller: UIViewController,UINavigationControllerDelegate,UIIm
     //reverse gecoding to get address base on marker click
     
     func updatemysqlserver(manholeid:String,state:String,postalcode:String,city:String,street:String,knownname:String,latitude:Double,longitude:Double,createdby:String) {
+        
+        
+        var ref: FIRDatabaseReference!
+        
+        ref = FIRDatabase.database().reference()
+        ref.child("photomarkeridrawstate").child(state).child((FIRAuth.auth()?.currentUser?.uid)!).child(self.marker1.title!).setValue(["lat": self.marker1.position.latitude,"lng":self.marker1.position.longitude,"createdby":FIRAuth.auth()?.currentUser?.email ?? ""])
+        
+        
+        ref.child("statelist").child(state).setValue("Y")
+        
+        
+        
         let parameters = ["manholeid" : manholeid  ,
                           "state" :  state,
                           "city" : city,

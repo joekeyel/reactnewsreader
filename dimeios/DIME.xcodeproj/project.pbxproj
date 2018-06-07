@@ -10,6 +10,9 @@
 		0A39DACDEF8D31ACD46DA8A6 /* Pods_DIMEUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46D954FCA174654D2044CA4F /* Pods_DIMEUITests.framework */; };
 		3001E9622054FFBD00DC6128 /* popovernewductnest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3001E9612054FFBD00DC6128 /* popovernewductnest.swift */; };
 		300618D920BD985C00662D42 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 300618D820BD985C00662D42 /* GoogleService-Info.plist */; };
+		3014921E20C8E19500EF79B7 /* statepopover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3014921D20C8E19500EF79B7 /* statepopover.swift */; };
+		3014922020C8E1EC00EF79B7 /* statelistcell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3014921F20C8E1EC00EF79B7 /* statelistcell.swift */; };
+		3014922220C91A3700EF79B7 /* ScaledHeightImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3014922120C91A3700EF79B7 /* ScaledHeightImageView.swift */; };
 		3023B9FD1F2F691B00A52650 /* hidekeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3023B9FC1F2F691B00A52650 /* hidekeyboard.swift */; };
 		302876DD1F70B7A8008F69A6 /* cameraviewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302876DC1F70B7A8008F69A6 /* cameraviewcontroller.swift */; };
 		302886581F1C7D2A00623542 /* images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 302886571F1C7D2A00623542 /* images.xcassets */; };
@@ -30,7 +33,6 @@
 		3062194D1F721CE7002CAE0C /* infowindowsmaps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3062194C1F721CE7002CAE0C /* infowindowsmaps.swift */; };
 		306DC34E1EF96F2500A5E082 /* register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306DC34D1EF96F2500A5E082 /* register.swift */; };
 		307D0031200B8D7300E00C41 /* registercontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307D0030200B8D7300E00C41 /* registercontroller.swift */; };
-		308F686920C3648600E6705D /* ScaleHeightImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308F686820C3648600E6705D /* ScaleHeightImageView.swift */; };
 		30981638200850C30020976B /* searchlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30981637200850C30020976B /* searchlist.swift */; };
 		3098163A20085E080020976B /* searchcell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3098163920085E080020976B /* searchcell.swift */; };
 		3098163C2008688E0020976B /* markerobject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3098163B2008688E0020976B /* markerobject.swift */; };
@@ -79,6 +81,9 @@
 		28EDDD7C14293B8A0EE54385 /* Pods-DIMETests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DIMETests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DIMETests/Pods-DIMETests.release.xcconfig"; sourceTree = "<group>"; };
 		3001E9612054FFBD00DC6128 /* popovernewductnest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = popovernewductnest.swift; sourceTree = "<group>"; };
 		300618D820BD985C00662D42 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		3014921D20C8E19500EF79B7 /* statepopover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = statepopover.swift; sourceTree = "<group>"; };
+		3014921F20C8E1EC00EF79B7 /* statelistcell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = statelistcell.swift; sourceTree = "<group>"; };
+		3014922120C91A3700EF79B7 /* ScaledHeightImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaledHeightImageView.swift; sourceTree = "<group>"; };
 		3023B9FC1F2F691B00A52650 /* hidekeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = hidekeyboard.swift; sourceTree = "<group>"; };
 		302876DC1F70B7A8008F69A6 /* cameraviewcontroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = cameraviewcontroller.swift; path = ../cameraviewcontroller.swift; sourceTree = "<group>"; };
 		302886571F1C7D2A00623542 /* images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = images.xcassets; sourceTree = "<group>"; };
@@ -109,7 +114,6 @@
 		3062194C1F721CE7002CAE0C /* infowindowsmaps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = infowindowsmaps.swift; sourceTree = "<group>"; };
 		306DC34D1EF96F2500A5E082 /* register.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = register.swift; sourceTree = "<group>"; };
 		307D0030200B8D7300E00C41 /* registercontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = registercontroller.swift; sourceTree = "<group>"; };
-		308F686820C3648600E6705D /* ScaleHeightImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleHeightImageView.swift; sourceTree = "<group>"; };
 		30981637200850C30020976B /* searchlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchlist.swift; sourceTree = "<group>"; };
 		3098163920085E080020976B /* searchcell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchcell.swift; sourceTree = "<group>"; };
 		3098163B2008688E0020976B /* markerobject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = markerobject.swift; sourceTree = "<group>"; };
@@ -223,6 +227,7 @@
 		305CB3D51E814677002732CB /* remoteios */ = {
 			isa = PBXGroup;
 			children = (
+				3014922120C91A3700EF79B7 /* ScaledHeightImageView.swift */,
 				302FE96320BEAAC10072C608 /* DLRadioButton.h */,
 				302FE96420BEAAC10072C608 /* DLRadioButton.m */,
 				300618D820BD985C00662D42 /* GoogleService-Info.plist */,
@@ -262,7 +267,8 @@
 				30AF73EA20BE8013002487F1 /* remarkobject.swift */,
 				302FE96220BEAAC00072C608 /* DIME-Bridging-Header.h */,
 				302FE96620BEACAF0072C608 /* manholeextrainfo.swift */,
-				308F686820C3648600E6705D /* ScaleHeightImageView.swift */,
+				3014921D20C8E19500EF79B7 /* statepopover.swift */,
+				3014921F20C8E1EC00EF79B7 /* statelistcell.swift */,
 			);
 			path = remoteios;
 			sourceTree = "<group>";
@@ -622,18 +628,20 @@
 				302FE96520BEAAC10072C608 /* DLRadioButton.m in Sources */,
 				30C2F4C2200370E0004CE301 /* markerdetail.swift in Sources */,
 				30556F7F2007587200D048F2 /* streetview.swift in Sources */,
+				3014922020C8E1EC00EF79B7 /* statelistcell.swift in Sources */,
 				302876DD1F70B7A8008F69A6 /* cameraviewcontroller.swift in Sources */,
 				30536B4A1F4688D50056B391 /* viewcellmenudetail.swift in Sources */,
+				3014921E20C8E19500EF79B7 /* statepopover.swift in Sources */,
 				30B617091F546D3C0087BD34 /* logincontroller.swift in Sources */,
 				30981638200850C30020976B /* searchlist.swift in Sources */,
 				30A63AF31F160B2700AFDC4C /* BaseViewCell.swift in Sources */,
 				30E66AFD1F56966500808338 /* user.swift in Sources */,
 				30B0C005204E30520004A455 /* manholesummary.swift in Sources */,
+				3014922220C91A3700EF79B7 /* ScaledHeightImageView.swift in Sources */,
 				3098163A20085E080020976B /* searchcell.swift in Sources */,
 				30B2F2661F1860B700D6B7E2 /* cellmenu.swift in Sources */,
 				305CB3D71E814677002732CB /* AppDelegate.swift in Sources */,
 				307D0031200B8D7300E00C41 /* registercontroller.swift in Sources */,
-				308F686920C3648600E6705D /* ScaleHeightImageView.swift in Sources */,
 				30AAE89C1F6B68A1002E5FDB /* orientation.swift in Sources */,
 				3023B9FD1F2F691B00A52650 /* hidekeyboard.swift in Sources */,
 				306DC34E1EF96F2500A5E082 /* register.swift in Sources */,

@@ -18,7 +18,7 @@ import AVFoundation
 
 
 
-class register: UIViewController,UITextFieldDelegate ,UITableViewDelegate,UITableViewDataSource,GMSMapViewDelegate,CLLocationManagerDelegate,UIPopoverPresentationControllerDelegate,SFSpeechRecognizerDelegate,sendDataToViewProtocol,sendDataToViewProtocol2,addmarkeraftertagdelegate{
+class register: UIViewController,UITextFieldDelegate ,UITableViewDelegate,UITableViewDataSource,GMSMapViewDelegate,CLLocationManagerDelegate,UIPopoverPresentationControllerDelegate,SFSpeechRecognizerDelegate,sendDataToViewProtocol,sendDataToViewProtocol2,sendDataToViewstatelist,addmarkeraftertagdelegate{
   
     
     
@@ -168,7 +168,7 @@ class register: UIViewController,UITextFieldDelegate ,UITableViewDelegate,UITabl
         
        
         
-        self.firebaselistenr()
+        //self.firebaselistenr()
         
         //check if user is login
        
@@ -196,7 +196,27 @@ class register: UIViewController,UITextFieldDelegate ,UITableViewDelegate,UITabl
     
     @IBAction func reloadaction(_ sender: Any) {
         
-        self.firebaselistenr()
+       // self.firebaselistenr()
+        
+        let popController2 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "statepopover") as! statepopover
+        
+        popController2.delegate = self
+        // set the presentation style...this to make popover not cover all the area
+        popController2.modalPresentationStyle = UIModalPresentationStyle.popover
+        
+        // set up the popover presentation controller
+        popController2.popoverPresentationController?.permittedArrowDirections = UIPopoverArrowDirection.up
+        popController2.popoverPresentationController?.delegate = self
+        
+        //button
+        popController2.popoverPresentationController?.barButtonItem = menuanchor
+        
+        
+        
+        
+        // present the popover
+        self.present(popController2, animated: true, completion: nil)
+        
         self.pathdraw.removeAllCoordinates()
         self.polylinecoordinates.removeAll()
         self.drawtoggle.title = "Draw"
@@ -245,6 +265,17 @@ class register: UIViewController,UITextFieldDelegate ,UITableViewDelegate,UITabl
         mapView.animate(to: camera)
         
     }
+    
+    func firebaselistenerstate(state: String) {
+        
+        self.dismiss(animated: true, completion: nil)
+      print(state)
+        
+        firebaselistenerstateload(state: state)
+       
+        
+    }
+    
     //firebase listener
     
     func firebaselistenr(){
@@ -408,6 +439,126 @@ class register: UIViewController,UITextFieldDelegate ,UITableViewDelegate,UITabl
             
             
             
+            
+            
+            
+        }) { (nil) in
+            print("error firebase listner")
+        }
+        
+        
+        
+    }
+    //firebase listener for state
+    
+    func firebaselistenerstateload(state:String){
+        
+        mapView.clear()
+        markerDict = []
+        
+        reference.observe(.value, with: { (snapshot) in
+            // print(snapshot.value ?? "no user")
+            
+            let value = snapshot.value as? NSDictionary
+            let username = value?["currentuser"] as? String ?? ""
+            
+            
+        }) { (nil) in
+            print("error firebase listner")
+        }
+        
+    
+        
+        
+        // initally load photo marker once
+        let referencephotomarkerinitial = FIRDatabase.database().reference().child("photomarkeridrawstate").child(state)
+        referencephotomarkerinitial.observeSingleEvent(of: .value, with: { (snapshot) in
+            
+            
+            var lat : Double = 1.1
+            var lng : Double = 1.1
+            var markername :String = ""
+            var createdby : String = ""
+            
+            
+            for rest in snapshot.children.allObjects as! [FIRDataSnapshot]{
+                
+                for rest2 in rest.children.allObjects as! [FIRDataSnapshot] {//photo marker user name level
+                    for rest3 in rest2.children.allObjects as! [FIRDataSnapshot] {
+                        
+                        
+                        if(rest3.key == "lat"){
+                            
+                            lat = rest3.value as! Double
+                            
+                        }
+                        if(rest3.key == "lng"){
+                            
+                            lng = rest3.value as! Double
+                            
+                        }
+                        
+                        if(rest3.key == "createdby"){
+                            
+                            createdby = rest3.value as! String;
+                            
+                        }
+                        
+                        
+                    }
+                    markername = rest2.key
+                    
+                    let marker = GMSMarker()
+                    marker.position = CLLocationCoordinate2D(latitude: lat, longitude: lng)
+                    marker.title = markername
+                    marker.userData = createdby
+                    //
+                    //                    if markername.range(of:"Cabinet_") != nil   {
+                    //                        marker.icon = UIImage(named:"cabinet")
+                    //                    }
+                    if markername.range(of:"ManHole_") != nil {
+                        marker.icon = UIImage(named:"mainhole")
+                        //save marker for man hole only....this is for dime server
+                        self.markerDict.append(marker)
+                        marker.map = self.mapView
+                    }
+                    //                    if markername.range(of:"DP_") != nil {
+                    //                        marker.icon = UIImage(named:"dppole")
+                    //                    }
+                    
+                    
+                    
+                    marker.isDraggable = true
+                    
+                    //save all marker here
+                    
+                    // self.markerDict.append(marker)
+                    
+                }
+            }
+            
+            
+            
+            // get a reference to the view controller for the popover
+            let popController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "searchlist") as! searchlist
+            
+            popController.delegate = self
+            // set the presentation style...this to make popover not cover all the area
+            popController.modalPresentationStyle = UIModalPresentationStyle.popover
+            
+            // set up the popover presentation controller
+            popController.popoverPresentationController?.permittedArrowDirections = UIPopoverArrowDirection.up
+            popController.popoverPresentationController?.delegate = self
+            
+            //button
+            popController.popoverPresentationController?.barButtonItem = self.searchbtn
+            
+            popController.markerDict = self.markerDict
+            
+            
+            
+            // present the popover
+            self.present(popController, animated: true, completion: nil)
             
             
             
@@ -1177,25 +1328,27 @@ class register: UIViewController,UITextFieldDelegate ,UITableViewDelegate,UITabl
     
     @IBAction func searchpopover(_ sender: Any) {
         
-        // get a reference to the view controller for the popover
-        let popController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "searchlist") as! searchlist
+     
         
-        popController.delegate = self
+        
+        let popController2 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "statepopover") as! statepopover
+        
+        popController2.delegate = self
         // set the presentation style...this to make popover not cover all the area
-        popController.modalPresentationStyle = UIModalPresentationStyle.popover
+        popController2.modalPresentationStyle = UIModalPresentationStyle.popover
         
         // set up the popover presentation controller
-        popController.popoverPresentationController?.permittedArrowDirections = UIPopoverArrowDirection.up
-        popController.popoverPresentationController?.delegate = self
+        popController2.popoverPresentationController?.permittedArrowDirections = UIPopoverArrowDirection.up
+        popController2.popoverPresentationController?.delegate = self
         
         //button
-        popController.popoverPresentationController?.barButtonItem = searchbtn
+        popController2.popoverPresentationController?.barButtonItem = menuanchor
         
-        popController.markerDict = markerDict
-       
+      
+        
         
         // present the popover
-        self.present(popController, animated: true, completion: nil)
+        self.present(popController2, animated: true, completion: nil)
     }
     
     
@@ -1203,8 +1356,36 @@ class register: UIViewController,UITextFieldDelegate ,UITableViewDelegate,UITabl
     
     //function when tagging image complete...trigger thru protocol from popover camereview
     func addmarkertomaps(marker: GMSMarker) {
-       
-     firebaselistenr()
+       self.dismiss(animated: true, completion: nil)
+    // firebaselistenerstateload(state: state)
+        
+        let geocoder = GMSGeocoder()
+        
+        var state: String = ""
+        
+        
+        geocoder.reverseGeocodeCoordinate(marker.position, completionHandler:{ response, error in
+            
+            if let address = response?.firstResult() {
+                
+                
+                
+                if(address.locality != nil){
+                    state = address.administrativeArea!
+                    
+                }
+                
+                self.firebaselistenerstateload(state: state)
+                
+                
+                print(state)
+                
+            }
+            
+            
+        })
+
+    
     }
     
 }
