@@ -144,6 +144,7 @@ public class MyActivity extends AppCompatActivity implements OnMapReadyCallback,
     MarkerOptions markercabinet;
     Marker marker;
     AlertDialog alert;
+    AlertDialog alertstate;
     boolean not_first_time_showing_info_window;
     boolean clearmap = true;
 
@@ -176,6 +177,7 @@ public class MyActivity extends AppCompatActivity implements OnMapReadyCallback,
     //for searching marker in page
     final ArrayList<markermodel> listallmarker = new ArrayList<>();
     ArrayList<MarkerOptions> listallmarker2 = new ArrayList<>();
+    ArrayList<String> statelistall = new ArrayList<>();
 
     GoogleCloudMessaging gcm;
     public static final String REG_ID = "regId";
@@ -465,7 +467,7 @@ public class MyActivity extends AppCompatActivity implements OnMapReadyCallback,
 
         mMap.setInfoWindowAdapter(new infowindowsadaptor());
 
-        loadfirebase();
+      loadstatelist();
 
         //for action when click on infowindows
 
@@ -1000,6 +1002,166 @@ public class MyActivity extends AppCompatActivity implements OnMapReadyCallback,
 
  }
 
+    public void loadstatelist(){
+
+
+        statelistall.clear();
+
+        mMap.clear();
+        //first initial load
+
+
+
+        //initial load once when loading
+
+        FirebaseDatabase databasefirebaseinitial = FirebaseDatabase.getInstance();
+        final DatabaseReference myRefdatabaseinitial = databasefirebaseinitial.getReference("statelist");
+
+        myRefdatabaseinitial.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+
+                for (DataSnapshot child: dataSnapshot.getChildren()) {
+
+                    String state = child.getKey();
+                    statelistall.add(state);
+                }
+                statelistdialog();
+                // ...
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                // Getting Post failed, log a message
+                Log.w(TAG, "loadPost:onCancelled", databaseError.toException());
+                // ...
+            }
+        });
+
+
+
+
+
+    }
+
+    public void loadfirebasestate(String state){
+
+        listallmarker.clear();
+        listallmarker2.clear();
+
+        mMap.clear();
+        //first initial load
+
+
+
+        //initial load once when loading
+
+        FirebaseDatabase databasefirebaseinitial = FirebaseDatabase.getInstance();
+        final DatabaseReference myRefdatabaseinitial = databasefirebaseinitial.getReference("photomarkeridrawstate").child(state);
+
+        myRefdatabaseinitial.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                Double latphoto = Double.valueOf(0);
+                Double lngphoto = Double.valueOf(0);
+
+
+                String markername = "";
+                String createdby = "";
+
+                for (DataSnapshot child: dataSnapshot.getChildren()) {
+
+                    for (DataSnapshot child2 : child.getChildren()) {
+
+                        markername = child2.getKey().toString();
+
+                        for (DataSnapshot child3 : child2.getChildren()) {
+
+                            if (child3.getKey().toString().equals("lat")) {
+//                     Log.i("MARKERPHOTOLat", String.valueOf(markerlist));
+//                     Log.i("MARKERPHOTOLng", String.valueOf(dataSnapshot.child("lng").getValue()));
+                                Log.i("MARKERPHOTOname", markername);
+
+                                latphoto = (Double) child3.getValue();
+
+
+                            }
+
+                            if (child3.getKey().toString().equals("lng")) {
+//                     Log.i("MARKERPHOTOLat", String.valueOf(markerlist));
+//                     Log.i("MARKERPHOTOLng", String.valueOf(dataSnapshot.child("lng").getValue()));
+                                Log.i("MARKERPHOTOname", markername);
+
+                                lngphoto = (Double) child3.getValue();
+
+
+                            }
+
+                            if (child3.getKey().toString().equals("createdby")) {
+//                     Log.i("MARKERPHOTOLat", String.valueOf(markerlist));
+//                     Log.i("MARKERPHOTOLng", String.valueOf(dataSnapshot.child("lng").getValue()));
+                                Log.i("MARKERPHOTOname", createdby);
+
+                                createdby = (String) child3.getValue();
+
+
+                            }
+
+
+                        }
+
+
+                        if (!latphoto.equals(null)) {
+
+                            LatLng coords = new LatLng(latphoto, lngphoto);
+
+
+                            MarkerOptions markerphotooption = new MarkerOptions();
+                            markerphotooption.position(coords);
+                            markerphotooption.snippet(createdby);
+                            markerphotooption.draggable(true);
+
+
+                            if (markername.contains("ManHole_")) {
+                                markerphotooption.title(markername);
+                                markerphotooption.icon(BitmapDescriptorFactory.fromResource(R.drawable.mainholeicon));
+                                //saving the marker for searching purpose
+                                markermodel markerobject = new markermodel();
+                                markerobject.setTitle(markername);
+                                markerobject.setCoordinate(coords);
+
+                                listallmarker.add(markerobject);
+
+                                listallmarker2.add(markerphotooption);
+
+
+                                mMap.addMarker(markerphotooption);
+                            }
+
+
+                        }
+                    }
+                }
+
+                serachdialog();
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                // Getting Post failed, log a message
+                Log.w(TAG, "loadPost:onCancelled", databaseError.toException());
+                // ...
+            }
+        });
+
+
+
+
+
+    }
+
 //function to search marker list
 
     public void serachdialog(){
@@ -1078,12 +1240,98 @@ public class MyActivity extends AppCompatActivity implements OnMapReadyCallback,
               // Perform action on click
 
               val.clear();
-              loadfirebase();
+          //    loadfirebase();
               alert.dismiss();
               //setupdraw();
 
           }
       });
+
+    }
+
+//dialog for state
+
+
+    public void statelistdialog(){
+
+
+
+        final AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
+
+        alertstate = alertDialog.create();
+
+        alertstate.setTitle("Load NE From State");
+
+
+        LayoutInflater inflater = getLayoutInflater();
+
+        // inflate the custom popup layout
+        final View convertView = inflater.inflate(R.layout.markerlist, null);
+        // find the ListView in the popup layout
+
+        final ListView listviewmarker = (ListView)convertView.findViewById(R.id.markerlv);
+
+        final statelistadaptor adaptormarker = new statelistadaptor(getApplicationContext(),R.layout.staterow,statelistall);
+        listviewmarker.setAdapter(adaptormarker);
+
+        SearchView sv = (SearchView) convertView.findViewById(R.id.serachmarker);
+        sv.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+
+                adaptormarker.getFilter().filter(newText);
+                return false;
+            }
+        });
+
+
+        alertstate.setView(convertView);
+
+        alertstate.show();
+
+
+        listviewmarker.setOnItemClickListener(
+
+                new AdapterView.OnItemClickListener() {
+
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                        String state = (String) listviewmarker.getAdapter().getItem(position);
+
+
+                        loadfirebasestate(state);
+
+
+                        alertstate.dismiss();
+
+
+                    }
+
+                });
+
+
+
+
+
+        Button dismiss = (Button)convertView.findViewById(R.id.dismissdialog);
+
+        dismiss.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Perform action on click
+
+                val.clear();
+
+                alertstate.dismiss();
+                //setupdraw();
+
+            }
+        });
 
     }
 
@@ -1477,6 +1725,23 @@ public class MyActivity extends AppCompatActivity implements OnMapReadyCallback,
                    myRef.child("Nesductidutilization/"  + marker.getTitle().toString()).removeValue();
 
 
+                   String state = "";
+
+                   List<Address> statecity = getaddress(marker.getPosition());
+
+                   if(statecity != null){
+                       if (statecity.get(0).getLocality() != null) {
+                           state = addresses.get(0).getAdminArea();
+                       }
+                   }
+                   else{
+
+                       state = "no state";
+                   }
+
+
+                   myRef.child("photomarkeridrawstate/"+state+"/" + FirebaseAuth.getInstance().getCurrentUser().getUid() + "/" + marker.getTitle().toString()).removeValue();
+
                    //delete from mysql gnecc server
 
                    deletemanhole delete = new deletemanhole(getApplicationContext());
@@ -1503,11 +1768,10 @@ public class MyActivity extends AppCompatActivity implements OnMapReadyCallback,
                 // Perform action on click
 
                 if(marker.getTitle().toString().contains("ManHole_")) {
-                    Intent i = new Intent(getApplicationContext(), mainholewall.class);
+                   // Intent i = new Intent(getApplicationContext(), mainholewall.class);
+                    Intent i = new Intent(getApplicationContext(), fiberdetails.class);
 
-                    i.putExtra("markerlatlng", marker.getPosition());
-                    i.putExtra("markertitle", marker.getTitle());
-                    i.putExtra("markercreateby", marker.getSnippet());
+
                     startActivity(i);
 
                     alert.dismiss();
@@ -1998,7 +2262,19 @@ public class MyActivity extends AppCompatActivity implements OnMapReadyCallback,
                     StorageReference riversRef = storageRef.child("remote_camera" + File.separator + FirebaseAuth.getInstance().getCurrentUser().getEmail() + File.separator + apkURI.getLastPathSegment());
                     UploadTask uploadTask = riversRef.putFile(apkURI);
 
+                    String state = "";
 
+                    List<Address> statecity = getaddress(markercabinet.getPosition());
+
+                    if(statecity != null){
+                        if (statecity.get(0).getLocality() != null) {
+                            state = addresses.get(0).getAdminArea();
+                        }
+                    }
+                    else{
+
+                        state = "no state";
+                    }
                     //create database info for marker
 
                     String useremail = FirebaseAuth.getInstance().getCurrentUser().getEmail();
@@ -2013,6 +2289,19 @@ public class MyActivity extends AppCompatActivity implements OnMapReadyCallback,
                     myRef.child("photomarkeridraw/" + FirebaseAuth
                             .getInstance().getCurrentUser().getUid() + "/" + cabinetidstrnameimage).child("createdby").setValue(useremail);
 
+
+
+
+                    myRef.child("photomarkeridrawstate/" +state +"/"+FirebaseAuth
+                            .getInstance().getCurrentUser().getUid() + "/" + cabinetidstrnameimage).child("lat").setValue(markercabinet.getPosition().latitude);
+                    myRef.child("photomarkeridrawstate/"+state +"/" + FirebaseAuth
+                            .getInstance().getCurrentUser().getUid() + "/" + cabinetidstrnameimage).child("lng").setValue(markercabinet.getPosition().longitude);
+
+                    myRef.child("photomarkeridrawstate/"+state +"/" + FirebaseAuth
+                            .getInstance().getCurrentUser().getUid() + "/" + cabinetidstrnameimage).child("createdby").setValue(useremail);
+
+
+                    myRef.child("statelist").child(state).setValue("Y");
 
                     // Register observers to listen for when the download is done or if it fails
                     uploadTask.addOnFailureListener(new OnFailureListener() {
@@ -2037,7 +2326,7 @@ public class MyActivity extends AppCompatActivity implements OnMapReadyCallback,
                             //marker.showInfoWindow();
 
 
-                            alert.dismiss();
+
                         }
                     });
 
@@ -2046,6 +2335,8 @@ public class MyActivity extends AppCompatActivity implements OnMapReadyCallback,
 
                     if (cabinetidstrnameimage.contains("ManHole_")) {
                         updatemysql(cabinetidstrnameimage, markercabinet.getPosition(), useremail);
+
+                        alert.dismiss();
                     }
                 }
 
@@ -2419,7 +2710,7 @@ public class MyActivity extends AppCompatActivity implements OnMapReadyCallback,
         switch (item.getItemId()) {
 
             case R.id.search:
-                serachdialog();
+               statelistdialog();
                 return true;
 
             case R.id.taglocation:
@@ -2435,7 +2726,7 @@ public class MyActivity extends AppCompatActivity implements OnMapReadyCallback,
 
 
             case R.id.reload:
-               loadfirebase();
+              loadstatelist();
                 return true;
 
             case R.id.draw:

@@ -62,6 +62,7 @@
         <activity android:name="my.com.tm.FIBO.streetview" />
         <activity android:name="my.com.tm.FIBO.mainholewall"></activity>
         <activity android:name="my.com.tm.FIBO.extrainfo"></activity>
+        <activity android:name="my.com.tm.FIBO.fiberdetails"></activity>
     </application>
 
 </manifest>

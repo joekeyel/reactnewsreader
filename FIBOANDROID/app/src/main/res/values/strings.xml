@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">"DIME"</string>
+    <string name="app_name">"FIBO"</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="register">Register to GCM</string>
@@ -86,4 +86,11 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="password">passwordhint</string>
     <string name="username">usernamehint</string>
+    <string name="mur_fdc13">MUR-FDC13</string>
+    <string name="row">Row =</string>
+    <string name="block">Block =</string>
+    <string name="_9_12">9/12</string>
+    <string name="_144c">144C</string>
+    <string name="_1">1</string>
+    <string name="_4">4</string>
 </resources>
