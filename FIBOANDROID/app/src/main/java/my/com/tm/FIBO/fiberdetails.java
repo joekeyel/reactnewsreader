@@ -1,6 +1,7 @@
 package my.com.tm.FIBO;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
@@ -10,6 +11,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.google.android.gms.maps.model.LatLng;
@@ -41,14 +43,33 @@ public class fiberdetails extends AppCompatActivity {
         listfiber.add(middle);
 
 
-        View footerView =  ((LayoutInflater)this.getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.footerfiber, null, false);
+        final View footerView =  ((LayoutInflater)this.getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.footerfiber, null, false);
 
-         adaptormarker = new fibersdfadaptor(getApplicationContext(),R.layout.fiberrow,listfiber);
+        final View headerview =  ((LayoutInflater)this.getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.headerfiber, null, false);
+
+
+
+        adaptormarker = new fibersdfadaptor(getApplicationContext(),R.layout.fiberrow,listfiber);
         lvfibersdf.setAdapter(adaptormarker);
         lvfibersdf.addFooterView(footerView);
-        lvfibersdf.addHeaderView(footerView);
+        lvfibersdf.addHeaderView(headerview);
 
 
+        lvfibersdf.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                // go to input new data for fiber spf
+
+              if(!view.equals(footerView) && !view.equals(headerview)) {
+                  Intent intent = new Intent(getApplicationContext(), fiberdetailsaddnew.class);
+
+
+                  startActivity(intent);
+              }
+
+
+            }
+        });
 
 
 
@@ -83,8 +104,11 @@ public class fiberdetails extends AppCompatActivity {
                     public void run() {
                         // Select the last row so it will scroll into view...
                         lvfibersdf.setSelection(adaptormarker.getCount() - 1);
+
+
                     }
                 });
+
 
 
 

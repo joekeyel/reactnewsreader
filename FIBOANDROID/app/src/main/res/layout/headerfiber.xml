@@ -3,14 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-
+    android:layout_margin="5dp"
+    android:background="@drawable/roundedrow"
     android:orientation="vertical">
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingRight="10dp">
+        android:orientation="horizontal">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -21,9 +21,8 @@
 
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
                 android:layout_margin="5dp"
-                android:text="MUR-FDC13"
+                android:text="EPE G6/0/60"
                 android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="14sp"
                 android:textStyle="bold" />
@@ -33,9 +32,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
-                android:layout_alignParentTop="true"
                 android:layout_margin="5dp"
-                android:text="144C"
                 android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="14sp"
                 android:textStyle="bold" />
@@ -60,25 +57,21 @@
 
             <TextView
 
-                android:layout_width="40dp"
+                android:layout_width="20dp"
                 android:layout_height="25dp"
                 android:layout_alignParentTop="true"
                 android:layout_margin="5dp"
-                android:background="@drawable/strokecolor"
                 android:gravity="center"
-                android:text="35"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
             <TextView
 
-                android:layout_width="40dp"
+                android:layout_width="20dp"
                 android:layout_height="25dp"
                 android:layout_alignParentTop="true"
                 android:layout_margin="5dp"
-                android:background="@drawable/strokecolor"
                 android:gravity="center"
-                android:text="36"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -97,7 +90,6 @@
                 android:layout_margin="5dp"
                 android:background="@drawable/strokecolor"
                 android:gravity="center"
-                android:text="91"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -109,23 +101,10 @@
                 android:layout_margin="5dp"
                 android:background="@drawable/strokecolor"
                 android:gravity="center"
-                android:text="92"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
         </LinearLayout>
-
-        <Button
-            android:id="@+id/delsfp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@android:color/holo_red_light"
-            android:gravity="right"
-            android:paddingRight="5dp"
-            android:text="X"
-            android:textColor="@android:color/background_dark"
-            android:focusable="false"
-            android:focusableInTouchMode="false"/>
 
     </LinearLayout>
 
@@ -156,7 +135,6 @@
 
             android:layout_width="50dp"
             android:layout_height="25dp"
-            android:layout_alignParentTop="true"
             android:layout_margin="5dp"
 
             android:textColor="@color/common_google_signin_btn_text_dark_focused"
@@ -170,9 +148,8 @@
 
             <TextView
 
-                android:layout_width="40dp"
+                android:layout_width="20dp"
                 android:layout_height="25dp"
-                android:layout_alignParentTop="true"
                 android:layout_margin="5dp"
                 android:textSize="14sp"
                 android:textStyle="bold" />
@@ -188,7 +165,6 @@
 
                 android:layout_width="40dp"
                 android:layout_height="25dp"
-                android:layout_alignParentTop="true"
                 android:layout_margin="5dp"
                 android:textSize="14sp"
                 android:textStyle="bold" />
@@ -211,9 +187,8 @@
 
                 android:layout_width="80dp"
                 android:layout_height="25dp"
-                android:layout_alignParentTop="true"
                 android:layout_margin="5dp"
-                android:text="Row ="
+                android:text="@string/row"
                 android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="14sp"
                 android:textStyle="bold" />
@@ -224,7 +199,6 @@
 
             android:layout_width="50dp"
             android:layout_height="25dp"
-            android:layout_alignParentTop="true"
             android:layout_margin="5dp"
             android:textColor="@color/common_google_signin_btn_text_dark_focused"
             android:textSize="14sp"
@@ -237,13 +211,10 @@
 
             <TextView
 
-                android:layout_width="40dp"
+                android:layout_width="20dp"
                 android:layout_height="25dp"
-                android:layout_alignParentTop="true"
                 android:layout_margin="5dp"
-                android:background="@drawable/stroke"
                 android:gravity="center"
-                android:text="2"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -258,18 +229,15 @@
 
                 android:layout_width="40dp"
                 android:layout_height="25dp"
-                android:layout_alignParentTop="true"
                 android:layout_margin="5dp"
                 android:background="@drawable/stroke"
                 android:gravity="center"
-                android:text="1"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
         </LinearLayout>
 
     </LinearLayout>
-
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -311,13 +279,11 @@
 
             <TextView
 
-                android:layout_width="40dp"
+                android:layout_width="20dp"
                 android:layout_height="25dp"
                 android:layout_alignParentTop="true"
                 android:layout_margin="5dp"
-                android:background="@drawable/stroke"
                 android:gravity="center"
-                android:text="2"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -336,14 +302,12 @@
                 android:layout_margin="5dp"
                 android:background="@drawable/stroke"
                 android:gravity="center"
-                android:text="3"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
         </LinearLayout>
 
     </LinearLayout>
-
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -358,9 +322,8 @@
 
                 android:layout_width="80dp"
                 android:layout_height="25dp"
-                android:layout_alignParentTop="true"
                 android:layout_margin="5dp"
-                android:text="Block ="
+                android:text="@string/block"
                 android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="14sp"
                 android:textStyle="bold" />
@@ -371,7 +334,6 @@
 
             android:layout_width="50dp"
             android:layout_height="25dp"
-            android:layout_alignParentTop="true"
             android:layout_margin="5dp"
 
             android:textColor="@color/common_google_signin_btn_text_dark_focused"
@@ -385,13 +347,10 @@
 
             <TextView
 
-                android:layout_width="40dp"
+                android:layout_width="20dp"
                 android:layout_height="25dp"
-                android:layout_alignParentTop="true"
                 android:layout_margin="5dp"
-                android:background="@drawable/stroke"
                 android:gravity="center"
-                android:text="2"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -406,11 +365,9 @@
 
                 android:layout_width="40dp"
                 android:layout_height="25dp"
-                android:layout_alignParentTop="true"
                 android:layout_margin="5dp"
                 android:background="@drawable/stroke"
                 android:gravity="center"
-                android:text="4"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -459,13 +416,11 @@
 
             <TextView
 
-                android:layout_width="40dp"
+                android:layout_width="20dp"
                 android:layout_height="25dp"
                 android:layout_alignParentTop="true"
                 android:layout_margin="5dp"
-                android:background="@drawable/stroke"
                 android:gravity="center"
-                android:text="11/12"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -480,11 +435,9 @@
 
                 android:layout_width="40dp"
                 android:layout_height="25dp"
-                android:layout_alignParentTop="true"
                 android:layout_margin="5dp"
                 android:background="@drawable/stroke"
                 android:gravity="center"
-                android:text="9/12"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -533,11 +486,10 @@
 
             <TextView
 
-                android:layout_width="40dp"
+                android:layout_width="20dp"
                 android:layout_height="25dp"
                 android:layout_alignParentTop="true"
                 android:layout_margin="5dp"
-                android:background="@drawable/stroke"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -589,7 +541,6 @@
 
             android:layout_width="50dp"
             android:layout_height="25dp"
-            android:layout_alignParentTop="true"
             android:layout_margin="5dp"
 
             android:textColor="@color/common_google_signin_btn_text_dark_focused"
@@ -603,13 +554,11 @@
 
             <TextView
 
-                android:layout_width="40dp"
+                android:layout_width="20dp"
                 android:layout_height="25dp"
                 android:layout_alignParentTop="true"
                 android:layout_margin="5dp"
-                android:background="@drawable/stroke"
                 android:gravity="center"
-                android:text="F"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -628,7 +577,6 @@
                 android:layout_margin="5dp"
                 android:background="@drawable/stroke"
                 android:gravity="center"
-                android:text="F"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -677,13 +625,11 @@
 
             <TextView
 
-                android:layout_width="40dp"
+                android:layout_width="20dp"
                 android:layout_height="25dp"
                 android:layout_alignParentTop="true"
                 android:layout_margin="5dp"
-                android:background="@drawable/stroke"
                 android:gravity="center"
-                android:text="24"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -702,11 +648,10 @@
                 android:layout_margin="5dp"
                 android:background="@drawable/stroke"
                 android:gravity="center"
-                android:text="24"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
         </LinearLayout>
 
     </LinearLayout>
-</LinearLayout>
+    </LinearLayout>

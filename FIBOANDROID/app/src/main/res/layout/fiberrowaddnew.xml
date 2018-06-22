@@ -17,7 +17,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <TextView
+            <EditText
 
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -28,7 +28,7 @@
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
-            <TextView
+            <EditText
 
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -58,7 +58,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <TextView
+            <EditText
 
                 android:layout_width="40dp"
                 android:layout_height="25dp"
@@ -70,7 +70,7 @@
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
-            <TextView
+            <EditText
 
                 android:layout_width="40dp"
                 android:layout_height="25dp"
@@ -89,7 +89,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <TextView
+            <EditText
 
                 android:layout_width="40dp"
                 android:layout_height="25dp"
@@ -101,7 +101,7 @@
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
-            <TextView
+            <EditText
 
                 android:layout_width="40dp"
                 android:layout_height="25dp"
@@ -115,17 +115,17 @@
 
         </LinearLayout>
 
-        <Button
-            android:id="@+id/delsfp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@android:color/holo_red_light"
-            android:gravity="right"
-            android:paddingRight="5dp"
-            android:text="X"
-            android:textColor="@android:color/background_dark"
-            android:focusable="false"
-            android:focusableInTouchMode="false"/>
+        <!--<Button-->
+            <!--android:id="@+id/delsfp"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:background="@android:color/holo_red_light"-->
+            <!--android:gravity="right"-->
+            <!--android:paddingRight="5dp"-->
+            <!--android:text="X"-->
+            <!--android:textColor="@android:color/background_dark"-->
+            <!--android:focusable="false"-->
+            <!--android:focusableInTouchMode="false"/>-->
 
     </LinearLayout>
 
@@ -158,7 +158,6 @@
             android:layout_height="25dp"
             android:layout_alignParentTop="true"
             android:layout_margin="5dp"
-
             android:textColor="@color/common_google_signin_btn_text_dark_focused"
             android:textSize="14sp"
             android:textStyle="bold" />
@@ -235,7 +234,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <TextView
+            <EditText
 
                 android:layout_width="40dp"
                 android:layout_height="25dp"
@@ -254,7 +253,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <TextView
+            <EditText
 
                 android:layout_width="40dp"
                 android:layout_height="25dp"
@@ -309,7 +308,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <TextView
+            <EditText
 
                 android:layout_width="40dp"
                 android:layout_height="25dp"
@@ -328,7 +327,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <TextView
+            <EditText
 
                 android:layout_width="40dp"
                 android:layout_height="25dp"
@@ -383,7 +382,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <TextView
+            <EditText
 
                 android:layout_width="40dp"
                 android:layout_height="25dp"
@@ -402,7 +401,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <TextView
+            <EditText
 
                 android:layout_width="40dp"
                 android:layout_height="25dp"
@@ -457,7 +456,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <TextView
+            <EditText
 
                 android:layout_width="40dp"
                 android:layout_height="25dp"
@@ -476,7 +475,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <TextView
+            <EditText
 
                 android:layout_width="40dp"
                 android:layout_height="25dp"
@@ -531,7 +530,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <TextView
+            <EditText
 
                 android:layout_width="40dp"
                 android:layout_height="25dp"
@@ -548,7 +547,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <TextView
+            <EditText
 
                 android:layout_width="40dp"
                 android:layout_height="25dp"
@@ -601,7 +600,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <TextView
+            <EditText
 
                 android:layout_width="40dp"
                 android:layout_height="25dp"
@@ -620,7 +619,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <TextView
+            <EditText
 
                 android:layout_width="40dp"
                 android:layout_height="25dp"
@@ -675,7 +674,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <TextView
+            <EditText
 
                 android:layout_width="40dp"
                 android:layout_height="25dp"
@@ -694,7 +693,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <TextView
+            <EditText
 
                 android:layout_width="40dp"
                 android:layout_height="25dp"
