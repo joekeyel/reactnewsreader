@@ -4,11 +4,19 @@
     >
 
 
+    <item android:id="@+id/reloadsfp"
+        android:title="Plus"
+        android:icon="@drawable/reloadicon"
+        app:showAsAction="always" />
+
     <item android:id="@+id/addsfp"
         android:title="Plus"
-        android:icon="@drawable/drawicon"
+        android:icon="@drawable/ic_add_black_24dp"
         app:showAsAction="always" />
 
 
-
+    <item android:id="@+id/mainprotect"
+        android:title="Plus"
+        android:icon="@drawable/main_protect"
+        app:showAsAction="always" />
 </menu>

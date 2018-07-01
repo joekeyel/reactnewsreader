@@ -31,18 +31,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="my.com.tm.FIBO.login">
+        <activity android:name=".login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="my.com.tm.FIBO.registeruser" />
+        <activity android:name=".registeruser" />
         <activity
-            android:name="my.com.tm.FIBO.MyActivity"
+            android:name=".MyActivity"
             android:configChanges="orientation"
-            android:label="DIME"
+            android:label="FIBO"
             android:screenOrientation="portrait" />
 
         <meta-data
@@ -59,11 +59,14 @@
                 android:resource="@xml/provider_paths" />
         </provider>
 
-        <activity android:name="my.com.tm.FIBO.streetview" />
-        <activity android:name="my.com.tm.FIBO.mainholewall"></activity>
-        <activity android:name="my.com.tm.FIBO.extrainfo"></activity>
-        <activity android:name="my.com.tm.FIBO.fiberdetails"></activity>
-        <activity android:name="my.com.tm.FIBO.fiberdetailsaddnew"></activity>
+        <activity android:name=".streetview" />
+        <activity android:name=".mainholewall" />
+        <activity android:name=".extrainfo" />
+        <activity android:name=".fiberdetails" />
+        <activity android:name=".fiberdetailsaddnew" />
+        <activity android:name=".fiberheader" />
+        <activity android:name=".fiberfooter" />
+        <activity android:name=".fiberinfo"></activity>
     </application>
 
 </manifest>

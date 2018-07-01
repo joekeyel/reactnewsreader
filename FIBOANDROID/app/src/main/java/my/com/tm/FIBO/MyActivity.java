@@ -950,7 +950,7 @@ public class MyActivity extends AppCompatActivity implements OnMapReadyCallback,
 //
 //                   mMap.addMarker(markerphotooption);
 //               }
-                     if (markername.contains("ManHole_")) {
+                     if (markername.contains("IUC_")) {
                          markerphotooption.title(markername);
                          markerphotooption.icon(BitmapDescriptorFactory.fromResource(R.drawable.mainholeicon));
                          //saving the marker for searching purpose
@@ -1124,7 +1124,7 @@ public class MyActivity extends AppCompatActivity implements OnMapReadyCallback,
                             markerphotooption.draggable(true);
 
 
-                            if (markername.contains("ManHole_")) {
+                            if (markername.contains("IUC_")) {
                                 markerphotooption.title(markername);
                                 markerphotooption.icon(BitmapDescriptorFactory.fromResource(R.drawable.mainholeicon));
                                 //saving the marker for searching purpose
@@ -1767,10 +1767,12 @@ public class MyActivity extends AppCompatActivity implements OnMapReadyCallback,
             public void onClick(View v) {
                 // Perform action on click
 
-                if(marker.getTitle().toString().contains("ManHole_")) {
+                if(marker.getTitle().toString().contains("IUC_")) {
                    // Intent i = new Intent(getApplicationContext(), mainholewall.class);
                     Intent i = new Intent(getApplicationContext(), fiberdetails.class);
 
+                    i.putExtra("siteid",marker.getTitle().toString());
+                    i.putExtra("updatedby",FirebaseAuth.getInstance().getCurrentUser().getEmail());
 
                     startActivity(i);
 
@@ -1787,12 +1789,14 @@ public class MyActivity extends AppCompatActivity implements OnMapReadyCallback,
             public void onClick(View v) {
                 // Perform action on click
 
-                if(marker.getTitle().toString().contains("ManHole_")) {
-                    Intent i = new Intent(getApplicationContext(), extrainfo.class);
+                if(marker.getTitle().toString().contains("IUC_")) {
+                    Intent i = new Intent(getApplicationContext(), fiberinfo.class);
 
-                    i.putExtra("markerlatlng", marker.getPosition());
-                    i.putExtra("markertitle", marker.getTitle());
-                    i.putExtra("markercreateby", marker.getSnippet());
+
+                    i.putExtra("siteid",marker.getTitle().toString());
+                    i.putExtra("updatedby",FirebaseAuth.getInstance().getCurrentUser().getEmail());
+
+
                     startActivity(i);
 
                     alert.dismiss();
@@ -1824,6 +1828,7 @@ public class MyActivity extends AppCompatActivity implements OnMapReadyCallback,
 
         // inflate the custom popup layout
         final View convertView = inflater.inflate(R.layout.tagcabinet_layout, null);
+
 
 
 
@@ -1952,6 +1957,11 @@ public class MyActivity extends AppCompatActivity implements OnMapReadyCallback,
                     if(cabinetidstrnameimage.contains("ManHole")) {
                         markercabinet.icon(BitmapDescriptorFactory.fromResource(R.drawable.mainholeicon));
                     }
+
+
+                    if(cabinetidstrnameimage.contains("IUC")) {
+                        markercabinet.icon(BitmapDescriptorFactory.fromResource(R.drawable.mainholeicon));
+                    }
                     if(cabinetidstrnameimage.contains("DP")) {
                         markercabinet.icon(BitmapDescriptorFactory.fromResource(R.drawable.dppole));
                     }
@@ -2043,6 +2053,10 @@ public class MyActivity extends AppCompatActivity implements OnMapReadyCallback,
                     }
 
                     if(cabinetidstrnameimage.contains("ManHole")) {
+                        markercabinet.icon(BitmapDescriptorFactory.fromResource(R.drawable.mainholeicon));
+                    }
+
+                    if(cabinetidstrnameimage.contains("IUC")) {
                         markercabinet.icon(BitmapDescriptorFactory.fromResource(R.drawable.mainholeicon));
                     }
                     if(cabinetidstrnameimage.contains("DP")) {
@@ -2331,9 +2345,10 @@ public class MyActivity extends AppCompatActivity implements OnMapReadyCallback,
                     });
 
 
+
                     //update database of mysql
 
-                    if (cabinetidstrnameimage.contains("ManHole_")) {
+                    if (cabinetidstrnameimage.contains("IUC_")) {
                         updatemysql(cabinetidstrnameimage, markercabinet.getPosition(), useremail);
 
                         alert.dismiss();
@@ -2885,7 +2900,7 @@ public class MyActivity extends AppCompatActivity implements OnMapReadyCallback,
 
 
 
-    public void updatemysql(String manholeid,LatLng location,String createdby) {
+    public void updatemysql(String siteid,LatLng location,String createdby) {
 
 
         List<Address> addresses = getaddress(location);
@@ -2923,7 +2938,7 @@ public class MyActivity extends AppCompatActivity implements OnMapReadyCallback,
 
             addnewmanhole update = new addnewmanhole(getApplicationContext());
 
-            update.execute(manholeid, state, city, address, String.valueOf(location.latitude), String.valueOf(location.longitude), createdby, postalCode, knownName, premises);
+            update.execute(siteid, state, city, address, String.valueOf(location.latitude), String.valueOf(location.longitude), createdby, postalCode, knownName, premises);
 
         }
     }

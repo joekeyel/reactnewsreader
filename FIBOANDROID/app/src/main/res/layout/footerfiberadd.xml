@@ -17,9 +17,9 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <TextView
+            <EditText
 
-                android:id="@+id/headerroutename"
+                android:id="@+id/routenamefooter"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
@@ -83,9 +83,8 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <TextView
+            <EditText
 
-                android:id="@+id/headerrouteport1"
                 android:layout_width="40dp"
                 android:layout_height="25dp"
                 android:layout_alignParentTop="true"
@@ -95,9 +94,8 @@
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
-            <TextView
+            <EditText
 
-                android:id="@+id/headercoreport1"
                 android:layout_width="40dp"
                 android:layout_height="25dp"
                 android:layout_alignParentTop="true"
@@ -228,9 +226,8 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <TextView
+            <EditText
 
-                android:id="@+id/headerrow1"
                 android:layout_width="40dp"
                 android:layout_height="25dp"
                 android:layout_margin="5dp"
@@ -298,9 +295,8 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <TextView
+            <EditText
 
-                android:id="@+id/headerver1"
                 android:layout_width="40dp"
                 android:layout_height="25dp"
                 android:layout_alignParentTop="true"
@@ -366,9 +362,8 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <TextView
+            <EditText
 
-                android:id="@+id/headerblock1"
                 android:layout_width="40dp"
                 android:layout_height="25dp"
                 android:layout_margin="5dp"
@@ -437,9 +432,8 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <TextView
+            <EditText
 
-                android:id="@+id/headerpinport1"
                 android:layout_width="40dp"
                 android:layout_height="25dp"
                 android:layout_margin="5dp"
@@ -507,9 +501,8 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <TextView
+            <EditText
 
-                android:id="@+id/headerindex1"
                 android:layout_width="40dp"
                 android:layout_height="25dp"
                 android:layout_alignParentTop="true"
@@ -577,9 +570,8 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <TextView
+            <EditText
 
-                android:id="@+id/headermanufacture1"
                 android:layout_width="40dp"
                 android:layout_height="25dp"
                 android:layout_alignParentTop="true"
@@ -649,9 +641,8 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <TextView
+            <EditText
 
-                android:id="@+id/headertype1"
                 android:layout_width="40dp"
                 android:layout_height="25dp"
                 android:layout_alignParentTop="true"
@@ -661,8 +652,17 @@
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
+
+
         </LinearLayout>
 
+
     </LinearLayout>
+    <Button
+        android:id="@+id/updatesdf2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Update" />
 
 </LinearLayout>

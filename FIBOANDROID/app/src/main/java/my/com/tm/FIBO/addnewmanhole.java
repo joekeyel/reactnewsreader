@@ -30,7 +30,7 @@ public class addnewmanhole extends AsyncTask<String,Void,String> {
     @Override
     protected String doInBackground(String... params) {
 
-        String manholeid = params[0];
+        String siteid = params[0];
         String state = params[1];
         String city = params[2];
         String street = params[3];
@@ -41,7 +41,7 @@ public class addnewmanhole extends AsyncTask<String,Void,String> {
         String knownname = params[8];
         String premise = params[9];
 
-        String stringurl = "http://58.27.84.188/addnewmanhole.php";
+        String stringurl = "http://58.27.84.188/addnewiuc.php";
 
         try {
             URL url = new URL(stringurl);
@@ -53,7 +53,7 @@ public class addnewmanhole extends AsyncTask<String,Void,String> {
             OutputStream os = conn.getOutputStream();
             BufferedWriter bufferwriter = new BufferedWriter(new OutputStreamWriter(os,"UTF-8"));
 
-            String data = URLEncoder.encode("manholeid","UTF-8")+"="+URLEncoder.encode(manholeid,"UTF-8")+
+            String data = URLEncoder.encode("siteid","UTF-8")+"="+URLEncoder.encode(siteid,"UTF-8")+
 
                     "&"+URLEncoder.encode("state","UTF-8")+"="+URLEncoder.encode(state,"UTF-8")+
                     "&"+URLEncoder.encode("city","UTF-8")+"="+URLEncoder.encode(city,"UTF-8")+

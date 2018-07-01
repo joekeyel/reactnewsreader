@@ -35,7 +35,7 @@
 
     <string-array name="elementtype">
         <!--<item>Cabinet</item>-->
-        <item>ManHole</item>
+        <item>IUC</item>
         <!--<item>DP</item>-->
 
     </string-array>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
+
+    <item android:id="@+id/delesfp"
+        android:title="Plus"
+        android:icon="@drawable/deleteicon"
+        app:showAsAction="always" />
+
+
+
+    <item android:id="@+id/savefsp"
+        android:title="Plus"
+        android:icon="@drawable/saveicon"
+        app:showAsAction="always" />
+</menu>
