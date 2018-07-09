@@ -67,6 +67,8 @@
         <activity android:name=".fiberheader" />
         <activity android:name=".fiberfooter" />
         <activity android:name=".fiberinfo"></activity>
+        <activity android:name=".finalreport" android:screenOrientation="landscape"
+            ></activity>
     </application>
 
 </manifest>

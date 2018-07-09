@@ -19,7 +19,8 @@
 
             <TextView
 
-                android:layout_width="match_parent"
+                android:id="@+id/middleroutename"
+                android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_margin="5dp"
@@ -30,9 +31,10 @@
 
             <TextView
 
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:id="@+id/middlecore"
+                android:layout_width="80dp"
 
+                android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_margin="5dp"
                 android:text="144C"
@@ -60,25 +62,25 @@
 
             <TextView
 
-                android:layout_width="40dp"
+                android:id="@+id/middleroutenameport1"
+                android:layout_width="50dp"
                 android:layout_height="25dp"
                 android:layout_alignParentTop="true"
                 android:layout_margin="5dp"
                 android:background="@drawable/strokecolor"
                 android:gravity="center"
-                android:text="35"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
             <TextView
 
-                android:layout_width="40dp"
+                android:id="@+id/middlecoreport1"
+                android:layout_width="50dp"
                 android:layout_height="25dp"
                 android:layout_alignParentTop="true"
                 android:layout_margin="5dp"
                 android:background="@drawable/strokecolor"
                 android:gravity="center"
-                android:text="36"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -91,25 +93,25 @@
 
             <TextView
 
-                android:layout_width="40dp"
+                android:id="@+id/middleroutenameport2"
+                android:layout_width="50dp"
                 android:layout_height="25dp"
                 android:layout_alignParentTop="true"
                 android:layout_margin="5dp"
                 android:background="@drawable/strokecolor"
                 android:gravity="center"
-                android:text="91"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
             <TextView
 
-                android:layout_width="40dp"
+                android:id="@+id/middlecoreport2"
+                android:layout_width="50dp"
                 android:layout_height="25dp"
                 android:layout_alignParentTop="true"
                 android:layout_margin="5dp"
                 android:background="@drawable/strokecolor"
                 android:gravity="center"
-                android:text="92"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -170,7 +172,7 @@
 
             <TextView
 
-                android:layout_width="40dp"
+                android:layout_width="50dp"
                 android:layout_height="25dp"
                 android:layout_alignParentTop="true"
                 android:layout_margin="5dp"
@@ -186,7 +188,7 @@
 
             <TextView
 
-                android:layout_width="40dp"
+                android:layout_width="50dp"
                 android:layout_height="25dp"
                 android:layout_alignParentTop="true"
                 android:layout_margin="5dp"
@@ -237,13 +239,14 @@
 
             <TextView
 
-                android:layout_width="40dp"
+                android:id="@+id/middlerowport1"
+                android:layout_width="50dp"
                 android:layout_height="25dp"
                 android:layout_alignParentTop="true"
                 android:layout_margin="5dp"
                 android:background="@drawable/stroke"
                 android:gravity="center"
-                android:text="2"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -256,13 +259,14 @@
 
             <TextView
 
-                android:layout_width="40dp"
+                android:id="@+id/middlerowport2"
+                android:layout_width="50dp"
                 android:layout_height="25dp"
                 android:layout_alignParentTop="true"
                 android:layout_margin="5dp"
                 android:background="@drawable/stroke"
                 android:gravity="center"
-                android:text="1"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -311,13 +315,14 @@
 
             <TextView
 
-                android:layout_width="40dp"
+                android:id="@+id/middleverport1"
+                android:layout_width="50dp"
                 android:layout_height="25dp"
                 android:layout_alignParentTop="true"
                 android:layout_margin="5dp"
                 android:background="@drawable/stroke"
                 android:gravity="center"
-                android:text="2"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -330,13 +335,14 @@
 
             <TextView
 
-                android:layout_width="40dp"
+                android:id="@+id/middleverport2"
+                android:layout_width="50dp"
                 android:layout_height="25dp"
                 android:layout_alignParentTop="true"
                 android:layout_margin="5dp"
                 android:background="@drawable/stroke"
                 android:gravity="center"
-                android:text="3"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -385,13 +391,14 @@
 
             <TextView
 
-                android:layout_width="40dp"
+                android:id="@+id/middleblockport1"
+                android:layout_width="50dp"
                 android:layout_height="25dp"
                 android:layout_alignParentTop="true"
                 android:layout_margin="5dp"
                 android:background="@drawable/stroke"
                 android:gravity="center"
-                android:text="2"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -404,13 +411,14 @@
 
             <TextView
 
-                android:layout_width="40dp"
+                android:id="@+id/middleblockport2"
+                android:layout_width="50dp"
                 android:layout_height="25dp"
                 android:layout_alignParentTop="true"
                 android:layout_margin="5dp"
                 android:background="@drawable/stroke"
                 android:gravity="center"
-                android:text="4"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -459,13 +467,14 @@
 
             <TextView
 
-                android:layout_width="40dp"
+                android:id="@+id/middlepinport1"
+                android:layout_width="50dp"
                 android:layout_height="25dp"
                 android:layout_alignParentTop="true"
                 android:layout_margin="5dp"
                 android:background="@drawable/stroke"
                 android:gravity="center"
-                android:text="11/12"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -478,13 +487,14 @@
 
             <TextView
 
-                android:layout_width="40dp"
+                android:id="@+id/middlepinport2"
+                android:layout_width="50dp"
                 android:layout_height="25dp"
                 android:layout_alignParentTop="true"
                 android:layout_margin="5dp"
                 android:background="@drawable/stroke"
                 android:gravity="center"
-                android:text="9/12"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -533,11 +543,13 @@
 
             <TextView
 
-                android:layout_width="40dp"
+                android:id="@+id/middleindexport1"
+                android:layout_width="50dp"
                 android:layout_height="25dp"
                 android:layout_alignParentTop="true"
                 android:layout_margin="5dp"
                 android:background="@drawable/stroke"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -550,11 +562,13 @@
 
             <TextView
 
-                android:layout_width="40dp"
+                android:id="@+id/middleindexport2"
+                android:layout_width="50dp"
                 android:layout_height="25dp"
                 android:layout_alignParentTop="true"
                 android:layout_margin="5dp"
                 android:background="@drawable/stroke"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -603,13 +617,14 @@
 
             <TextView
 
-                android:layout_width="40dp"
+                android:id="@+id/middlemanufactureport1"
+                android:layout_width="50dp"
                 android:layout_height="25dp"
                 android:layout_alignParentTop="true"
                 android:layout_margin="5dp"
                 android:background="@drawable/stroke"
                 android:gravity="center"
-                android:text="F"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -622,13 +637,14 @@
 
             <TextView
 
-                android:layout_width="40dp"
+                android:id="@+id/middlemanufactureport2"
+                android:layout_width="50dp"
                 android:layout_height="25dp"
                 android:layout_alignParentTop="true"
                 android:layout_margin="5dp"
                 android:background="@drawable/stroke"
                 android:gravity="center"
-                android:text="F"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -677,13 +693,14 @@
 
             <TextView
 
-                android:layout_width="40dp"
+                android:id="@+id/middletypeport1"
+                android:layout_width="50dp"
                 android:layout_height="25dp"
                 android:layout_alignParentTop="true"
                 android:layout_margin="5dp"
                 android:background="@drawable/stroke"
                 android:gravity="center"
-                android:text="24"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -696,13 +713,14 @@
 
             <TextView
 
-                android:layout_width="40dp"
+                android:id="@+id/middletypeport2"
+                android:layout_width="50dp"
                 android:layout_height="25dp"
                 android:layout_alignParentTop="true"
                 android:layout_margin="5dp"
                 android:background="@drawable/stroke"
                 android:gravity="center"
-                android:text="24"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 

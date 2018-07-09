@@ -20,7 +20,7 @@
             <TextView
 
                 android:id="@+id/headerroutename"
-                android:layout_width="match_parent"
+                android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:text="EPE G6/0/60"
@@ -30,7 +30,7 @@
 
             <TextView
 
-                android:layout_width="match_parent"
+                android:layout_width="80dp"
                 android:layout_height="wrap_content"
 
                 android:layout_margin="5dp"
@@ -85,8 +85,8 @@
 
             <TextView
 
-                android:id="@+id/headerrouteport1"
-                android:layout_width="40dp"
+                android:id="@+id/headerrouteporttv"
+                android:layout_width="50dp"
                 android:layout_height="25dp"
                 android:layout_alignParentTop="true"
                 android:layout_margin="5dp"
@@ -97,8 +97,8 @@
 
             <TextView
 
-                android:id="@+id/headercoreport1"
-                android:layout_width="40dp"
+                android:id="@+id/headercoreporttv"
+                android:layout_width="50dp"
                 android:layout_height="25dp"
                 android:layout_alignParentTop="true"
                 android:layout_margin="5dp"
@@ -230,8 +230,8 @@
 
             <TextView
 
-                android:id="@+id/headerrow1"
-                android:layout_width="40dp"
+                android:id="@+id/headerrowtv"
+                android:layout_width="50dp"
                 android:layout_height="25dp"
                 android:layout_margin="5dp"
                 android:background="@drawable/stroke"
@@ -300,8 +300,8 @@
 
             <TextView
 
-                android:id="@+id/headerver1"
-                android:layout_width="40dp"
+                android:id="@+id/headervertv"
+                android:layout_width="50dp"
                 android:layout_height="25dp"
                 android:layout_alignParentTop="true"
                 android:layout_margin="5dp"
@@ -368,8 +368,8 @@
 
             <TextView
 
-                android:id="@+id/headerblock1"
-                android:layout_width="40dp"
+                android:id="@+id/headerblocktv"
+                android:layout_width="50dp"
                 android:layout_height="25dp"
                 android:layout_margin="5dp"
                 android:background="@drawable/stroke"
@@ -439,8 +439,8 @@
 
             <TextView
 
-                android:id="@+id/headerpinport1"
-                android:layout_width="40dp"
+                android:id="@+id/headerpinporttv"
+                android:layout_width="50dp"
                 android:layout_height="25dp"
                 android:layout_margin="5dp"
                 android:background="@drawable/stroke"
@@ -509,8 +509,8 @@
 
             <TextView
 
-                android:id="@+id/headerindex1"
-                android:layout_width="40dp"
+                android:id="@+id/headerindextv"
+                android:layout_width="50dp"
                 android:layout_height="25dp"
                 android:layout_alignParentTop="true"
                 android:layout_margin="5dp"
@@ -579,8 +579,8 @@
 
             <TextView
 
-                android:id="@+id/headermanufacture1"
-                android:layout_width="40dp"
+                android:id="@+id/headermanufacturetv"
+                android:layout_width="50dp"
                 android:layout_height="25dp"
                 android:layout_alignParentTop="true"
                 android:layout_margin="5dp"
@@ -651,8 +651,8 @@
 
             <TextView
 
-                android:id="@+id/headertype1"
-                android:layout_width="40dp"
+                android:id="@+id/headertypetv"
+                android:layout_width="50dp"
                 android:layout_height="25dp"
                 android:layout_alignParentTop="true"
                 android:layout_margin="5dp"

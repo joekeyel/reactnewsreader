@@ -110,52 +110,6 @@ public class fibersdfadaptor extends ArrayAdapter implements Filterable {
         }
 
 
-//        TextView title;
-//        TextView coordinates;
-//        final ImageView markerimage;
-//
-//        title = (TextView) convertView.findViewById(R.id.tvtitlemarker);
-//        coordinates = (TextView) convertView.findViewById(R.id.tvcoordinates);
-//        markerimage = (ImageView)convertView.findViewById(R.id.imagemarker);
-//
-//       title.setText(ttmodellist.get(position).getTitle());
-//
-//       String latstr = String.valueOf(ttmodellist.get(position).getPosition().latitude);
-//       String lngstr = String.valueOf(ttmodellist.get(position).getPosition().longitude);
-//
-//        coordinates.setText("Latittude:"+latstr+",Longitude:"+lngstr);
-//
-//
-//        //this part to load the image
-//
-//        FirebaseStorage storage = FirebaseStorage.getInstance();
-//        StorageReference storageRef = storage.getReference();
-//
-//
-//        storageRef.child("remote_camera" + File.separator +ttmodellist.get(position).getSnippet()+ File.separator + ttmodellist.get(position).getTitle() + ".jpg").getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-//            @Override
-//            public void onSuccess(Uri uri) {
-//                // TODO: handle uri
-//
-//
-//                Context context = markerimage.getContext();
-//
-//                markerimage.invalidate();
-//
-//                Picasso.with(context).load(uri).networkPolicy(NetworkPolicy.NO_CACHE).into(markerimage);
-//
-//
-//
-//
-//            }
-//        }).addOnFailureListener(new OnFailureListener() {
-//            @Override
-//            public void onFailure(@NonNull Exception exception) {
-//                // Handle any errors
-//            }
-//        });
-
-
 
         Button delsfp = (Button)convertView.findViewById(R.id.delsfp);
 
@@ -163,6 +117,75 @@ public class fibersdfadaptor extends ArrayAdapter implements Filterable {
 
             convertView.setBackgroundColor(Color.WHITE);
             delsfp.setVisibility(View.INVISIBLE);
+
+            TextView routename = (TextView)convertView.findViewById(R.id.middleroutename);
+            routename.setText(ttmodellist.get(position).getRoute());
+
+            TextView core = (TextView)convertView.findViewById(R.id.middlecore);
+            core.setText(ttmodellist.get(position).getCore());
+
+
+            TextView routeport1 = (TextView)convertView.findViewById(R.id.middleroutenameport1);
+            routeport1.setText(ttmodellist.get(position).getRouteport1());
+
+            TextView routeport2 = (TextView)convertView.findViewById(R.id.middleroutenameport2);
+            routeport2.setText(ttmodellist.get(position).getRouteport2());
+
+
+            TextView coreport1 = (TextView)convertView.findViewById(R.id.middlecoreport1);
+            coreport1.setText(ttmodellist.get(position).getCoreport1());
+
+            TextView coreport2 = (TextView)convertView.findViewById(R.id.middlecoreport2);
+            coreport2.setText(ttmodellist.get(position).getCoreport2());
+
+
+            TextView rowport1 = (TextView)convertView.findViewById(R.id.middlerowport1);
+            rowport1.setText(ttmodellist.get(position).getRowport1());
+
+            TextView rowport2 = (TextView)convertView.findViewById(R.id.middlerowport2);
+            rowport2.setText(ttmodellist.get(position).getRowport2());
+
+
+            TextView verport1 = (TextView)convertView.findViewById(R.id.middleverport1);
+            verport1.setText(ttmodellist.get(position).getVerport1());
+
+            TextView verport2 = (TextView)convertView.findViewById(R.id.middleverport2);
+            verport2.setText(ttmodellist.get(position).getVerport2());
+
+            TextView block1 = (TextView)convertView.findViewById(R.id.middleblockport1);
+            block1.setText(ttmodellist.get(position).getBlockport1());
+
+            TextView block2 = (TextView)convertView.findViewById(R.id.middleblockport2);
+            block2.setText(ttmodellist.get(position).getBlockport2());
+
+
+            TextView pinport1 = (TextView)convertView.findViewById(R.id.middlepinport1);
+            pinport1.setText(ttmodellist.get(position).getPinportport1());
+
+            TextView pinport2 = (TextView)convertView.findViewById(R.id.middlepinport2);
+            pinport2.setText(ttmodellist.get(position).getPinportport2());
+
+
+            TextView indexport1 = (TextView)convertView.findViewById(R.id.middleindexport1);
+            indexport1.setText(ttmodellist.get(position).getIndexport1());
+
+            TextView indexport2 = (TextView)convertView.findViewById(R.id.middleindexport2);
+            indexport2.setText(ttmodellist.get(position).getIndexport2());
+
+
+            TextView manufacture1 = (TextView)convertView.findViewById(R.id.middlemanufactureport1);
+            manufacture1.setText(ttmodellist.get(position).getManufactureport1());
+
+            TextView manufacture2 = (TextView)convertView.findViewById(R.id.middlemanufactureport2);
+            manufacture2.setText(ttmodellist.get(position).getManufacturedport2());
+
+            TextView type1 = (TextView)convertView.findViewById(R.id.middletypeport1);
+            type1.setText(ttmodellist.get(position).getTypeport1());
+
+            TextView type2 = (TextView)convertView.findViewById(R.id.middletypeport2);
+            type2.setText(ttmodellist.get(position).getTypeport2());
+
+
         }else{
 
             convertView.setBackgroundColor(Color.RED);

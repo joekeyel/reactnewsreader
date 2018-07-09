@@ -1,12 +1,16 @@
 package my.com.tm.FIBO;
 
+import android.os.Parcelable;
+
 import com.google.android.gms.maps.model.LatLng;
+
+import java.io.Serializable;
 
 /**
  * Created by hasanulisyraf on 01/01/2018.
  */
 
-public class fibermodel {
+public class fibermodel implements Serializable{
 
     private String route;
     private String core;
@@ -19,6 +23,25 @@ public class fibermodel {
     private String verport1;
     private String verport2;
     private String status;
+    private String indexclick;
+
+    public String getIndexclick() {
+        return indexclick;
+    }
+
+    public void setIndexclick(String indexclick) {
+        this.indexclick = indexclick;
+    }
+
+    public String getUpdateby() {
+        return updateby;
+    }
+
+    public void setUpdateby(String updateby) {
+        this.updateby = updateby;
+    }
+
+    private String updateby;
 
     public String getStatus() {
         return status;

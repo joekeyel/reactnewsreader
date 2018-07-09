@@ -19,12 +19,13 @@
 
             <EditText
 
-                android:layout_width="match_parent"
+                android:id="@+id/headername"
+                android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:text="EPE G6/0/60"
                 android:textColor="@color/common_google_signin_btn_text_dark_focused"
-                android:textSize="14sp"
+                android:textSize="12sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -84,7 +85,8 @@
 
             <EditText
 
-                android:layout_width="40dp"
+                android:id="@+id/routenameportheader"
+                android:layout_width="50dp"
                 android:layout_height="25dp"
                 android:layout_alignParentTop="true"
                 android:layout_margin="5dp"
@@ -95,7 +97,8 @@
 
             <EditText
 
-                android:layout_width="40dp"
+                android:id="@+id/coreportheader"
+                android:layout_width="50dp"
                 android:layout_height="25dp"
                 android:layout_alignParentTop="true"
                 android:layout_margin="5dp"
@@ -163,7 +166,7 @@
 
             <TextView
 
-                android:layout_width="40dp"
+                android:layout_width="50dp"
                 android:layout_height="25dp"
                 android:layout_margin="5dp"
                 android:textSize="14sp"
@@ -227,7 +230,8 @@
 
             <EditText
 
-                android:layout_width="40dp"
+                android:id="@+id/rowportheader"
+                android:layout_width="50dp"
                 android:layout_height="25dp"
                 android:layout_margin="5dp"
                 android:background="@drawable/stroke"
@@ -296,7 +300,8 @@
 
             <EditText
 
-                android:layout_width="40dp"
+                android:id="@+id/verportheader"
+                android:layout_width="50dp"
                 android:layout_height="25dp"
                 android:layout_alignParentTop="true"
                 android:layout_margin="5dp"
@@ -363,7 +368,8 @@
 
             <EditText
 
-                android:layout_width="40dp"
+                android:id="@+id/blockportheader"
+                android:layout_width="50dp"
                 android:layout_height="25dp"
                 android:layout_margin="5dp"
                 android:background="@drawable/stroke"
@@ -433,7 +439,8 @@
 
             <EditText
 
-                android:layout_width="40dp"
+                android:id="@+id/pinportheader"
+                android:layout_width="50dp"
                 android:layout_height="25dp"
                 android:layout_margin="5dp"
                 android:background="@drawable/stroke"
@@ -502,7 +509,8 @@
 
             <EditText
 
-                android:layout_width="40dp"
+                android:id="@+id/indexportheader"
+                android:layout_width="50dp"
                 android:layout_height="25dp"
                 android:layout_alignParentTop="true"
                 android:layout_margin="5dp"
@@ -571,7 +579,8 @@
 
             <EditText
 
-                android:layout_width="40dp"
+                android:id="@+id/manufactureheader"
+                android:layout_width="50dp"
                 android:layout_height="25dp"
                 android:layout_alignParentTop="true"
                 android:layout_margin="5dp"
@@ -642,7 +651,8 @@
 
             <EditText
 
-                android:layout_width="40dp"
+                android:id="@+id/typeportheader"
+                android:layout_width="50dp"
                 android:layout_height="25dp"
                 android:layout_alignParentTop="true"
                 android:layout_margin="5dp"
@@ -654,12 +664,5 @@
         </LinearLayout>
 
     </LinearLayout>
-
-    <Button
-        android:id="@+id/updatesdfheader"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="Update" />
 
 </LinearLayout>

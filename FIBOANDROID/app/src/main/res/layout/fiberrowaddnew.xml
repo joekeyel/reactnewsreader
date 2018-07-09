@@ -34,25 +34,23 @@
 
             <EditText
 
-                android:id="@+id/routename"
-                android:layout_width="match_parent"
+                android:id="@+id/routenameet"
+                android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_margin="5dp"
-                android:text="MUR-FDC13"
                 android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
             <EditText
 
-                android:id="@+id/core"
-                android:layout_width="match_parent"
+                android:id="@+id/coreet"
+                android:layout_width="80dp"
 
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_margin="5dp"
-                android:text="144C"
                 android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="14sp"
                 android:textStyle="bold" />
@@ -77,27 +75,25 @@
 
             <EditText
 
-                android:id="@+id/routeport1"
-                android:layout_width="40dp"
+                android:id="@+id/routeport1et"
+                android:layout_width="50dp"
                 android:layout_height="25dp"
                 android:layout_alignParentTop="true"
                 android:layout_margin="5dp"
                 android:background="@drawable/strokecolor"
                 android:gravity="center"
-                android:text="35"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
             <EditText
 
-                android:id="@+id/coreport1"
-                android:layout_width="40dp"
+                android:id="@+id/coreport1et"
+                android:layout_width="50dp"
                 android:layout_height="25dp"
                 android:layout_alignParentTop="true"
                 android:layout_margin="5dp"
                 android:background="@drawable/strokecolor"
                 android:gravity="center"
-                android:text="36"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -110,27 +106,25 @@
 
             <EditText
 
-                android:id="@+id/routeport2"
-                android:layout_width="40dp"
+                android:id="@+id/routeport2et"
+                android:layout_width="50dp"
                 android:layout_height="25dp"
                 android:layout_alignParentTop="true"
                 android:layout_margin="5dp"
                 android:background="@drawable/strokecolor"
                 android:gravity="center"
-                android:text="91"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
             <EditText
 
-                android:id="@+id/coreport2"
-                android:layout_width="40dp"
+                android:id="@+id/coreport2et"
+                android:layout_width="50dp"
                 android:layout_height="25dp"
                 android:layout_alignParentTop="true"
                 android:layout_margin="5dp"
                 android:background="@drawable/strokecolor"
                 android:gravity="center"
-                android:text="92"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -190,7 +184,7 @@
 
             <TextView
 
-                android:layout_width="40dp"
+                android:layout_width="50dp"
                 android:layout_height="25dp"
                 android:layout_alignParentTop="true"
                 android:layout_margin="5dp"
@@ -206,7 +200,7 @@
 
             <TextView
 
-                android:layout_width="40dp"
+                android:layout_width="50dp"
                 android:layout_height="25dp"
                 android:layout_alignParentTop="true"
                 android:layout_margin="5dp"
@@ -257,14 +251,13 @@
 
             <EditText
 
-                android:id="@+id/row1"
-                android:layout_width="40dp"
+                android:id="@+id/row1et"
+                android:layout_width="50dp"
                 android:layout_height="25dp"
                 android:layout_alignParentTop="true"
                 android:layout_margin="5dp"
                 android:background="@drawable/stroke"
                 android:gravity="center"
-                android:text="2"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -277,14 +270,13 @@
 
             <EditText
 
-                android:id="@+id/row2"
-                android:layout_width="40dp"
+                android:id="@+id/row2et"
+                android:layout_width="50dp"
                 android:layout_height="25dp"
                 android:layout_alignParentTop="true"
                 android:layout_margin="5dp"
                 android:background="@drawable/stroke"
                 android:gravity="center"
-                android:text="1"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -333,14 +325,13 @@
 
             <EditText
 
-                android:id="@+id/ver1"
-                android:layout_width="40dp"
+                android:id="@+id/ver1et"
+                android:layout_width="50dp"
                 android:layout_height="25dp"
                 android:layout_alignParentTop="true"
                 android:layout_margin="5dp"
                 android:background="@drawable/stroke"
                 android:gravity="center"
-                android:text="2"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -353,14 +344,13 @@
 
             <EditText
 
-                android:id="@+id/ver2"
-                android:layout_width="40dp"
+                android:id="@+id/ver2et"
+                android:layout_width="50dp"
                 android:layout_height="25dp"
                 android:layout_alignParentTop="true"
                 android:layout_margin="5dp"
                 android:background="@drawable/stroke"
                 android:gravity="center"
-                android:text="3"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -409,14 +399,13 @@
 
             <EditText
 
-                android:id="@+id/block1"
-                android:layout_width="40dp"
+                android:id="@+id/block1et"
+                android:layout_width="50dp"
                 android:layout_height="25dp"
                 android:layout_alignParentTop="true"
                 android:layout_margin="5dp"
                 android:background="@drawable/stroke"
                 android:gravity="center"
-                android:text="2"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -429,14 +418,13 @@
 
             <EditText
 
-                android:id="@+id/block2"
-                android:layout_width="40dp"
+                android:id="@+id/block2et"
+                android:layout_width="50dp"
                 android:layout_height="25dp"
                 android:layout_alignParentTop="true"
                 android:layout_margin="5dp"
                 android:background="@drawable/stroke"
                 android:gravity="center"
-                android:text="4"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -485,14 +473,13 @@
 
             <EditText
 
-                android:id="@+id/pinport1"
-                android:layout_width="40dp"
+                android:id="@+id/pinport1et"
+                android:layout_width="50dp"
                 android:layout_height="25dp"
                 android:layout_alignParentTop="true"
                 android:layout_margin="5dp"
                 android:background="@drawable/stroke"
                 android:gravity="center"
-                android:text="11/12"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -505,14 +492,13 @@
 
             <EditText
 
-                android:id="@+id/pinport2"
-                android:layout_width="40dp"
+                android:id="@+id/pinport2et"
+                android:layout_width="50dp"
                 android:layout_height="25dp"
                 android:layout_alignParentTop="true"
                 android:layout_margin="5dp"
                 android:background="@drawable/stroke"
                 android:gravity="center"
-                android:text="9/12"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -561,8 +547,8 @@
 
             <EditText
 
-                android:id="@+id/index1"
-                android:layout_width="40dp"
+                android:id="@+id/index1et"
+                android:layout_width="50dp"
                 android:layout_height="25dp"
                 android:layout_alignParentTop="true"
                 android:layout_margin="5dp"
@@ -579,8 +565,8 @@
 
             <EditText
 
-                android:id="@+id/index2"
-                android:layout_width="40dp"
+                android:id="@+id/index2et"
+                android:layout_width="50dp"
                 android:layout_height="25dp"
                 android:layout_alignParentTop="true"
                 android:layout_margin="5dp"
@@ -633,14 +619,13 @@
 
             <EditText
 
-                android:id="@+id/manufacture1"
-                android:layout_width="40dp"
+                android:id="@+id/manufacture1et"
+                android:layout_width="50dp"
                 android:layout_height="25dp"
                 android:layout_alignParentTop="true"
                 android:layout_margin="5dp"
                 android:background="@drawable/stroke"
                 android:gravity="center"
-                android:text="F"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -653,14 +638,13 @@
 
             <EditText
 
-                android:id="@+id/manufacture2"
-                android:layout_width="40dp"
+                android:id="@+id/manufacture2et"
+                android:layout_width="50dp"
                 android:layout_height="25dp"
                 android:layout_alignParentTop="true"
                 android:layout_margin="5dp"
                 android:background="@drawable/stroke"
                 android:gravity="center"
-                android:text="F"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -709,14 +693,13 @@
 
             <EditText
 
-                android:id="@+id/type1"
-                android:layout_width="40dp"
+                android:id="@+id/type1et"
+                android:layout_width="50dp"
                 android:layout_height="25dp"
                 android:layout_alignParentTop="true"
                 android:layout_margin="5dp"
                 android:background="@drawable/stroke"
                 android:gravity="center"
-                android:text="24"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -729,14 +712,13 @@
 
             <EditText
 
-                android:id="@+id/type2"
-                android:layout_width="40dp"
+                android:id="@+id/type2et"
+                android:layout_width="50dp"
                 android:layout_height="25dp"
                 android:layout_alignParentTop="true"
                 android:layout_margin="5dp"
                 android:background="@drawable/stroke"
                 android:gravity="center"
-                android:text="24"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -744,16 +726,5 @@
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/updatesdf"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Update" />
-    </LinearLayout>
 </LinearLayout>
