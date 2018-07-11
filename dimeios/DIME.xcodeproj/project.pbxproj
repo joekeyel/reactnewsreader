@@ -25,7 +25,6 @@
 		30536B521F46CB3E0056B391 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30536B511F46CB3E0056B391 /* CoreLocation.framework */; };
 		30556F7F2007587200D048F2 /* streetview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30556F7E2007587200D048F2 /* streetview.swift */; };
 		305CB3D71E814677002732CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305CB3D61E814677002732CB /* AppDelegate.swift */; };
-		305CB3DC1E814677002732CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 305CB3DA1E814677002732CB /* Main.storyboard */; };
 		305CB3E11E814677002732CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 305CB3DF1E814677002732CB /* LaunchScreen.storyboard */; };
 		305CB3EC1E814677002732CB /* remoteiosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305CB3EB1E814677002732CB /* remoteiosTests.swift */; };
 		305CB3F71E814677002732CB /* remoteiosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305CB3F61E814677002732CB /* remoteiosUITests.swift */; };
@@ -48,6 +47,7 @@
 		30B617071F54671F0087BD34 /* login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30B617061F54671F0087BD34 /* login.storyboard */; };
 		30B617091F546D3C0087BD34 /* logincontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B617081F546D3C0087BD34 /* logincontroller.swift */; };
 		30C2F4C2200370E0004CE301 /* markerdetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C2F4C1200370E0004CE301 /* markerdetail.swift */; };
+		30C37DF520E711E900810188 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30C37DF420E711E800810188 /* Main.storyboard */; };
 		30E66AFD1F56966500808338 /* user.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E66AFC1F56966500808338 /* user.swift */; };
 		30FDDF321F93060A008AD7B0 /* sessionresponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FDDF311F93060A008AD7B0 /* sessionresponse.swift */; };
 		64B1FC89269820FA5D4244E6 /* Pods_DIMETests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20AC9DBD363E822E05FAE96A /* Pods_DIMETests.framework */; };
@@ -100,7 +100,6 @@
 		30556F7E2007587200D048F2 /* streetview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = streetview.swift; sourceTree = "<group>"; };
 		305CB3D31E814677002732CB /* DIME.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DIME.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		305CB3D61E814677002732CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		305CB3DB1E814677002732CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		305CB3E01E814677002732CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		305CB3E21E814677002732CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		305CB3E71E814677002732CB /* DIMETests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DIMETests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,6 +128,7 @@
 		30B617061F54671F0087BD34 /* login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = login.storyboard; sourceTree = "<group>"; };
 		30B617081F546D3C0087BD34 /* logincontroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = logincontroller.swift; sourceTree = "<group>"; };
 		30C2F4C1200370E0004CE301 /* markerdetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = markerdetail.swift; sourceTree = "<group>"; };
+		30C37DF420E711E800810188 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		30E66AFC1F56966500808338 /* user.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = user.swift; sourceTree = "<group>"; };
 		30FDDF311F93060A008AD7B0 /* sessionresponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sessionresponse.swift; sourceTree = "<group>"; };
 		417C42D069C054E0D881D5EC /* Pods-DIMEUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DIMEUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DIMEUITests/Pods-DIMEUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -238,12 +238,12 @@
 				30A63AF01F1608A100AFDC4C /* basecell.xib */,
 				30B617061F54671F0087BD34 /* login.storyboard */,
 				30A63AF21F160B2700AFDC4C /* BaseViewCell.swift */,
+				30C37DF420E711E800810188 /* Main.storyboard */,
 				30B2F2651F1860B700D6B7E2 /* cellmenu.swift */,
 				3048E6CB1F1DCEB400DA8296 /* cellmenupopover.swift */,
 				302886571F1C7D2A00623542 /* images.xcassets */,
 				305CB3E21E814677002732CB /* Info.plist */,
 				305CB3DF1E814677002732CB /* LaunchScreen.storyboard */,
-				305CB3DA1E814677002732CB /* Main.storyboard */,
 				30536B491F4688D50056B391 /* viewcellmenudetail.swift */,
 				30AC405C1F2ACD9A008F0538 /* userupdating.storyboard */,
 				3023B9FC1F2F691B00A52650 /* hidekeyboard.swift */,
@@ -450,9 +450,9 @@
 				302886581F1C7D2A00623542 /* images.xcassets in Resources */,
 				30536B4C1F46A0430056B391 /* maps.storyboard in Resources */,
 				30AC405D1F2ACD9A008F0538 /* userupdating.storyboard in Resources */,
+				30C37DF520E711E900810188 /* Main.storyboard in Resources */,
 				300618D920BD985C00662D42 /* GoogleService-Info.plist in Resources */,
 				305CB3E11E814677002732CB /* LaunchScreen.storyboard in Resources */,
-				305CB3DC1E814677002732CB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -680,14 +680,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		305CB3DA1E814677002732CB /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				305CB3DB1E814677002732CB /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		305CB3DF1E814677002732CB /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

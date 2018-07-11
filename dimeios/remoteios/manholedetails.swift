@@ -143,7 +143,11 @@ class manholedetails: UIViewController,UIPopoverPresentationControllerDelegate,p
         ductdictionary.removeAll()
         
     }
-    
+     func getter2(){
+    setupductlabel()
+    loadduct(manhole: manholename!, wallnumber: wallnumbername!)
+    ductdictionary.removeAll()
+    }
     func setupductlabel(){
         
         A1.isUserInteractionEnabled = true
