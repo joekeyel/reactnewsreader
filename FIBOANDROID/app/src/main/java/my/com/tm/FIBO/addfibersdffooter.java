@@ -20,11 +20,11 @@ import java.net.URLEncoder;
  * Created by hasanulisyraf on 14/03/2018.
  */
 
-public class addfibersdfheader extends AsyncTask<String,Void,String> {
+public class addfibersdffooter extends AsyncTask<String,Void,String> {
 
     Context context;
 
-    public addfibersdfheader(Context applicationContext) {
+    public addfibersdffooter(Context applicationContext) {
         this.context = applicationContext;
 
     }
@@ -55,10 +55,10 @@ public class addfibersdfheader extends AsyncTask<String,Void,String> {
         String type1 = params[11];
 
         String updateby = params[12];
-//        String indexstr = params[13];
+        String indexstr = params[13];
 
 
-        String stringurl = "http://58.27.84.188/addnewfibersdfheader.php";
+        String stringurl = "http://58.27.84.188/addnewfibersdffooter.php";
 
         try {
             URL url = new URL(stringurl);
@@ -83,7 +83,8 @@ public class addfibersdfheader extends AsyncTask<String,Void,String> {
                     "&"+URLEncoder.encode("index1","UTF-8")+"="+URLEncoder.encode(index1, "UTF-8")+
                     "&"+URLEncoder.encode("manufacture1","UTF-8")+"="+URLEncoder.encode(manufacture1, "UTF-8")+
                     "&"+URLEncoder.encode("type1","UTF-8")+"="+URLEncoder.encode(type1, "UTF-8")+
-                    "&"+URLEncoder.encode("updatedby","UTF-8")+"="+URLEncoder.encode(updateby, "UTF-8");
+                    "&"+URLEncoder.encode("updatedby","UTF-8")+"="+URLEncoder.encode(updateby, "UTF-8")+
+                    "&"+URLEncoder.encode("index","UTF-8")+"="+URLEncoder.encode(indexstr, "UTF-8");
 
 
             bufferwriter.write(data);

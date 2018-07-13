@@ -19,6 +19,7 @@ import android.widget.AdapterView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.model.LatLng;
 import com.google.firebase.auth.FirebaseAuth;
@@ -45,8 +46,8 @@ public class fiberdetails extends AppCompatActivity {
     String siteid,updatedby;
 
     ArrayList<fibermodel> listfiber = new ArrayList();
-    ArrayList<headerfootermodel> listfiber2 = new ArrayList();
-    ArrayList<headerfootermodel> listfiber3 = new ArrayList();
+    ArrayList<fibermodel> listfiber2 = new ArrayList();
+    ArrayList<fibermodel> listfiber3 = new ArrayList();
 
     View footerView;
     View headerview;
@@ -81,10 +82,10 @@ public class fiberdetails extends AppCompatActivity {
 
 
         loadfibersdfheader fibersdflistheader = new loadfibersdfheader(getApplicationContext());
-        fibersdflistheader.execute("http://58.27.84.188/fibersdflist.php",siteid);
+        fibersdflistheader.execute("http://58.27.84.188/fibersdflistheader.php",siteid);
 
         loadfibersdffooter fibersdflistfooter = new loadfibersdffooter(getApplicationContext());
-        fibersdflistfooter.execute("http://58.27.84.188/fibersdflist.php",siteid);
+        fibersdflistfooter.execute("http://58.27.84.188/fibersdflistfooter.php",siteid);
 
 
         loadfibersdf fibersdflist = new loadfibersdf(getApplicationContext());
@@ -295,7 +296,45 @@ public class fiberdetails extends AppCompatActivity {
                         Intent intent = new Intent(getApplicationContext(), fiberheader.class);
 
 
+
+                        Toast.makeText(getApplicationContext(), siteid, Toast.LENGTH_LONG).show();
+
+                        intent.putExtra("siteid",siteid);
+                        intent.putExtra("updatedby",updatedby);
+
+                        if (fibermodels != null) {
+
+                            listfiber2.clear();
+
+                            listfiber2 = fibermodels;
+
+
+
+                            intent.putExtra("routename", listfiber2.get(0).getRoute());
+                            intent.putExtra("core", listfiber2.get(0).getCore());
+                            intent.putExtra("routeport1", listfiber2.get(0).getRouteport1());
+
+                            intent.putExtra("coreport1", listfiber2.get(0).getCoreport1());
+
+                            intent.putExtra("rowport1", listfiber2.get(0).getRowport1());
+
+                            intent.putExtra("verport1", listfiber2.get(0).getVerport1());
+
+                            intent.putExtra("blockport1", listfiber2.get(0).getBlockport1());
+
+                            intent.putExtra("pinport1", listfiber2.get(0).getPinportport1());
+
+                            intent.putExtra("indexport1", listfiber2.get(0).getIndexport1());
+
+                            intent.putExtra("manufactureport1", listfiber2.get(0).getManufactureport1());
+
+                            intent.putExtra("typeport1", listfiber2.get(0).getTypeport1());
+
+                        }
+
                         startActivity(intent);
+
+
                     }
 
 
@@ -311,7 +350,7 @@ public class fiberdetails extends AppCompatActivity {
     }
 
 
-    public class loadfibersdfheader extends AsyncTask<String, Integer, ArrayList<headerfootermodel>> {
+    public class loadfibersdfheader extends AsyncTask<String, Integer, ArrayList<fibermodel>> {
 
 
 
@@ -319,7 +358,7 @@ public class fiberdetails extends AppCompatActivity {
         }
 
         @Override
-        protected ArrayList<headerfootermodel> doInBackground(String... params) {
+        protected ArrayList<fibermodel> doInBackground(String... params) {
             HttpURLConnection conn = null;
             BufferedReader reader = null;
 
@@ -355,15 +394,35 @@ public class fiberdetails extends AppCompatActivity {
                 JSONArray parentArray = parentObject.getJSONArray("fiberlist");
 
 
-                ArrayList<headerfootermodel> fibermodelArrayList = new ArrayList<>();
+                ArrayList<fibermodel> fibermodelArrayList = new ArrayList<>();
 
 
                 for (int i = 0; i < parentArray.length(); i++) {
 
-                    headerfootermodel fiberobject = new headerfootermodel();
+                    fibermodel fiberobject = new fibermodel();
                     JSONObject finalObject = parentArray.getJSONObject(i);
 
                     fiberobject.setRoute(finalObject.getString("routename"));
+                    fiberobject.setCore(finalObject.getString("core"));
+                    fiberobject.setRouteport1(finalObject.getString("routeport1"));
+
+                    fiberobject.setCoreport1(finalObject.getString("coreport1"));
+                     fiberobject.setRowport1(finalObject.getString("row1"));
+
+                    fiberobject.setVerport1(finalObject.getString("ver1"));
+
+                    fiberobject.setBlockport1(finalObject.getString("block1"));
+
+                    fiberobject.setPinportport1(finalObject.getString("pinport1"));
+
+                    fiberobject.setIndexport1(finalObject.getString("index1"));
+
+                    fiberobject.setManufactureport1(finalObject.getString("manufacture1"));
+
+                    fiberobject.setTypeport1(finalObject.getString("type1"));
+
+                    fiberobject.setUpdateby(finalObject.getString("updatedby"));
+
 
 
                     //add to tt model object array list
@@ -399,7 +458,7 @@ public class fiberdetails extends AppCompatActivity {
         }
 
         @Override
-        protected void onPostExecute(ArrayList<headerfootermodel> fibermodels) {
+        protected void onPostExecute(final ArrayList<fibermodel> fibermodels) {
             super.onPostExecute(fibermodels);
 
 
@@ -414,8 +473,32 @@ public class fiberdetails extends AppCompatActivity {
                     listfiber2.clear();
 
                     listfiber2 = fibermodels;
-                    TextView routeport1 = (TextView) headerview.findViewById(R.id.headerroutename);
-                    routeport1.setText(listfiber2.get(0).getRoute());
+
+                    TextView routename = (TextView) headerview.findViewById(R.id.headerroutename);
+                    routename.setText(listfiber2.get(0).getRoute());
+                    TextView core = (TextView) headerview.findViewById(R.id.headercoretv);
+                    core.setText(listfiber2.get(0).getCore());
+
+
+                    TextView routeport = (TextView) headerview.findViewById(R.id.headerrouteporttv);
+                    routeport.setText(listfiber2.get(0).getRouteport1());
+                    TextView coreporttv = (TextView) headerview.findViewById(R.id.headercoreporttv);
+                    coreporttv.setText(listfiber2.get(0).getCoreport1());
+                    TextView row = (TextView) headerview.findViewById(R.id.headerrowtv);
+                    row.setText(listfiber2.get(0).getRowport1());
+                    TextView ver = (TextView) headerview.findViewById(R.id.headervertv);
+                    ver.setText(listfiber2.get(0).getVerport1());
+                    TextView block = (TextView) headerview.findViewById(R.id.headerblocktv);
+                    block.setText(listfiber2.get(0).getBlockport1());
+                    TextView pinport = (TextView) headerview.findViewById(R.id.headerpinporttv);
+                    pinport.setText(listfiber2.get(0).getPinportport1());
+                    TextView index = (TextView) headerview.findViewById(R.id.headerindextv);
+                    index.setText(listfiber2.get(0).getIndexport1());
+                    TextView manufacture = (TextView) headerview.findViewById(R.id.headermanufacturetv);
+                    manufacture.setText(listfiber2.get(0).getManufactureport1());
+                    TextView type = (TextView) headerview.findViewById(R.id.headertypetv);
+                    type.setText(listfiber2.get(0).getTypeport1());
+
 
 
                 }else{
@@ -447,6 +530,9 @@ public class fiberdetails extends AppCompatActivity {
 
 
 
+
+
+
                             startActivity(intent);
                         }
 
@@ -458,7 +544,40 @@ public class fiberdetails extends AppCompatActivity {
                         }
                         if (view.equals(wrapheaderview)) {
                             Intent intent = new Intent(getApplicationContext(), fiberheader.class);
+                            Toast.makeText(getApplicationContext(), siteid, Toast.LENGTH_LONG).show();
 
+                            intent.putExtra("siteid",siteid);
+                            intent.putExtra("updatedby",updatedby);
+
+                            if (fibermodels != null) {
+
+                                listfiber2.clear();
+
+                                listfiber2 = fibermodels;
+
+
+
+                                intent.putExtra("routename", listfiber2.get(0).getRoute());
+                                intent.putExtra("core", listfiber2.get(0).getCore());
+                                intent.putExtra("routeport1", listfiber2.get(0).getRouteport1());
+
+                                intent.putExtra("coreport1", listfiber2.get(0).getCoreport1());
+
+                                intent.putExtra("rowport1", listfiber2.get(0).getRowport1());
+
+                                intent.putExtra("verport1", listfiber2.get(0).getVerport1());
+
+                                intent.putExtra("blockport1", listfiber2.get(0).getBlockport1());
+
+                                intent.putExtra("pinport1", listfiber2.get(0).getPinportport1());
+
+                                intent.putExtra("indexport1", listfiber2.get(0).getIndexport1());
+
+                                intent.putExtra("manufactureport1", listfiber2.get(0).getManufactureport1());
+
+                                intent.putExtra("typeport1", listfiber2.get(0).getTypeport1());
+
+                            }
 
                             startActivity(intent);
                         }
@@ -474,7 +593,7 @@ public class fiberdetails extends AppCompatActivity {
 
     }
 
-    public class loadfibersdffooter extends AsyncTask<String, Integer, ArrayList<headerfootermodel>> {
+    public class loadfibersdffooter extends AsyncTask<String, Integer, ArrayList<fibermodel>> {
 
 
 
@@ -482,7 +601,7 @@ public class fiberdetails extends AppCompatActivity {
         }
 
         @Override
-        protected ArrayList<headerfootermodel> doInBackground(String... params) {
+        protected ArrayList<fibermodel> doInBackground(String... params) {
             HttpURLConnection conn = null;
             BufferedReader reader = null;
 
@@ -518,15 +637,34 @@ public class fiberdetails extends AppCompatActivity {
                 JSONArray parentArray = parentObject.getJSONArray("fiberlist");
 
 
-                ArrayList<headerfootermodel> fibermodelArrayList = new ArrayList<>();
+                ArrayList<fibermodel> fibermodelArrayList = new ArrayList<>();
 
 
                 for (int i = 0; i < parentArray.length(); i++) {
 
-                    headerfootermodel fiberobject = new headerfootermodel();
+                    fibermodel fiberobject = new fibermodel();
                     JSONObject finalObject = parentArray.getJSONObject(i);
 
                     fiberobject.setRoute(finalObject.getString("routename"));
+                    fiberobject.setCore(finalObject.getString("core"));
+                    fiberobject.setRouteport1(finalObject.getString("routeport1"));
+
+                    fiberobject.setCoreport1(finalObject.getString("coreport1"));
+                    fiberobject.setRowport1(finalObject.getString("row1"));
+
+                    fiberobject.setVerport1(finalObject.getString("ver1"));
+
+                    fiberobject.setBlockport1(finalObject.getString("block1"));
+
+                    fiberobject.setPinportport1(finalObject.getString("pinport1"));
+
+                    fiberobject.setIndexport1(finalObject.getString("index1"));
+
+                    fiberobject.setManufactureport1(finalObject.getString("manufacture1"));
+
+                    fiberobject.setTypeport1(finalObject.getString("type1"));
+
+                    fiberobject.setUpdateby(finalObject.getString("updatedby"));
 
 
                     //add to tt model object array list
@@ -562,7 +700,7 @@ public class fiberdetails extends AppCompatActivity {
         }
 
         @Override
-        protected void onPostExecute(ArrayList<headerfootermodel> fibermodels) {
+        protected void onPostExecute(ArrayList<fibermodel> fibermodels) {
             super.onPostExecute(fibermodels);
 
 
@@ -577,14 +715,36 @@ public class fiberdetails extends AppCompatActivity {
                 listfiber3.clear();
 
                 listfiber3 = fibermodels;
-                TextView routeport1 = (TextView) headerview.findViewById(R.id.headerroutename);
-                routeport1.setText(listfiber3.get(0).getRoute());
+                TextView routename = (TextView) footerView.findViewById(R.id.footernametv);
+                routename.setText(listfiber3.get(0).getRoute());
+                TextView core = (TextView) footerView.findViewById(R.id.footercoretv);
+                core.setText(listfiber3.get(0).getCore());
+
+
+                TextView routeport = (TextView) footerView.findViewById(R.id.footerrouteporttv);
+                routeport.setText(listfiber3.get(0).getRouteport1());
+                TextView coreporttv = (TextView) footerView.findViewById(R.id.footercoreporttv);
+                coreporttv.setText(listfiber3.get(0).getCoreport1());
+                TextView row = (TextView) footerView.findViewById(R.id.footerrowporttv);
+                row.setText(listfiber3.get(0).getRowport1());
+                TextView ver = (TextView) footerView.findViewById(R.id.footerverporttv);
+                ver.setText(listfiber3.get(0).getVerport1());
+                TextView block = (TextView) footerView.findViewById(R.id.footerblockporttv);
+                block.setText(listfiber3.get(0).getBlockport1());
+                TextView pinport = (TextView) footerView.findViewById(R.id.footerpinporttv);
+                pinport.setText(listfiber3.get(0).getPinportport1());
+                TextView index = (TextView) footerView.findViewById(R.id.footerindexporttv);
+                index.setText(listfiber3.get(0).getIndexport1());
+                TextView manufacture = (TextView) footerView.findViewById(R.id.footermanufactureporttv);
+                manufacture.setText(listfiber3.get(0).getManufactureport1());
+                TextView type = (TextView) footerView.findViewById(R.id.footertypeporttv);
+                type.setText(listfiber3.get(0).getTypeport1());
 
 
             }else{
 
-                TextView routeport1 = (TextView) headerview.findViewById(R.id.headerroutename);
-                routeport1.setText("Header Route");
+                TextView routeport1 = (TextView) footerView.findViewById(R.id.footernametv);
+                routeport1.setText("Footer Route");
             }
 
 
@@ -681,10 +841,10 @@ public class fiberdetails extends AppCompatActivity {
 
 
                 loadfibersdfheader fibersdflistheader = new loadfibersdfheader(getApplicationContext());
-                fibersdflistheader.execute("http://58.27.84.188/fibersdflist.php",siteid);
+                fibersdflistheader.execute("http://58.27.84.188/fibersdflistheader.php",siteid);
 
                 loadfibersdffooter fibersdflistfooter = new loadfibersdffooter(getApplicationContext());
-                fibersdflistfooter.execute("http://58.27.84.188/fibersdflist.php",siteid);
+                fibersdflistfooter.execute("http://58.27.84.188/fibersdflistfooter.php",siteid);
 
 
                 loadfibersdf fibersdflist = new loadfibersdf(getApplicationContext());
