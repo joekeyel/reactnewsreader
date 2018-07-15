@@ -49,6 +49,7 @@ public class finalreport extends AppCompatActivity{
     WebView graphview;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -126,6 +127,31 @@ public class finalreport extends AppCompatActivity{
                     Toast.makeText(finalreport.this, "Oops! Image could not be saved.", Toast.LENGTH_SHORT)
                             .show();
                 }
+
+
+
+
+                return true;
+
+            case R.id.sharepdf:
+                ScrollView graphview2 = (ScrollView) findViewById(R.id.layoutTxtDescription);
+
+                File file2 = saveBitMap(this, graphview2);    //which view you want to pass that view as parameter
+                if (file2 != null) {
+
+
+                    Intent share = new Intent(Intent.ACTION_SEND);
+                    share.setType("image/jpeg");
+                    share.putExtra(Intent.EXTRA_STREAM, Uri.parse(file2.getAbsolutePath()));
+                    share.setPackage("com.whatsapp");//package name of the app
+                    startActivity(Intent.createChooser(share, "Share Image"));
+
+                } else {
+                    Log.i("TAG", "Oops! Image could not be saved.");
+                    Toast.makeText(finalreport.this, "Oops! Image could not be saved.", Toast.LENGTH_SHORT)
+                            .show();
+                }
+
 
 
 

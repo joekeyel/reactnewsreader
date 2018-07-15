@@ -4,15 +4,15 @@
     >
 
 
-    <item android:id="@+id/downloadpdf"
+    <item android:id="@+id/loadaddress"
         android:title="Plus"
-        android:icon="@drawable/icondownload"
+        android:icon="@drawable/findaddressicon"
         app:showAsAction="always" />
 
 
-    <item android:id="@+id/sharepdf"
+    <item android:id="@+id/saveinfofiber"
         android:title="Plus"
-        android:icon="@drawable/shareicon"
+        android:icon="@drawable/saveicon"
         app:showAsAction="always" />
 
 </menu>

@@ -1771,8 +1771,15 @@ public class MyActivity extends AppCompatActivity implements OnMapReadyCallback,
                    // Intent i = new Intent(getApplicationContext(), mainholewall.class);
                     Intent i = new Intent(getApplicationContext(), fiberdetails.class);
 
+
+
+                    double latitude = marker.getPosition().latitude;
+                    double longitude = marker.getPosition().longitude;
+
                     i.putExtra("siteid",marker.getTitle().toString());
                     i.putExtra("updatedby",FirebaseAuth.getInstance().getCurrentUser().getEmail());
+                    i.putExtra("latitude",latitude);
+                    i.putExtra("longitude",longitude);
 
                     startActivity(i);
 
@@ -1792,10 +1799,12 @@ public class MyActivity extends AppCompatActivity implements OnMapReadyCallback,
                 if(marker.getTitle().toString().contains("IUC_")) {
                     Intent i = new Intent(getApplicationContext(), fiberinfo.class);
 
-
+                    double latitude = marker.getPosition().latitude;
+                    double longitude = marker.getPosition().longitude;
                     i.putExtra("siteid",marker.getTitle().toString());
                     i.putExtra("updatedby",FirebaseAuth.getInstance().getCurrentUser().getEmail());
-
+                    i.putExtra("latitude",latitude);
+                    i.putExtra("longitude",longitude);
 
                     startActivity(i);
 

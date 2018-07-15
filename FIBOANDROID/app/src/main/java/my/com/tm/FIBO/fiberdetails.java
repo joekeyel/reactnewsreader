@@ -290,47 +290,117 @@ public class fiberdetails extends AppCompatActivity {
                         Intent intent = new Intent(getApplicationContext(), fiberfooter.class);
 
 
-                        startActivity(intent);
-                    }
-                    if (view.equals(wrapheaderview)) {
-                        Intent intent = new Intent(getApplicationContext(), fiberheader.class);
 
 
 
-                        Toast.makeText(getApplicationContext(), siteid, Toast.LENGTH_LONG).show();
+                        TextView routename = (TextView) footerView.findViewById(R.id.footernametv);
+                        String routenamestr = routename.getText().toString();
+                        TextView core = (TextView) footerView.findViewById(R.id.footercoretv);
+                        String corestr = core.getText().toString();
+
+
+                        TextView routeport = (TextView) footerView.findViewById(R.id.footerrouteporttv);
+                        String routeportstr = routeport.getText().toString();
+                        TextView coreporttv = (TextView) footerView.findViewById(R.id.footercoreporttv);
+                        String coreporttvstr = coreporttv.getText().toString();
+                        TextView row = (TextView) footerView.findViewById(R.id.footerrowporttv);
+                        String rowstr = row.getText().toString();
+                        TextView ver = (TextView) footerView.findViewById(R.id.footerverporttv);
+                        String verstr = ver.getText().toString();
+                        TextView block = (TextView) footerView.findViewById(R.id.footerblockporttv);
+                        String blockstr = block.getText().toString();
+                        TextView pinport = (TextView) footerView.findViewById(R.id.footerpinporttv);
+                        String pinportstr = pinport.getText().toString();
+                        TextView index = (TextView) footerView.findViewById(R.id.footerindexporttv);
+                        String indexstr = index.getText().toString();
+                        TextView manufacture = (TextView) footerView.findViewById(R.id.footermanufactureporttv);
+                        String manufacturestr = manufacture.getText().toString();
+                        TextView type = (TextView) footerView.findViewById(R.id.footertypeporttv);
+                        String typestr = type.getText().toString();
+
 
                         intent.putExtra("siteid",siteid);
                         intent.putExtra("updatedby",updatedby);
 
-                        if (fibermodels != null) {
+                        intent.putExtra("routename", routenamestr);
+                        intent.putExtra("core", corestr);
+                        intent.putExtra("routeport1", routeportstr);
 
-                            listfiber2.clear();
+                        intent.putExtra("coreport1", coreporttvstr);
 
-                            listfiber2 = fibermodels;
+                        intent.putExtra("rowport1", rowstr);
+
+                        intent.putExtra("verport1", verstr);
+
+                        intent.putExtra("blockport1", blockstr);
+
+                        intent.putExtra("pinport1", pinportstr);
+
+                        intent.putExtra("indexport1", indexstr);
+
+                        intent.putExtra("manufactureport1", manufacturestr);
+
+                        intent.putExtra("typeport1", typestr);
+
+
+                        startActivity(intent);
+                    }
+                    if (view.equals(wrapheaderview)) {
+                        Intent intent = new Intent(getApplicationContext(), fiberheader.class);
+                        // Toast.makeText(getApplicationContext(), siteid, Toast.LENGTH_LONG).show();
 
 
 
-                            intent.putExtra("routename", listfiber2.get(0).getRoute());
-                            intent.putExtra("core", listfiber2.get(0).getCore());
-                            intent.putExtra("routeport1", listfiber2.get(0).getRouteport1());
 
-                            intent.putExtra("coreport1", listfiber2.get(0).getCoreport1());
+                        TextView routename = (TextView) headerview.findViewById(R.id.headerroutename);
+                        String routenamestr = routename.getText().toString();
+                        TextView core = (TextView) headerview.findViewById(R.id.headercoretv);
+                        String corestr = core.getText().toString();
 
-                            intent.putExtra("rowport1", listfiber2.get(0).getRowport1());
 
-                            intent.putExtra("verport1", listfiber2.get(0).getVerport1());
+                        TextView routeport = (TextView) headerview.findViewById(R.id.headerrouteporttv);
+                        String routeportstr = routeport.getText().toString();
+                        TextView coreporttv = (TextView) headerview.findViewById(R.id.headercoreporttv);
+                        String coreporttvstr = coreporttv.getText().toString();
+                        TextView row = (TextView) headerview.findViewById(R.id.headerrowtv);
+                        String rowstr = row.getText().toString();
+                        TextView ver = (TextView) headerview.findViewById(R.id.headervertv);
+                        String verstr = ver.getText().toString();
+                        TextView block = (TextView) headerview.findViewById(R.id.headerblocktv);
+                        String blockstr = block.getText().toString();
+                        TextView pinport = (TextView) headerview.findViewById(R.id.headerpinporttv);
+                        String pinportstr = pinport.getText().toString();
+                        TextView index = (TextView) headerview.findViewById(R.id.headerindextv);
+                        String indexstr = index.getText().toString();
+                        TextView manufacture = (TextView) headerview.findViewById(R.id.headermanufacturetv);
+                        String manufacturestr = manufacture.getText().toString();
+                        TextView type = (TextView) headerview.findViewById(R.id.headertypetv);
+                        String typestr = type.getText().toString();
 
-                            intent.putExtra("blockport1", listfiber2.get(0).getBlockport1());
 
-                            intent.putExtra("pinport1", listfiber2.get(0).getPinportport1());
+                        intent.putExtra("siteid",siteid);
+                        intent.putExtra("updatedby",updatedby);
 
-                            intent.putExtra("indexport1", listfiber2.get(0).getIndexport1());
+                        intent.putExtra("routename", routenamestr);
+                        intent.putExtra("core", corestr);
+                        intent.putExtra("routeport1", routeportstr);
 
-                            intent.putExtra("manufactureport1", listfiber2.get(0).getManufactureport1());
+                        intent.putExtra("coreport1", coreporttvstr);
 
-                            intent.putExtra("typeport1", listfiber2.get(0).getTypeport1());
+                        intent.putExtra("rowport1", rowstr);
 
-                        }
+                        intent.putExtra("verport1", verstr);
+
+                        intent.putExtra("blockport1", blockstr);
+
+                        intent.putExtra("pinport1", pinportstr);
+
+                        intent.putExtra("indexport1", indexstr);
+
+                        intent.putExtra("manufactureport1", manufacturestr);
+
+                        intent.putExtra("typeport1", typestr);
+
 
                         startActivity(intent);
 
@@ -544,40 +614,60 @@ public class fiberdetails extends AppCompatActivity {
                         }
                         if (view.equals(wrapheaderview)) {
                             Intent intent = new Intent(getApplicationContext(), fiberheader.class);
-                            Toast.makeText(getApplicationContext(), siteid, Toast.LENGTH_LONG).show();
+                           // Toast.makeText(getApplicationContext(), siteid, Toast.LENGTH_LONG).show();
+
+
+
+
+                            TextView routename = (TextView) headerview.findViewById(R.id.headerroutename);
+                            String routenamestr = routename.getText().toString();
+                            TextView core = (TextView) headerview.findViewById(R.id.headercoretv);
+                            String corestr = core.getText().toString();
+
+
+                            TextView routeport = (TextView) headerview.findViewById(R.id.headerrouteporttv);
+                            String routeportstr = routeport.getText().toString();
+                            TextView coreporttv = (TextView) headerview.findViewById(R.id.headercoreporttv);
+                            String coreporttvstr = coreporttv.getText().toString();
+                            TextView row = (TextView) headerview.findViewById(R.id.headerrowtv);
+                            String rowstr = row.getText().toString();
+                            TextView ver = (TextView) headerview.findViewById(R.id.headervertv);
+                            String verstr = ver.getText().toString();
+                            TextView block = (TextView) headerview.findViewById(R.id.headerblocktv);
+                            String blockstr = block.getText().toString();
+                            TextView pinport = (TextView) headerview.findViewById(R.id.headerpinporttv);
+                            String pinportstr = pinport.getText().toString();
+                            TextView index = (TextView) headerview.findViewById(R.id.headerindextv);
+                            String indexstr = index.getText().toString();
+                            TextView manufacture = (TextView) headerview.findViewById(R.id.headermanufacturetv);
+                            String manufacturestr = manufacture.getText().toString();
+                            TextView type = (TextView) headerview.findViewById(R.id.headertypetv);
+                            String typestr = type.getText().toString();
+
 
                             intent.putExtra("siteid",siteid);
                             intent.putExtra("updatedby",updatedby);
 
-                            if (fibermodels != null) {
+                                intent.putExtra("routename", routenamestr);
+                                intent.putExtra("core", corestr);
+                                intent.putExtra("routeport1", routeportstr);
 
-                                listfiber2.clear();
+                                intent.putExtra("coreport1", coreporttvstr);
 
-                                listfiber2 = fibermodels;
+                                intent.putExtra("rowport1", rowstr);
 
+                                intent.putExtra("verport1", verstr);
 
+                                intent.putExtra("blockport1", blockstr);
 
-                                intent.putExtra("routename", listfiber2.get(0).getRoute());
-                                intent.putExtra("core", listfiber2.get(0).getCore());
-                                intent.putExtra("routeport1", listfiber2.get(0).getRouteport1());
+                                intent.putExtra("pinport1", pinportstr);
 
-                                intent.putExtra("coreport1", listfiber2.get(0).getCoreport1());
+                                intent.putExtra("indexport1", indexstr);
 
-                                intent.putExtra("rowport1", listfiber2.get(0).getRowport1());
+                                intent.putExtra("manufactureport1", manufacturestr);
 
-                                intent.putExtra("verport1", listfiber2.get(0).getVerport1());
+                                intent.putExtra("typeport1", typestr);
 
-                                intent.putExtra("blockport1", listfiber2.get(0).getBlockport1());
-
-                                intent.putExtra("pinport1", listfiber2.get(0).getPinportport1());
-
-                                intent.putExtra("indexport1", listfiber2.get(0).getIndexport1());
-
-                                intent.putExtra("manufactureport1", listfiber2.get(0).getManufactureport1());
-
-                                intent.putExtra("typeport1", listfiber2.get(0).getTypeport1());
-
-                            }
 
                             startActivity(intent);
                         }
@@ -778,7 +868,62 @@ public class fiberdetails extends AppCompatActivity {
                         Intent intent = new Intent(getApplicationContext(), fiberfooter.class);
 
 
+
+
+
+                        TextView routename = (TextView) footerView.findViewById(R.id.footernametv);
+                        String routenamestr = routename.getText().toString();
+                        TextView core = (TextView) footerView.findViewById(R.id.footercoretv);
+                        String corestr = core.getText().toString();
+
+
+                        TextView routeport = (TextView) footerView.findViewById(R.id.footerrouteporttv);
+                        String routeportstr = routeport.getText().toString();
+                        TextView coreporttv = (TextView) footerView.findViewById(R.id.footercoreporttv);
+                        String coreporttvstr = coreporttv.getText().toString();
+                        TextView row = (TextView) footerView.findViewById(R.id.footerrowporttv);
+                        String rowstr = row.getText().toString();
+                        TextView ver = (TextView) footerView.findViewById(R.id.footerverporttv);
+                        String verstr = ver.getText().toString();
+                        TextView block = (TextView) footerView.findViewById(R.id.footerblockporttv);
+                        String blockstr = block.getText().toString();
+                        TextView pinport = (TextView) footerView.findViewById(R.id.footerpinporttv);
+                        String pinportstr = pinport.getText().toString();
+                        TextView index = (TextView) footerView.findViewById(R.id.footerindexporttv);
+                        String indexstr = index.getText().toString();
+                        TextView manufacture = (TextView) footerView.findViewById(R.id.footermanufactureporttv);
+                        String manufacturestr = manufacture.getText().toString();
+                        TextView type = (TextView) footerView.findViewById(R.id.footertypeporttv);
+                        String typestr = type.getText().toString();
+
+
+                        intent.putExtra("siteid",siteid);
+                        intent.putExtra("updatedby",updatedby);
+
+                        intent.putExtra("routename", routenamestr);
+                        intent.putExtra("core", corestr);
+                        intent.putExtra("routeport1", routeportstr);
+
+                        intent.putExtra("coreport1", coreporttvstr);
+
+                        intent.putExtra("rowport1", rowstr);
+
+                        intent.putExtra("verport1", verstr);
+
+                        intent.putExtra("blockport1", blockstr);
+
+                        intent.putExtra("pinport1", pinportstr);
+
+                        intent.putExtra("indexport1", indexstr);
+
+                        intent.putExtra("manufactureport1", manufacturestr);
+
+                        intent.putExtra("typeport1", typestr);
+
+
                         startActivity(intent);
+
+
                     }
                     if (view.equals(wrapheaderview)) {
                         Intent intent = new Intent(getApplicationContext(), fiberheader.class);
