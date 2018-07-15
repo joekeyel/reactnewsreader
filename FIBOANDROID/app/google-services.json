@@ -1,27 +1,27 @@
 {
   "project_info": {
-    "project_number": "710027680129",
-    "firebase_url": "https://dime-1f787.firebaseio.com",
-    "project_id": "dime-1f787",
-    "storage_bucket": "dime-1f787.appspot.com"
+    "project_number": "207523662204",
+    "firebase_url": "https://fibo-936ce.firebaseio.com",
+    "project_id": "fibo-936ce",
+    "storage_bucket": "fibo-936ce.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:710027680129:android:b4d62cabfbf9312c",
+        "mobilesdk_app_id": "1:207523662204:android:6eaa4957eac3c581",
         "android_client_info": {
-          "package_name": "my.com.tm.DIME"
+          "package_name": "my.com.tm.FIBO"
         }
       },
       "oauth_client": [
         {
-          "client_id": "710027680129-1gi5jab3bujb0s5rkcu4vr9ibba9uved.apps.googleusercontent.com",
+          "client_id": "207523662204-beidb43u5n1if7d5ptvjs7bnbrau7thc.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBk-fP1ZbHW3UwTCdUGevSHVi41dfJuORo"
+          "current_key": "AIzaSyBw-uTMJYU_7CQgvPHuSscne-hr8EA1j7c"
         }
       ],
       "services": {
