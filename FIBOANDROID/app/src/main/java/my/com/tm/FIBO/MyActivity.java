@@ -126,6 +126,8 @@ public class MyActivity extends AppCompatActivity implements OnMapReadyCallback,
     String cabinetidstrnameimage = "";
     String pushid = "";
 
+    String stateselected;
+
     remarkadaptor rmarkadptor;
     ListView remarklistview;
     String remarkstr = "";
@@ -1304,7 +1306,7 @@ public class MyActivity extends AppCompatActivity implements OnMapReadyCallback,
 
                         String state = (String) listviewmarker.getAdapter().getItem(position);
 
-
+                         stateselected = state;
                         loadfirebasestate(state);
 
 
@@ -2631,9 +2633,9 @@ public class MyActivity extends AppCompatActivity implements OnMapReadyCallback,
 
 
 
-        myRef.child("photomarkeridraw/"+FirebaseAuth.getInstance().getCurrentUser().getUid()+"/"+marker.getTitle().toString()).child("lat").removeValue();
+        myRef.child("photomarkeridrawstate/"+stateselected+"/"+FirebaseAuth.getInstance().getCurrentUser().getUid()+"/"+marker.getTitle().toString()).child("lat").removeValue();
 
-        myRef.child("photomarkeridraw/"+FirebaseAuth.getInstance().getCurrentUser().getUid()+"/"+marker.getTitle().toString()).child("lng").removeValue();
+        myRef.child("photomarkeridrawstate/"+stateselected+"/"+FirebaseAuth.getInstance().getCurrentUser().getUid()+"/"+marker.getTitle().toString()).child("lng").removeValue();
 
 
 
@@ -2657,7 +2659,7 @@ public class MyActivity extends AppCompatActivity implements OnMapReadyCallback,
 
 //add listener on remark update
         FirebaseDatabase databasefirebaseinitial = FirebaseDatabase.getInstance();
-        final DatabaseReference myRefdatabaseinitial = databasefirebaseinitial.getReference("photomarkeridraw");
+        final DatabaseReference myRefdatabaseinitial = databasefirebaseinitial.getReference("photomarkeridrawstate").child(stateselected);
 
         myRefdatabaseinitial.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -2680,8 +2682,8 @@ public class MyActivity extends AppCompatActivity implements OnMapReadyCallback,
 
                                     if(usercreated.equals(usernow)) {
 
-                                        myRef.child("photomarkeridraw/" + FirebaseAuth.getInstance().getCurrentUser().getUid() + "/" + marker.getTitle().toString()).child("lat").setValue(marker.getPosition().latitude);
-                                        myRef.child("photomarkeridraw/" + FirebaseAuth.getInstance().getCurrentUser().getUid() + "/" + marker.getTitle().toString()).child("lng").setValue(marker.getPosition().longitude);
+                                        myRef.child("photomarkeridrawstate/" +stateselected+"/"+ FirebaseAuth.getInstance().getCurrentUser().getUid() + "/" + marker.getTitle().toString()).child("lat").setValue(marker.getPosition().latitude);
+                                        myRef.child("photomarkeridrawstate/" +stateselected+"/"+ FirebaseAuth.getInstance().getCurrentUser().getUid() + "/" + marker.getTitle().toString()).child("lng").setValue(marker.getPosition().longitude);
                                     }
                                     else{
 
