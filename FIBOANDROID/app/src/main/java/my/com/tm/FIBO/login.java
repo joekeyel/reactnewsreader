@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.os.AsyncTask;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -22,6 +23,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -302,7 +304,9 @@ public void forgetpassword(View view){
                             // Sign in success, update UI with the signed-in user's information
                             Log.d("TOKEN FIREBASE", "signInWithCustomToken:success");
                             FirebaseUser user = mAuth.getCurrentUser();
-                            updateUI(user);
+
+                            getworkgroup workgrouprequest = new getworkgroup();
+                            workgrouprequest.execute(Config.APP_SERVER_URL25,user.getEmail());
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w("TOKEN FIREBASE", "signInWithCustomToken:failure", task.getException());
@@ -321,7 +325,7 @@ public void forgetpassword(View view){
 
 
 
-    void updateUI(FirebaseUser user){
+    void updateUI(FirebaseUser user,String workgroup){
 
         if(user!=null) {
 
@@ -330,10 +334,16 @@ public void forgetpassword(View view){
 
 
 
+
             displayresult.setText("Sign In Success "+user.getUid().toString());
 
 
 
+
+            UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
+                    .setDisplayName("KL").build();
+
+            user.updateProfile(profileUpdates);
             progressbarhide();
 
 
@@ -341,6 +351,7 @@ public void forgetpassword(View view){
            // go to register building activity
 
             Intent i = new Intent(getApplicationContext(), MyActivity.class);
+            i.putExtra("workgroup",workgroup);
             startActivity(i);
 
             this.finish();
@@ -410,7 +421,8 @@ public void forgetpassword(View view){
         if(currentUser!=null){
         progressdialogshow();
 
-        updateUI(currentUser);
+            getworkgroup workgrouprequest = new getworkgroup();
+            workgrouprequest.execute(Config.APP_SERVER_URL25,currentUser.getEmail());
         }
     }
 

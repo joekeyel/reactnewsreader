@@ -32,4 +32,6 @@ public interface Config {
     static final String APP_SERVER_URL22 ="http://58.27.84.166/mcconline/MCC%20Online%20V3/tablemasterlist_mobile_json.php";
     static final String APP_SERVER_URL23 ="http://58.27.84.166/mcconline/MCC%20Online%20V3/portstate_json2_mobile_summary.php";
     static final String APP_SERVER_URL24 = "http://58.27.84.166/mcconline/MCC%20Online%20V3/tokenfirebase.php";
+    static final String APP_SERVER_URL25 = "http://58.27.84.188/checkuserworkgroup.php";
+    static final String APP_SERVER_URL26 = "http://58.27.84.188/fibolist.php";
 }

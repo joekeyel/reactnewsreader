@@ -71,6 +71,7 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -106,6 +107,7 @@ public class MyActivity extends AppCompatActivity implements OnMapReadyCallback,
 
     public static MyActivity myactivitymain;
 
+    public static String workgroupglobal;
 
     public static String USERNAME1 = "";
     public static String UUIDLATLNG="";
@@ -147,6 +149,7 @@ public class MyActivity extends AppCompatActivity implements OnMapReadyCallback,
     Marker marker;
     AlertDialog alert;
     AlertDialog alertstate;
+    AlertDialog alertlist;
     boolean not_first_time_showing_info_window;
     boolean clearmap = true;
 
@@ -232,8 +235,14 @@ public class MyActivity extends AppCompatActivity implements OnMapReadyCallback,
        // to get userid for given uuid of the phone from server
 
 
+       Intent i = getIntent();
+
+       workgroupglobal = i.getStringExtra("workgroup");
 
 
+
+      loadpendingorder loadpendinglist = new loadpendingorder();
+      loadpendinglist.execute(Config.APP_SERVER_URL26,workgroupglobal);
     }
 
 
@@ -469,7 +478,7 @@ public class MyActivity extends AppCompatActivity implements OnMapReadyCallback,
 
         mMap.setInfoWindowAdapter(new infowindowsadaptor());
 
-      loadstatelist();
+      //loadstatelist();
 
         //for action when click on infowindows
 
@@ -1337,6 +1346,88 @@ public class MyActivity extends AppCompatActivity implements OnMapReadyCallback,
 
     }
 
+
+    public void pendinglistdialog(ArrayList<fibermodel2> list){
+
+
+
+        final AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
+
+        alertlist = alertDialog.create();
+
+        alertlist.setTitle("Pending Order List");
+
+
+        LayoutInflater inflater = getLayoutInflater();
+
+        // inflate the custom popup layout
+        final View convertView = inflater.inflate(R.layout.markerlist, null);
+        // find the ListView in the popup layout
+
+        final ListView listviewmarker = (ListView)convertView.findViewById(R.id.markerlv);
+
+        final pendinglistadaptor adaptormarker = new pendinglistadaptor(getApplicationContext(),R.layout.listrow,list);
+        listviewmarker.setAdapter(adaptormarker);
+
+        SearchView sv = (SearchView) convertView.findViewById(R.id.serachmarker);
+        sv.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+
+                adaptormarker.getFilter().filter(newText);
+                return false;
+            }
+        });
+
+
+        alertlist.setView(convertView);
+
+        alertlist.show();
+
+
+        listviewmarker.setOnItemClickListener(
+
+                new AdapterView.OnItemClickListener() {
+
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+
+
+
+
+
+                        alertlist.dismiss();
+
+
+                    }
+
+                });
+
+
+
+
+
+        Button dismiss = (Button)convertView.findViewById(R.id.dismissdialog);
+
+        dismiss.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Perform action on click
+
+                val.clear();
+
+                alertlist.dismiss();
+                //setupdraw();
+
+            }
+        });
+
+    }
 
 //function to search marker list
 
@@ -2736,7 +2827,8 @@ public class MyActivity extends AppCompatActivity implements OnMapReadyCallback,
         switch (item.getItemId()) {
 
             case R.id.search:
-               statelistdialog();
+                loadpendingorder loadpendinglist = new loadpendingorder();
+                loadpendinglist.execute(Config.APP_SERVER_URL26,workgroupglobal);
                 return true;
 
             case R.id.taglocation:
@@ -2988,6 +3080,13 @@ public class MyActivity extends AppCompatActivity implements OnMapReadyCallback,
         double x = (pY - bee) / m; // algebra is neat!
 
         return x > pX;
+    }
+
+    public void getworkgroup(String workgroup) {
+
+      workgroupglobal = workgroup;
+
+
     }
 
 
