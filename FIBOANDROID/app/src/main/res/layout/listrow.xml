@@ -12,12 +12,12 @@
         android:id="@+id/customernametv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
+android:textAlignment="center"
         android:layout_alignParentTop="true"
         android:layout_margin="5dp"
         android:text="TextView"
         android:textColor="@color/common_google_signin_btn_text_dark_focused"
-        android:textSize="10sp"
+        android:textSize="20sp"
         android:textStyle="bold" />
 
     <TextView

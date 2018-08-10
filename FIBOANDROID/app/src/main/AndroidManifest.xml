@@ -66,9 +66,13 @@
         <activity android:name=".fiberdetailsaddnew" />
         <activity android:name=".fiberheader" />
         <activity android:name=".fiberfooter" />
-        <activity android:name=".fiberinfo"></activity>
-        <activity android:name=".finalreport" android:screenOrientation="landscape"
-            ></activity>
+        <activity
+            android:name=".fiberinfo"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".finalreport"
+            android:screenOrientation="landscape" />
+        <activity android:name=".image"></activity>
     </application>
 
 </manifest>

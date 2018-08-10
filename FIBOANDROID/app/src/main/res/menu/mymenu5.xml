@@ -12,7 +12,18 @@
 
     <item android:id="@+id/saveinfofiber"
         android:title="Plus"
-        android:icon="@drawable/saveicon"
+        android:icon="@drawable/savefiber"
+        app:showAsAction="always" />
+
+    <item android:id="@+id/loadfiberdetails"
+        android:title="Details"
+        android:icon="@drawable/fiberdetailsicon"
+        app:showAsAction="always" />
+
+
+    <item android:id="@+id/uploadcamera"
+        android:title="Picture"
+        android:icon="@drawable/uploadcamera"
         app:showAsAction="always" />
 
 </menu>

@@ -373,25 +373,7 @@ public class MyActivity extends AppCompatActivity implements OnMapReadyCallback,
             }
 
         });
-//
-//        mMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
-//
-//
-//
-//            public void onMapClick(LatLng latLng) {
-//
-//                if(val.size()>0) {
-//                   boolean result = isPointInPolygon(latLng, val);
-//
-//                    if(result == true)
-//                    Toast.makeText(MyActivity.this, "Inside", Toast.LENGTH_SHORT)
-//                            .show();
-//
-//                }
-//
-//            }
-//
-//        });
+
 
 
       mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
@@ -1347,7 +1329,7 @@ public class MyActivity extends AppCompatActivity implements OnMapReadyCallback,
     }
 
 
-    public void pendinglistdialog(ArrayList<fibermodel2> list){
+    public void pendinglistdialog(final ArrayList<fibermodel2> list){
 
 
 
@@ -1398,11 +1380,19 @@ public class MyActivity extends AppCompatActivity implements OnMapReadyCallback,
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
 
+                    String siteid = list.get(position).getSiteid();
+                        String orderid = list.get(position).getOrderid();
+
+                    Intent i = new Intent(getApplicationContext(),fiberinfo.class);
+
+                    i.putExtra("siteid",siteid);
+                    i.putExtra("orderid",orderid);
+                    i.putExtra("updatedby",FirebaseAuth.getInstance().getCurrentUser().getEmail());
 
 
+                    startActivity(i);
 
 
-                        alertlist.dismiss();
 
 
                     }

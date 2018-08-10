@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Frame Image"
+        android:textAlignment="center" />
+
+    <ImageView
+        android:id="@+id/oltimage1"
+        android:layout_width="fill_parent"
+        android:layout_height="200dp"
+        android:scaleType="fitXY"/>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+    <Button
+        android:id="@+id/uploadimage1"
+        android:layout_width="0dp"
+        android:layout_weight="0.5"
+        android:layout_height="wrap_content"
+        android:onClick="selectgallerywall1"
+        android:text="Upload" />
+
+        <Button
+            android:id="@+id/uploadimage2"
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:layout_height="wrap_content"
+            android:onClick="selectcamera"
+            android:text="Camera" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Power Tap 1"
+        android:textAlignment="center" />
+
+    <ImageView
+        android:id="@+id/oltimage2"
+        android:layout_width="fill_parent"
+        android:layout_height="200dp"
+        android:scaleType="fitXY"/>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/uploadimage3"
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:layout_height="wrap_content"
+            android:onClick="selectgallerywall1"
+            android:text="Upload" />
+
+        <Button
+            android:id="@+id/uploadimage4"
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:layout_height="wrap_content"
+            android:onClick="selectcamera"
+            android:text="Camera" />
+
+    </LinearLayout>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Power Tap 2"
+        android:textAlignment="center" />
+
+    <ImageView
+        android:id="@+id/oltimage3"
+        android:layout_width="fill_parent"
+        android:layout_height="200dp"
+        android:scaleType="fitXY"/>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/uploadimage5"
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:layout_height="wrap_content"
+            android:onClick="selectgallerywall1"
+            android:text="Upload" />
+
+        <Button
+            android:id="@+id/uploadimage6"
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:layout_height="wrap_content"
+            android:onClick="selectcamera"
+            android:text="Camera" />
+
+    </LinearLayout>
+
+
+</LinearLayout>
+
+</ScrollView>

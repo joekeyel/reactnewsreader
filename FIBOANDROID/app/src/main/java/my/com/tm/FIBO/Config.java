@@ -34,4 +34,5 @@ public interface Config {
     static final String APP_SERVER_URL24 = "http://58.27.84.166/mcconline/MCC%20Online%20V3/tokenfirebase.php";
     static final String APP_SERVER_URL25 = "http://58.27.84.188/checkuserworkgroup.php";
     static final String APP_SERVER_URL26 = "http://58.27.84.188/fibolist.php";
+    static final String APP_SERVER_URL27 = "http://58.27.84.188/fiboinfo.php";
 }
