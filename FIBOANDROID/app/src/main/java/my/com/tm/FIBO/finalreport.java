@@ -14,6 +14,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.PersistableBundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -31,6 +32,13 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.squareup.picasso.NetworkPolicy;
+import com.squareup.picasso.Picasso;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -47,7 +55,7 @@ public class finalreport extends AppCompatActivity{
     String siteid;
     int heightwebview;
     WebView graphview;
-
+    ImageView frameimage1,powercableimage1,iucimageuplink1,ftbfocimage1,epenpeimage1,fdffocimage1;
 
 
     @Override
@@ -87,6 +95,21 @@ public class finalreport extends AppCompatActivity{
 
 
 
+
+
+        frameimage1 = (ImageView)findViewById(R.id.oltimage2);
+        powercableimage1 = (ImageView)findViewById(R.id.powercableimage2);
+        iucimageuplink1 = (ImageView)findViewById(R.id.iucuplinkimage2);
+        ftbfocimage1 = (ImageView)findViewById(R.id.ftbfocimage2);
+        epenpeimage1 = (ImageView)findViewById(R.id.epenpeimage2);
+        fdffocimage1 = (ImageView)findViewById(R.id.fdffocimage2);
+
+        loadimage(frameimage1,siteid+"_iucchasis.jpg");
+        loadimage(powercableimage1,siteid+"_power1.jpg");
+        loadimage(iucimageuplink1,siteid+"_uplinkiuc.jpg");
+        loadimage(ftbfocimage1,siteid+"_ftbfoc.jpg");
+        loadimage(epenpeimage1,siteid+"_epenpe.jpg");
+        loadimage(fdffocimage1,siteid+"_fdffoc.jpg");
 
 
     }
@@ -225,5 +248,45 @@ public class finalreport extends AppCompatActivity{
         }
     }
 
+
+    public void loadimage(final ImageView view, final String imagename1){
+
+
+        FirebaseStorage storage = FirebaseStorage.getInstance();
+        StorageReference storageRef = storage.getReference();
+
+
+
+
+
+
+
+        storageRef.child("FIBO" + File.separator+imagename1).getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+            @Override
+            public void onSuccess(Uri uri) {
+                // TODO: handle uri
+
+                Context context = view.getContext();
+
+                view.invalidate();
+
+                Picasso.with(context).load(uri).networkPolicy(NetworkPolicy.NO_CACHE).into(view);
+
+
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception exception) {
+                // Hand
+                //
+                //
+                // le any errors
+
+                Toast.makeText(finalreport.this, "Failed  To view image"+ imagename1+" "+exception , Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+    }
 
 }

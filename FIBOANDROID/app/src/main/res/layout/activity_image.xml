@@ -28,6 +28,7 @@
         android:orientation="horizontal">
     <Button
         android:id="@+id/uploadimage1"
+        android:tag="iucchasis"
         android:layout_width="0dp"
         android:layout_weight="0.5"
         android:layout_height="wrap_content"
@@ -36,6 +37,8 @@
 
         <Button
             android:id="@+id/uploadimage2"
+
+            android:tag="iucchasis"
             android:layout_width="0dp"
             android:layout_weight="0.5"
             android:layout_height="wrap_content"
@@ -48,11 +51,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:text="Power Tap 1"
+        android:text="Power Cable at each termination point Breaker,SPD and IUC"
+
         android:textAlignment="center" />
 
     <ImageView
-        android:id="@+id/oltimage2"
+        android:id="@+id/powercableimage"
         android:layout_width="fill_parent"
         android:layout_height="200dp"
         android:scaleType="fitXY"/>
@@ -67,6 +71,7 @@
             android:layout_weight="0.5"
             android:layout_height="wrap_content"
             android:onClick="selectgallerywall1"
+            android:tag="power1"
             android:text="Upload" />
 
         <Button
@@ -75,6 +80,7 @@
             android:layout_weight="0.5"
             android:layout_height="wrap_content"
             android:onClick="selectcamera"
+            android:tag="power1"
             android:text="Camera" />
 
     </LinearLayout>
@@ -84,11 +90,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:text="Power Tap 2"
+        android:text="IUC for uplink"
         android:textAlignment="center" />
 
     <ImageView
-        android:id="@+id/oltimage3"
+        android:id="@+id/iucuplinkimage"
         android:layout_width="fill_parent"
         android:layout_height="200dp"
         android:scaleType="fitXY"/>
@@ -103,7 +109,8 @@
             android:layout_weight="0.5"
             android:layout_height="wrap_content"
             android:onClick="selectgallerywall1"
-            android:text="Upload" />
+            android:text="Upload"
+            android:tag="uplinkiuc"/>
 
         <Button
             android:id="@+id/uploadimage6"
@@ -111,11 +118,128 @@
             android:layout_weight="0.5"
             android:layout_height="wrap_content"
             android:onClick="selectcamera"
-            android:text="Camera" />
+            android:text="Camera"
+            android:tag="uplinkiuc"/>
 
     </LinearLayout>
 
 
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="At TM FTB,at FOC (Custome)"
+        android:textAlignment="center" />
+
+    <ImageView
+        android:id="@+id/ftbfocimage"
+        android:layout_width="fill_parent"
+        android:layout_height="200dp"
+        android:scaleType="fitXY"/>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/uploadftb"
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:layout_height="wrap_content"
+            android:onClick="selectgallerywall1"
+            android:text="Upload"
+
+            android:tag="ftbfoc"/>
+
+        <Button
+            android:id="@+id/uploadcameraftb"
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:layout_height="wrap_content"
+            android:onClick="selectcamera"
+            android:text="Camera"
+            android:tag="ftbfoc"/>
+
+    </LinearLayout>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="At TM FTB,at FOC (Custome)"
+        android:textAlignment="center" />
+
+    <ImageView
+        android:id="@+id/epenpeimage"
+        android:layout_width="fill_parent"
+        android:layout_height="200dp"
+        android:scaleType="fitXY"/>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/uploadepenpe"
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:layout_height="wrap_content"
+            android:onClick="selectgallerywall1"
+            android:text="Upload"
+
+            android:tag="epenpe"/>
+
+        <Button
+            android:id="@+id/uploadcameraepenpe"
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:layout_height="wrap_content"
+            android:onClick="selectcamera"
+            android:text="Camera"
+            android:tag="epenpe"/>
+
+    </LinearLayout>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="At FDF inclusive of intertie - at FOC"
+        android:textAlignment="center" />
+
+    <ImageView
+        android:id="@+id/fdffocimage"
+        android:layout_width="fill_parent"
+        android:layout_height="200dp"
+        android:scaleType="fitXY"/>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/uploadfdf"
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:layout_height="wrap_content"
+            android:onClick="selectgallerywall1"
+            android:text="Upload"
+
+            android:tag="fdffoc"/>
+
+        <Button
+            android:id="@+id/uploadcamerafdf"
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:layout_height="wrap_content"
+            android:onClick="selectcamera"
+            android:text="Camera"
+            android:tag="fdffoc"/>
+
+    </LinearLayout>
 </LinearLayout>
 
 </ScrollView>
